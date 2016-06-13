@@ -1,47 +1,44 @@
 "use strict";
 
-var app = angular.module("MovieDatabaseApp", ["ngRoute", "focus-if", "ui-bootstrap"])
+var app = angular.module("ToothBrushingApp", ["ngRoute"])
     .constant("firebaseURL", "https://tooth-brushing.firebaseio.com/");
 
-let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
-    if (AuthFactory.isAuthenticated()) {
+
+let isAuth = (authFactory) => new Promise((resolve, reject) => {
+    if (authFactory.isAuthenticated()) {
         resolve();
     } else {
         reject();    
     }
 });
 
+
 app.config(function($routeProvider) {
     $routeProvider
-        .when("/", {
+        .when("/splash", {
             templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl",
-            resolve: {isAuth}
+            controller:  "loginCtrl"
         })
-        .when("/splash",{
+        .when("/parentLogin", {
             templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl"
+            controller:  "loginCtrl"
         })
-        .when("/login", {
+        .when("/childLogin", {
             templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl"
+            controller:  "loginCtrl"
         })
         .when("/logout",{
             templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl"
+            controller:  "loginCtrl"
         })
-        .when("/register", {
-            templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl"
-        })
-        .otherwise("/"); 
+        .otherwise("/splash"); 
 });
 
 app.run(($location) => {
-    let watchlistRef = new Firebase("https://tooth-brushing.firebaseio.com/");
-    watchlistRef.unauth();
+    let brushingDbRef = new Firebase("https://tooth-brushing.firebaseio.com/");
+    brushingDbRef.unauth();
 
-    watchlistRef.onAuth(authData => {
+    brushingDbRef.onAuth(authData => {
         if(!authData) {
             $location.path("/login");
         }

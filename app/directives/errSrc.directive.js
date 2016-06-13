@@ -1,3 +1,5 @@
+"use strict";
+
 app.directive('errSrc', function() {
   return {
     link: function(scope, element, attrs) {
