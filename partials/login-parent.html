@@ -1,0 +1,79 @@
+<div class="container parentLoginContainer">
+  <div class="row">
+    <h4 class="col s4 offset-s3"> Parent Login </h4>
+      
+    <ul class="pagination col s4 offset-s1">
+      <li class="waves-effect" ng-hide="!modeLogin" ng-href="/#/parentregister"><a ng-href="/#/parentregister">Register</a></li>
+      <li class="active" ng-hide="modeLogin" ng-href="/#/parentregister"><a ng-href="/#/parentregister">Register</a></li>
+      <li class="waves-effect" ng-hide="modeLogin" ng-href="/#/parentlogin"><a ng-href="/#/parentlogin">Login</a></li>
+      <li class="active" ng-hide="!modeLogin" ng-href="/#/parentlogin"><a ng-href="/#/parentlogin">Login</a></li>
+    </ul>
+  </div>
+
+<!-- ------------------------- REGISTER PARENT ------------------------- -->
+  <form ng-hide="modeLogin" id="add-new-user">
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input type="email" autocomplete="nope" focus-if ng-model="account.email">
+          <label>Email</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">security</i>
+          <input type="password" autocomplete="nope" ng-model="account.password">
+          <label>Password</label>
+        </div>
+    </div>
+
+    <div class="row">
+      <div id="google-button" class="btn white" ng-click="loginGoggle()"><span class="icon"></span><span>Register</span></div>
+      <button class="btn" ng-click="register()"><i class="material-icons left">person_add</i>Register</button>
+    </div>
+  </form>
+
+
+<!-- -------------------------   LOGIN PARENT   ------------------------- -->
+  <form id="login" ng-hide="!modeLogin">
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input type="email" autofocus="true" focus-if autocomplete="nope" ng-model="account.email">
+          <label>Email</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">security</i>
+          <input type="password" autocomplete="nope" ng-model="account.password">
+          <label>Password</label>
+        </div>
+    </div>
+
+    <div class="row">
+      <div id="google-button" class="btn white" ng-click="loginGoggle()"><span class="icon"></span><span>Login</span></div>
+      <button class="btn" ng-click="login()"><i class="material-icons left">person_add</i>Login</button>
+    </div>
+  </form>
+
+</div>
+
+
+
+
+<!-- -------------------------     ERROR MODAL     ------------------------- -->
+<div class="errormodal" ng-keypress="closeModal()" ng-click="closeModal()" id="errorMessageBox" autofocus="true" ng-show="userError" ng-if="userError" ng-focus="userError">
+  <a class="waves-effect waves-green btn-floating teal"><i class="material-icons left">close</i></a>
+  <div class="errormodal-photo-container"><img class="errormodal-photo" src="img/avatar/av11.png"></div>
+  <div class="mockmodal-content">
+    <h4>Oops! Houston we have a problem.</h4>
+    <p>{{errorMessage}}</p>
+  </div>   
+</div>
+
+
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>

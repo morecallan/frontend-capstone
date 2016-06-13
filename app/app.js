@@ -19,7 +19,11 @@ app.config(function($routeProvider) {
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl"
         })
-        .when("/parentLogin", {
+        .when("/parentregister", {
+            templateUrl: "partials/splash.html",
+            controller:  "loginCtrl"
+        })
+        .when("/parentlogin", {
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl"
         })
@@ -40,7 +44,7 @@ app.run(($location) => {
 
     brushingDbRef.onAuth(authData => {
         if(!authData) {
-            $location.path("/login");
+            $location.path("/parentlogin");
         }
     });
 });

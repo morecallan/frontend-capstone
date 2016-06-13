@@ -16,11 +16,11 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     };
 
 
-    if($location.path() === "/login"){
+    if($location.path() === "/parentlogin"){
         $rootScope.modeLogin = true;
     }
 
-    if($location.path() === "/register"){
+    if($location.path() === "/parentregister"){
         $rootScope.modeLogin = false;
     }
 
