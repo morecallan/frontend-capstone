@@ -140,9 +140,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
 
     $scope.childadd = () => {
         addChildFactory.addChildToParentAccount($scope.childAccount).then(() => {
-            addChildFactory.returnAllChildrenForLoggedInParent().then((childrenFromFirebase) => {
-                $scope.children = childrenFromFirebase;
-            });
+            $location.path("/childlogin");
+            $scope.checkForChildren();
         });
     };
 
@@ -151,10 +150,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     ********************************************/
     $scope.checkForChildren = () => {
         addChildFactory.returnAllChildrenForLoggedInParent().then((childrenFromFirebase) => {
-            console.log("childrenFromFirebase", childrenFromFirebase);
             if (childrenFromFirebase.length > 0) {
                 $rootScope.children = childrenFromFirebase;
-                console.log("$scope.children", $scope.children);
                 if ($rootScope.children.length >= 4) {
                     $scope.lessThanFourChildren = true;
                 }
