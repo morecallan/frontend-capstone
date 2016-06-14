@@ -21,7 +21,13 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         password: ""
     };
 
-    $scope.avatars = [{img: "av1.png"},{img: "av2.png"},{img: "av3.png"},{img: "av4.png"},{img: "av5.png"},{img: "av6.png"},{img: "av7.png"},{img: "av8.png"},{img: "av9.png"},{img: "av10.png"},{img: "av11.png"},{img: "av12.png"},{img: "av13.png"},{img: "av14.png"}]
+    $scope.childAccount = {
+        firstName: "",
+        age: "",
+        avatar: "img/avatar/av2.png"
+    }
+
+    $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"}]
 
     /********************************************
     **               ERROR MODAL               **
@@ -115,6 +121,14 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
 
     $scope.closeAvatarModal = () => {
         $scope.viewAvatars = false;
+    }
+
+    $scope.assignAvatar = (chosenAvatarImg) => {
+        $scope.childAccount.avatar = chosenAvatarImg;
+    }
+
+    $scope.childadd = () => {
+        console.log($scope.childAccount);
     }
 
 });

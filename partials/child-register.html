@@ -21,12 +21,12 @@
       </div>
 
       <div class="col s5 btnDiv">
-         <a class="btn-floating btn-large waves-effect waves-light avatarChoose"><img class="buttonAvatar" ng-click="showAvatarModal()" src="img/avatar/av2.png"></a>
+         <a class="btn-floating btn-large waves-effect waves-light avatarChoose"><img class="buttonAvatar" ng-click="showAvatarModal()" src="{{childAccount.avatar}}"></a>
          <h6 class="btnLabel">Select your avatar</h6>
       </div>
     </div>
   
-  <button class="btn" ng-click="register()"><i class="material-icons left">person_add</i>Add Me!</button>
+  <button class="btn" ng-click="childadd()"><i class="material-icons left">person_add</i>Add Me!</button>
       
   </form>
 </div>
@@ -46,9 +46,12 @@
 
 <!-- -------------------------- AVATAR SELECT MODAL ------------------------- -->
 <div class="avatarSelectModal" ng-keypress="closeAvatarModal()" ng-click="closeAvatarModal()" id="avatarSelectModal" autofocus="true" ng-show="viewAvatars" ng-if="viewAvatars" ng-focus="viewAvatars">
-  <div class="avatarList">
-    <div ng-repeat="avatar in avatars">
-      <img src="./img/avatar/{{avatar.img}}" class="selectionAvatars z-depth-2"> 
-    </div>
-  </div>   
+  <h4>Select Your Avatar</h4>
+  <div class="avatarSelectModalSlider">
+    <ul class="avatarList">
+      <li ng-repeat="avatar in avatars">
+        <img src="./{{avatar.img}}" class="selectionAvatars z-depth-2" ng-click="assignAvatar(avatar.img)"> 
+      </li>
+    </ul>   
+  </div>
 </div>

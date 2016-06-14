@@ -6,32 +6,31 @@
   left: 2%;
   background-color: rgba(255, 255, 255, 0.95);
   color: black;
-  padding: 2px;
-  height: 340px;
+  padding: 0;
+  height: 330px;
   width: 96%;
-  overflow-x: auto;
-  overflow-y: hidden;
   border-radius: 10px; }
-  .avatarSelectModal .fixedHeader {
-    position: absolue;
-    width: 100vw;
-    min-width: 100vw;
-    z-index: 2000; }
+  .avatarSelectModal .avatarSelectModalSlider {
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding: 30px 0; }
   .avatarSelectModal h4 {
     font-family: "Cabin Sketch";
     padding: 0;
     margin: 20px 0 0;
     text-align: center; }
   .avatarSelectModal .avatarList {
-    margin-top: 40px;
     display: flex;
     flex-wrap: no-wrap;
-    flex-direction: row; }
+    flex-direction: row;
+    -webkit-overflow-scrolling: touch; }
     .avatarSelectModal .avatarList .selectionAvatars {
+      -webkit-overflow-scrolling: touch;
       border-radius: 5px;
-      height: 45vw;
-      padding: 10px;
-      margin: 20px;
+      height: 30vw;
+      margin: 0 20px;
       background-color: rgba(0, 128, 128, 0.1); }
 
 .mockmodal:focus {
@@ -68,9 +67,17 @@ body {
   overflow: hidden; }
 
 .buttonAvatar {
-  width: 75%;
-  margin: 5% 12.5%;
-  display: inline-block; }
+  -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
+  filter: drop-shadow(0 10px 0px white);
+  margin: auto;
+  vertical-align: middle;
+  display: inline-block;
+  min-width: 75%;
+  min-height: 75%;
+  max-width: 100%;
+  max-height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover; }
 
 .btnLabel {
   display: inline-block;
