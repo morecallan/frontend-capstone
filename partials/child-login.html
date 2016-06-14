@@ -1,0 +1,32 @@
+<div class="container childLoginContainer">
+  <div class="col s8 offset-s2">
+    <h4>Who is ready to boogie & brush?</h4>
+  </div>
+
+
+<!-- -------------------------- AVATAR SELECT MODAL ------------------------- -->
+  <div class="childUserSelectSlider">
+    <div class="childUserList row">
+      <div class="card" ng-repeat="child in children">
+        <div class="card-image">
+          <img src="{{child.avatar}}">  
+        </div>
+        <div class="card-content">
+          <h4>{{child.firstName}}</h4>
+        </div>
+      </div>
+
+      <div class="card" ng-show="lessThanFourChildren"> 
+          <a class="btn-floating btn-large" ng-href="#/childregister">
+            <i class="large material-icons">add_circle</i>
+          </a>
+
+          <div class="card-content">
+            <h4>Add Child</h4>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

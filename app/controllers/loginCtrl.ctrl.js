@@ -27,6 +27,9 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         avatar: "img/avatar/av2.png"
     };
 
+    $rootScope.children = [];
+    $scope.lessThanFourChildren = true;
+
     $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"}];
 
     /********************************************
@@ -51,6 +54,12 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         $scope.parentMode = true;
         $scope.childMode = false;
         $scope.modeLogin = false;
+    }
+
+     if($location.path() === "/childlogin"){
+        $scope.parentMode = false;
+        $scope.childMode = true;
+        $scope.modeLogin = true;
     }
 
     if($location.path() === "/childregister"){
@@ -85,7 +94,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         .authenticate($rootScope.account)
         .then((userCreds) => {
             $scope.$apply(function() {
-                $location.path("/childregister");
+                $location.path("/childlogin");
+                $scope.checkForChildren();
                 $rootScope.isActive = true;
             });
         })
@@ -101,7 +111,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         .authenticateGoogle()
         .then((userCreds) => {
             $scope.$apply(function() {
-                $location.path("/childregister");
+                $location.path("/childlogin");
+                $scope.checkForChildren();
                 $rootScope.isActive = true;
             });
         })
@@ -129,8 +140,28 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
 
     $scope.childadd = () => {
         addChildFactory.addChildToParentAccount($scope.childAccount).then(() => {
-            console.log("YES");
-        })
+            addChildFactory.returnAllChildrenForLoggedInParent().then((childrenFromFirebase) => {
+                $scope.children = childrenFromFirebase;
+            });
+        });
+    };
+
+    /********************************************
+    **              CHILD LOGIN                **
+    ********************************************/
+    $scope.checkForChildren = () => {
+        addChildFactory.returnAllChildrenForLoggedInParent().then((childrenFromFirebase) => {
+            console.log("childrenFromFirebase", childrenFromFirebase);
+            if (childrenFromFirebase.length > 0) {
+                $rootScope.children = childrenFromFirebase;
+                console.log("$scope.children", $scope.children);
+                if ($rootScope.children.length >= 4) {
+                    $scope.lessThanFourChildren = true;
+                }
+            } else {
+                $scope.lessThanFourChildren = true;
+            }
+        });
     };
 
 });

@@ -27,6 +27,11 @@ app.config(function($routeProvider) {
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl"
         })
+        .when("/childlogin", {
+            templateUrl: "partials/splash.html",
+            controller:  "loginCtrl",
+            resolve: {isAuth}
+        })
         .when("/childregister", {
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl",
