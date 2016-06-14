@@ -23,12 +23,12 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
-<body ng-app="ToothBrushingApp">
+<body ng-app="ToothBrushingApp" ng-cloak>
 
 
 
   <!-- BEGINNING OF NAV -->
-  <div id="navContainer" ng-include="'./partials/nav.html'"></div>
+  <div id="navContainer" ng-include="'./partials/nav.html'" ng-controller="navCtrl"></div>
   <!-- END OF NAV BAR -->
 
 
@@ -105,6 +105,7 @@
   <script type="text/javascript" src="app/directives/errSrc.directive.js"></script>
   <script type="text/javascript" src="app/directives/select.directive.js"></script>
   <!-- CONTROLLERS LAST -->
+  <script type="text/javascript" src="app/controllers/navCtrl.ctrl.js"></script>
   <script type="text/javascript" src="app/controllers/loginCtrl.ctrl.js"></script>
   <script type="text/javascript" src="app/controllers/childAcctCtrl.ctrl.js"></script>
 </body>

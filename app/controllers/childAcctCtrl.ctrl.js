@@ -4,9 +4,9 @@
 app.controller('childAcctCtrl', function ($scope, $location, $rootScope, firebaseURL, authFactory, addChildFactory) {
 
     /********************************************
-    **      VARIABLES FOR USERS - SUBUSERS     **
+    **               SELECTED USER             **
     ********************************************/
-    let ref = new Firebase(firebaseURL);
+    
 
     console.log("selectedChild",$rootScope.selectedChild);
 
