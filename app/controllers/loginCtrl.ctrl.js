@@ -167,6 +167,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
 
     $scope.selectActiveChild = (child) => {
         $rootScope.selectedChild = child;
+        $location.path("/childlanding");
     };
 
 });

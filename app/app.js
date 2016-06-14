@@ -12,6 +12,15 @@ let isAuth = (authFactory) => new Promise((resolve, reject) => {
     }
 });
 
+let isChildAuth = ($rootScope) => {
+    if (Object.getOwnPropertyNames($rootScope.selectedChild).length === 0) {
+        return false;
+    } else {
+        return true;    
+    }
+};
+
+
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -36,6 +45,11 @@ app.config(function($routeProvider) {
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl",
             resolve: {isAuth}
+        })
+        .when("/childlanding", {
+            templateUrl: "partials/child-landing.html",
+            controller:  "childAcctCtrl",
+            resolve: {isAuth, isChildAuth}
         })
         .when("/logout",{
             templateUrl: "partials/splash.html",
