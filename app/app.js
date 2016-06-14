@@ -29,7 +29,8 @@ app.config(function($routeProvider) {
         })
         .when("/childregister", {
             templateUrl: "partials/splash.html",
-            controller:  "loginCtrl"
+            controller:  "loginCtrl",
+            resolve: {isAuth}
         })
         .when("/logout",{
             templateUrl: "partials/splash.html",
@@ -45,7 +46,7 @@ app.run(($location) => {
 
     brushingDbRef.onAuth(authData => {
         if(!authData) {
-            $location.path("/childregister");
+            $location.path("/splash");
         }
     });
 });

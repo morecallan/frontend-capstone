@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL, authFactory) {
+app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL, authFactory, addChildFactory) {
 
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
@@ -25,9 +25,9 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         firstName: "",
         age: "",
         avatar: "img/avatar/av2.png"
-    }
+    };
 
-    $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"}]
+    $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"}];
 
     /********************************************
     **               ERROR MODAL               **
@@ -117,18 +117,20 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     ********************************************/
     $scope.showAvatarModal = () => {
         $scope.viewAvatars = true;
-    }
+    };
 
     $scope.closeAvatarModal = () => {
         $scope.viewAvatars = false;
-    }
+    };
 
     $scope.assignAvatar = (chosenAvatarImg) => {
         $scope.childAccount.avatar = chosenAvatarImg;
-    }
+    };
 
     $scope.childadd = () => {
-        console.log($scope.childAccount);
-    }
+        addChildFactory.addChildToParentAccount($scope.childAccount).then(() => {
+            console.log("YES");
+        })
+    };
 
 });
