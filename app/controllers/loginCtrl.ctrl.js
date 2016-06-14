@@ -9,6 +9,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     let ref = new Firebase(firebaseURL);
 
     $scope.userError = false;
+    $scope.childRegError = false;
 
     $scope.parentMode = true;
     $scope.childMode = false;
@@ -42,6 +43,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
 
     $scope.closeModal = () => {
         $scope.userError = false;
+        $scope.childRegError = false;
     };
 
     /********************************************
@@ -142,6 +144,16 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         $scope.childAccount.avatar = chosenAvatarImg;
     };
 
+    $scope.checkChildRegForm = () => {
+        if ($scope.childAccount.firstName !== "" && $scope.childAccount.age !== "") {
+            $scope.childadd();
+        } else {    
+            $scope.childRegError = true;
+            $scope.errorMessage = "Please fill out all fields!";
+        }
+    };
+
+
     $scope.childadd = () => {
         addChildFactory.addChildToParentAccount($scope.childAccount).then(() => {
             $location.path("/childlogin");
@@ -155,12 +167,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.checkForChildren = () => {
         addChildFactory.returnAllChildrenForLoggedInParent().then((childrenFromFirebase) => {
             if (childrenFromFirebase.length > 0) {
-                $rootScope.children = childrenFromFirebase;
-                if ($rootScope.children.length >= 4) {
-                    $scope.lessThanFourChildren = true;
-                }
-            } else {
-                $scope.lessThanFourChildren = true;
+                $rootScope.children = childrenFromFirebase;    
             }
         });
     };
@@ -170,4 +177,9 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         $location.path("/childlanding");
     };
 
+    $scope.$watch(() => {
+        if ($rootScope.children.length >= 4) {
+            $scope.lessThanFourChildren = false;
+        }
+    });
 });
