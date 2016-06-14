@@ -1,7 +1,11 @@
 <!-- CAROUSEL -->
-<div id="carouselContainer" ng-include="'./partials/carousel.html'"></div>
+<div id="carouselContainer" ng-include="'./partials/carousel.html'" ng-show="!childMode"></div>
 <!-- END OF CAROUSEL -->
 
 <!-- PARENT LOGIN/REGISTER -->
-<div id="parentLoginContainer" ng-include="'./partials/login-parent.html'"></div>
+<div id="parentLoginContainer" ng-include="'./partials/login-parent.html'" ng-show="parentMode"></div>
 <!-- END OF PARENT LOGIN/REGISTER -->
+
+<!-- CHILD LOGIN/REGISTER -->
+<div id="parentLoginContainer" ng-include="'./partials/child-register.html'" ng-show="childMode && !modeLogin"></div>
+<!-- CHILD LOGIN/REGISTER -->

@@ -1,0 +1,36 @@
+.btnDiv {
+    margin: 0;
+    margin-top: -15px;
+    min-width: 50%;
+
+    h6 {
+        position: relative;
+        top: 17px;
+        left: -5px;
+    }
+}
+
+.avatarChoose {
+    margin-top: 0vw;
+    width: 12vw !important;
+    height: 12vw !important;
+    overflow: hidden;
+}
+
+.buttonAvatar {
+    width: 75%;
+    margin: 5% 12.5%;
+    display: inline-block;
+}
+
+.btnLabel {
+    display: inline-block;
+    width: 30%;
+    line-height: 18px;
+    font-size: 20px;
+    color: black !important;
+    font-family: "Cabin Sketch";
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+

@@ -27,7 +27,7 @@ app.config(function($routeProvider) {
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl"
         })
-        .when("/childLogin", {
+        .when("/childregister", {
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl"
         })
@@ -38,13 +38,14 @@ app.config(function($routeProvider) {
         .otherwise("/splash"); 
 });
 
+
 app.run(($location) => {
     let brushingDbRef = new Firebase("https://tooth-brushing.firebaseio.com/");
     brushingDbRef.unauth();
 
     brushingDbRef.onAuth(authData => {
         if(!authData) {
-            $location.path("/parentlogin");
+            $location.path("/childregister");
         }
     });
 });

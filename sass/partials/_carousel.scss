@@ -1,6 +1,6 @@
 .carouselContainer {
-    margin: 25px;
-    background-color: rgba(255, 255, 255, .1);
+    margin: 20px 25px;
+    background-color: rgba(0, 0, 0, .1);
     height: 100%;
     text-align: center;
     padding: 0;
@@ -15,6 +15,26 @@
         margin: 0 5%;
         padding: 0;
         max-height: 90%;
-        max-width: 90%; 
+        max-width: 90%;
+    }
+
+    .card-title {
+        color: black !important;
+        font-weight: bold;
+        line-height: 12px;
+        display: inline;
+        background-color: rgba(255, 255, 255, .5);
+        margin: 0;
+        padding: 7px 10px !important;
+    }
+
+    .subfact {
+        display: inline;
+        font-family: "Roboto";
+        font-size: 10px;
+        font-weight: normal;
+        line-height: 8px;
+        margin: 0;
+        padding: 0;
     }
 }

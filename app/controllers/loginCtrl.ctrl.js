@@ -4,31 +4,51 @@
 app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL, authFactory) {
 
     /********************************************
-    **           For Parent Login/Reg          **
+    **      VARIABLES FOR USERS - SUBUSERS     **
     ********************************************/
     let ref = new Firebase(firebaseURL);
 
     $scope.userError = false;
 
-
-    $scope.closeModal = () => {
-        $scope.userError = false;
-    };
-
-
-    if($location.path() === "/parentlogin"){
-        $rootScope.modeLogin = true;
-    }
-
-    if($location.path() === "/parentregister"){
-        $rootScope.modeLogin = false;
-    }
+    $scope.parentMode = true;
+    $scope.childMode = false;
+    $scope.modeLogin = true;
 
 
     $rootScope.account = {
         email: "",
         password: ""
     };
+
+    /********************************************
+    **               ERROR MODAL               **
+    ********************************************/
+
+    $scope.closeModal = () => {
+        $scope.userError = false;
+    };
+
+    /********************************************
+    **        WHICH PARTIAL SHOULD I SHOW?     **
+    ********************************************/
+
+    if($location.path() === "/parentlogin"){
+        $scope.parentMode = true;
+        $scope.childMode = false;
+        $scope.modeLogin = true;
+    }
+
+    if($location.path() === "/parentregister"){
+        $scope.parentMode = true;
+        $scope.childMode = false;
+        $scope.modeLogin = false;
+    }
+
+    if($location.path() === "/childregister"){
+        $scope.parentMode = false;
+        $scope.childMode = true;
+        $scope.modeLogin = false;
+    }
 
     if($location.path() === "/logout"){
         ref.unauth();
@@ -56,7 +76,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         .authenticate($rootScope.account)
         .then((userCreds) => {
             $scope.$apply(function() {
-                $location.path("/watchlist");
+                $location.path("/childregister");
                 $rootScope.isActive = true;
             });
         })
@@ -72,7 +92,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         .authenticateGoogle()
         .then((userCreds) => {
             $scope.$apply(function() {
-                $location.path("/childuser");
+                $location.path("/childregister");
                 $rootScope.isActive = true;
             });
         })
