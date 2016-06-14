@@ -21,6 +21,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         password: ""
     };
 
+    $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"}];
+
     $scope.childAccount = {
         firstName: "",
         age: "",
@@ -30,7 +32,9 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $rootScope.children = [];
     $scope.lessThanFourChildren = true;
 
-    $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"}];
+    $rootScope.selectedChild = {};
+
+
 
     /********************************************
     **               ERROR MODAL               **
@@ -159,6 +163,10 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
                 $scope.lessThanFourChildren = true;
             }
         });
+    };
+
+    $scope.selectActiveChild = (child) => {
+        $rootScope.selectedChild = child;
     };
 
 });
