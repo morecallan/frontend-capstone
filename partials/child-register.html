@@ -14,14 +14,14 @@
     </div>
 
     <div class="row">
-      <div class="input-field col s4 offset-s1">
+      <div class="input-field col s5 offset-s1">
         <i class="material-icons prefix">cake</i>
         <input type="text" pattern="[0-9]{2}" ng-model="childAccount.age" maxlength="2">
         <label>Age</label>
       </div>
 
       <div class="col s5 btnDiv">
-         <a class="btn-floating btn-large waves-effect waves-light avatarChoose"><img class="buttonAvatar" src="img/avatar/av2.png"></a>
+         <a class="btn-floating btn-large waves-effect waves-light avatarChoose"><img class="buttonAvatar" ng-click="showAvatarModal()" src="img/avatar/av2.png"></a>
          <h6 class="btnLabel">Select your avatar</h6>
       </div>
     </div>
@@ -41,5 +41,14 @@
   <div class="mockmodal-content">
     <h4>Oops! Houston we have a problem.</h4>
     <p>{{errorMessage}}</p>
+  </div>   
+</div>
+
+<!-- -------------------------- AVATAR SELECT MODAL ------------------------- -->
+<div class="avatarSelectModal" ng-keypress="closeAvatarModal()" ng-click="closeAvatarModal()" id="avatarSelectModal" autofocus="true" ng-show="viewAvatars" ng-if="viewAvatars" ng-focus="viewAvatars">
+  <div class="avatarList">
+    <div ng-repeat="avatar in avatars">
+      <img src="./img/avatar/{{avatar.img}}" class="selectionAvatars z-depth-2"> 
+    </div>
   </div>   
 </div>

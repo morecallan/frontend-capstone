@@ -1,3 +1,42 @@
+.avatarSelectModal {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
+  z-index: 1000;
+  position: absolute;
+  top: 20%;
+  left: 2%;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: black;
+  padding: 2px;
+  height: 340px;
+  width: 96%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 10px; }
+  .avatarSelectModal .fixedHeader {
+    position: absolue;
+    width: 100vw;
+    min-width: 100vw;
+    z-index: 2000; }
+  .avatarSelectModal h4 {
+    font-family: "Cabin Sketch";
+    padding: 0;
+    margin: 20px 0 0;
+    text-align: center; }
+  .avatarSelectModal .avatarList {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: no-wrap;
+    flex-direction: row; }
+    .avatarSelectModal .avatarList .selectionAvatars {
+      border-radius: 5px;
+      height: 45vw;
+      padding: 10px;
+      margin: 20px;
+      background-color: rgba(0, 128, 128, 0.1); }
+
+.mockmodal:focus {
+  outline: none; }
+
 body {
   background: url(../img/background/bg.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -15,7 +54,7 @@ body {
 
 .btnDiv {
   margin: 0;
-  margin-top: -15px;
+  margin-top: -5vw;
   min-width: 50%; }
   .btnDiv h6 {
     position: relative;
@@ -88,13 +127,14 @@ body {
     font-weight: bold; }
   .childRegisterContainer p {
     margin: 0;
-    margin-top: -3vw;
-    font-size: 15px;
+    margin-top: -4vw;
+    font-size: 20px;
+    text-transform: uppercase;
     color: #ef5350;
     padding: 0;
     letter-spacing: 1.3px; }
-  .childRegisterContainer .row {
-    margin-top: 20px; }
+  .childRegisterContainer .row:nth-of-type(1) {
+    margin-top: 8vw; }
   .childRegisterContainer .btn {
     margin: 20px;
     border-radius: 20px; }

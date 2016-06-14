@@ -13,12 +13,15 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.parentMode = true;
     $scope.childMode = false;
     $scope.modeLogin = true;
+    $scope.viewAvatars = false;
 
 
     $rootScope.account = {
         email: "",
         password: ""
     };
+
+    $scope.avatars = [{img: "av1.png"},{img: "av2.png"},{img: "av3.png"},{img: "av4.png"},{img: "av5.png"},{img: "av6.png"},{img: "av7.png"},{img: "av8.png"},{img: "av9.png"},{img: "av10.png"},{img: "av11.png"},{img: "av12.png"},{img: "av13.png"},{img: "av14.png"}]
 
     /********************************************
     **               ERROR MODAL               **
@@ -102,5 +105,16 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
                 $scope.$apply();
         });
     };
+
+    /********************************************
+    **          CHILD REGISTRATION             **
+    ********************************************/
+    $scope.showAvatarModal = () => {
+        $scope.viewAvatars = true;
+    }
+
+    $scope.closeAvatarModal = () => {
+        $scope.viewAvatars = false;
+    }
 
 });
