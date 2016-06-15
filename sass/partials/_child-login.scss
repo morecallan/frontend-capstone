@@ -6,7 +6,15 @@
 
     h4 {
         font-family: "Cabin Sketch";
-        font-size: 30px;
+        font-size: 25px;
+        display: inline-block;
+    }
+
+    a {
+        display: inline-block;
+        margin: 0;
+        margin-left: 30px;
+        margin-top: -10px;
     }
 
     .childUserSelectSlider {
@@ -66,7 +74,8 @@
             color: white;
         }
 
-        .btn-floating {
+        .add-child-btn {
+            margin: 0 !important;
             top: 15%;
         }
     }

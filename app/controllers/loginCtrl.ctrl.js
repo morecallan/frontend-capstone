@@ -184,8 +184,9 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
 
     $scope.deleteSelectedChild = (child) => {
         addChildFactory.deleteOneChild(child.subuid).then((childrenFromFirebase) => {
-            //Return to normal view or leave shaking?
             $scope.checkForChildren();
+            $scope.exitDeleteMode();
+            $scope.enterDeleteMode();
         });
     };
 
@@ -201,14 +202,14 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.enterDeleteMode = () => {
         let childAcctCards = document.getElementsByClassName("child-login-card");
         for (var i = 0; i < childAcctCards.length; i++) {
-            childAcctCards[i].classList.add("animated", "infinite", "tada");
+            childAcctCards[i].classList.add("animated", "infinite", "shake");
         }
     };
 
     $scope.exitDeleteMode = () => {
         let childAcctCards = document.getElementsByClassName("child-login-card");
         for (var i = 0; i < childAcctCards.length; i++) {
-            childAcctCards[i].classList.remove("animated", "infinite", "tada");
+            childAcctCards[i].classList.remove("animated", "infinite", "shake");
         }
     };
 

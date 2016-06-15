@@ -171,7 +171,13 @@ body {
   padding: 1vw; }
   .childLoginContainer h4 {
     font-family: "Cabin Sketch";
-    font-size: 30px; }
+    font-size: 25px;
+    display: inline-block; }
+  .childLoginContainer a {
+    display: inline-block;
+    margin: 0;
+    margin-left: 30px;
+    margin-top: -10px; }
   .childLoginContainer .childUserSelectSlider {
     margin: 0;
     overflow: auto;
@@ -216,7 +222,8 @@ body {
       font-size: 27px;
       text-align: center;
       color: white; }
-    .childLoginContainer .card .btn-floating {
+    .childLoginContainer .card .add-child-btn {
+      margin: 0 !important;
       top: 15%; }
 
 .childRegisterContainer {
@@ -419,4 +426,5 @@ body {
   position: absolute;
   top: 3px;
   right: 3px;
+  margin: 0 !important;
   z-index: 2000; }
