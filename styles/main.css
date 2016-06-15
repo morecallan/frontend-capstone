@@ -414,3 +414,9 @@ body {
   .parentLoginContainer .btnRow {
     width: 80%;
     margin: 0 10%; }
+
+.top-right-btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 2000; }

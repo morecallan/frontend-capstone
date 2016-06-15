@@ -6,15 +6,17 @@
 
 <!-- -------------------------- AVATAR SELECT MODAL ------------------------- -->
   <div class="childUserSelectSlider">
+    <a class="btn-floating top-right-btn red" ng-click="applyDeleteMode()"><i class="large material-icons">delete_sweep</i></a>
     <div class="childUserList" ng-focus="true">
-      <div class="card" ng-repeat="child in children">
-        <div ng-click="selectActiveChild(child)">
+      <div class="card child-login-card" ng-repeat="child in children">
+        <div ng-click="deleteMode||selectActiveChild(child)">
           <div class="card-image valign-wrapper">
             <img src="{{child.avatar}}" class="valign">  
           </div>
           <div class="card-content">
             <h4>{{child.firstName}}</h4>
           </div>
+          <a class="btn-floating top-right-btn red" ng-click="deleteSelectedChild(child)" ng-show="deleteMode"><i class="large material-icons">delete_forever</i></a>
         </div>
       </div>
 

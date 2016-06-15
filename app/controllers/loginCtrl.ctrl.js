@@ -16,6 +16,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.modeLogin = true;
     $scope.viewAvatars = false;
 
+    $scope.deleteMode = false;
+
 
     $rootScope.account = {
         email: "",
@@ -178,6 +180,36 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.selectActiveChild = (child) => {
         $rootScope.selectedChild = child;
         $location.path("/childlanding/" + child.subuid);
+    };
+
+    $scope.deleteSelectedChild = (child) => {
+        addChildFactory.deleteOneChild(child.subuid).then((childrenFromFirebase) => {
+            //Return to normal view or leave shaking?
+            $scope.checkForChildren();
+        });
+    };
+
+    $scope.applyDeleteMode = () => {
+        $scope.deleteMode = !$scope.deleteMode;
+        if ($scope.deleteMode) {
+            $scope.enterDeleteMode();
+        } else if (!$scope.deleteMode) {
+            $scope.exitDeleteMode();
+        }
+    }
+
+    $scope.enterDeleteMode = () => {
+        let childAcctCards = document.getElementsByClassName("child-login-card");
+        for (var i = 0; i < childAcctCards.length; i++) {
+            childAcctCards[i].classList.add("animated", "infinite", "tada");
+        }
+    };
+
+    $scope.exitDeleteMode = () => {
+        let childAcctCards = document.getElementsByClassName("child-login-card");
+        for (var i = 0; i < childAcctCards.length; i++) {
+            childAcctCards[i].classList.remove("animated", "infinite", "tada");
+        }
     };
 
     $scope.$watch(() => {

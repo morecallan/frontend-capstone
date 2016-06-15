@@ -60,5 +60,19 @@ app.factory("addChildFactory", function($q, $http, firebaseURL, authFactory){
         }); 
     };
 
-    return {addChildToParentAccount:addChildToParentAccount, addChildFromDatabase:addChildFromDatabase, returnAllChildrenForLoggedInParent:returnAllChildrenForLoggedInParent};
+//Firebase: Removes selected child from db. (Only child subuid key passed).
+    let deleteOneChild = (childSubuid) =>{
+        return $q(function(resolve, reject){
+            $http
+            .delete(`${firebaseURL}subusers/${childSubuid}.json`)
+            .success(function(objectFromFirebase){
+                resolve(objectFromFirebase);
+            })
+            .error(function(error){
+                reject(error);
+            });
+        });
+    };
+
+    return {addChildToParentAccount:addChildToParentAccount, addChildFromDatabase:addChildFromDatabase, returnAllChildrenForLoggedInParent:returnAllChildrenForLoggedInParent, deleteOneChild:deleteOneChild};
 });
