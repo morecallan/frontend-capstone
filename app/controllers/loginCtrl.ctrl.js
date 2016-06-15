@@ -22,12 +22,15 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         password: ""
     };
 
-    $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"}];
+    $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"},{img: "img/avatar/av15.png"}];
 
     $scope.childAccount = {
         firstName: "",
         age: "",
-        avatar: "img/avatar/av2.png"
+        avatar: "img/avatar/av2.png",
+        awards: [],
+        uid: "",
+        subuid: ""
     };
 
     $rootScope.children = [];
@@ -174,7 +177,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
 
     $scope.selectActiveChild = (child) => {
         $rootScope.selectedChild = child;
-        $location.path("/childlanding");
+        $location.path("/childlanding/" + child.subuid);
     };
 
     $scope.$watch(() => {

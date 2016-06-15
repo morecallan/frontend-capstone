@@ -6,10 +6,9 @@ app.controller('navCtrl', function ($scope, $location, $rootScope, firebaseURL, 
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
     ********************************************/
-    $rootScope.navImg = "./img/avatar/av10.png";
+    $rootScope.navImg = "./img/avatar/av1.png";
     $rootScope.selectedChild = {};
 
-    console.log("$rootScope.selectedChild", $rootScope.selectedChild);
 
     $scope.$watch(() => {
         if ($rootScope.selectedChild !== null) {

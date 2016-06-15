@@ -46,7 +46,7 @@ app.config(function($routeProvider) {
             controller:  "loginCtrl",
             resolve: {isAuth}
         })
-        .when("/childlanding", {
+        .when("/childlanding/:subuid", {
             templateUrl: "partials/child-landing.html",
             controller:  "childAcctCtrl",
             resolve: {isAuth, isChildAuth}

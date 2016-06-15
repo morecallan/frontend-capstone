@@ -11,8 +11,10 @@ app.factory("addChildFactory", function($q, $http, firebaseURL, authFactory){
                 JSON.stringify({
                     firstName: childAccount.firstName,
                     age: childAccount.age,
-                    avatar: childAccount.avatar, 
-                    uid:user.uid
+                    avatar: childAccount.avatar,
+                    awards: [], 
+                    uid:user.uid,
+                    subuid: ""
                 }))
             .success(function(response){
                 resolve(response);
