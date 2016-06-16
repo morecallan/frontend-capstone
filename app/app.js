@@ -51,6 +51,11 @@ app.config(function($routeProvider) {
             controller:  "childAcctCtrl",
             resolve: {isAuth, isChildAuth}
         })
+        .when("/brushing/:subuid",{
+            templateUrl: "partials/brushing.html",
+            controller:  "brushingCtrl",
+            resolve: {isAuth, isChildAuth}
+        })
         .when("/logout",{
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl"
