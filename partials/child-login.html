@@ -9,7 +9,7 @@
   <div class="childUserSelectSlider">
     <div class="childUserList" ng-focus="true">
       <div class="card child-login-card" ng-repeat="child in children">
-        <a class="btn-floating top-right-btn red" ng-click="deleteSelectedChild(child)" ng-show="deleteMode"><i class="large material-icons">delete_forever</i></a>
+        <a class="btn-floating top-right-btn red" ng-click="activateAreYouSureModal(child)" ng-show="deleteMode"><i class="large material-icons">delete_forever</i></a>
         <div ng-click="deleteMode||selectActiveChild(child)">
           <div class="card-image valign-wrapper">
             <img src="{{child.avatar}}" class="valign">  
@@ -20,6 +20,7 @@
         </div>
       </div>
 
+      <!-- -------------------------- DELETE: ARE YOU SURE ------------------------- -->
       <div class="card" ng-show="lessThanFourChildren"> 
           <a class="btn-floating btn-large add-child-btn" ng-href="#/childregister">
             <i class="large material-icons">add_circle</i>
@@ -31,6 +32,14 @@
       </div>
     </div>
   </div>
+</div>
 
-
+<!-- -------------------------- DELETE: ARE YOU SURE ------------------------- -->
+<div class="errormodal" ng-keypress="closeModal()" ng-click="closeModal()" id="areYouSureYouWantToDelete" autofocus="true" ng-show="deleteButtonClicked" ng-if="deleteButtonClicked" ng-focus="deleteButtonClicked">
+  <h4>Are you sure</h4>
+  <h5>you want to delete {{childToDelete.firstName}} from your account?</h5>
+  <div class="row buttonRow">
+    <button class="btn col s5 offset-s1" ng-click="closeModal()">Nope. Just kidding.</button>
+    <button class="btn red col s5" ng-click="deleteSelectedChild(childToDelete)">Yes. Delete account.</button>
+  </div>
 </div>

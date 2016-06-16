@@ -255,14 +255,14 @@ body {
   box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
   z-index: 1000;
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 7%;
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
   padding: 2px;
-  height: 125px;
+  height: 155px;
   width: 86%;
-  overflow-y: auto;
+  overflow-y: hidden;
   border-radius: 10px;
   text-align: center; }
   .errormodal .btn-floating {
@@ -273,6 +273,7 @@ body {
   .errormodal .mockmodal-content {
     display: inline-block;
     margin: 5%;
+    margin-top: 8%;
     margin-left: -3vw;
     width: 70%; }
   .errormodal h4:nth-of-type(1) {
@@ -283,13 +284,23 @@ body {
   .errormodal .errormodal-photo-container {
     max-width: 100px;
     min-width: 100px;
-    margin: 5% 2% 10%;
+    margin: 8% 2% 10%;
     float: left;
     overflow: hidden;
     border-radius: 2px;
     height: 90px; }
   .errormodal .errormodal-photo {
     width: 80px; }
+  .errormodal h5 {
+    font-size: 16px !important;
+    margin-top: 8px; }
+  .errormodal .buttonRow {
+    margin-top: 15px; }
+    .errormodal .buttonRow .btn {
+      width: 38%;
+      margin: 0 2px; }
+    .errormodal .buttonRow .btn:nth-of-type(1) {
+      margin-left: 12%; }
 
 .mockmodal:focus {
   outline: none; }

@@ -17,6 +17,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.viewAvatars = false;
 
     $scope.deleteMode = false;
+    $scope.deleteButtonClicked = false;
+    $scope.childToDelete = "";
 
 
     $rootScope.account = {
@@ -49,6 +51,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.closeModal = () => {
         $scope.userError = false;
         $scope.childRegError = false;
+        $scope.deleteButtonClicked = false;
     };
 
     /********************************************
@@ -171,6 +174,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     ********************************************/
     $scope.checkForChildren = () => {
         addChildFactory.returnAllChildrenForLoggedInParent().then((childrenFromFirebase) => {
+            $rootScope.children = childrenFromFirebase;    
             if (childrenFromFirebase.length > 0) {
                 $rootScope.children = childrenFromFirebase;    
             }
@@ -212,6 +216,11 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
             childAcctCards[i].classList.remove("animated", "infinite", "shake");
         }
     };
+
+    $scope.activateAreYouSureModal = (child) => {
+        $scope.childToDelete = child;
+        $scope.deleteButtonClicked = true;
+    }
 
     $scope.$watch(() => {
         if ($rootScope.children.length >= 4) {
