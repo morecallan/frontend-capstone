@@ -1,0 +1,441 @@
+.avatarSelectModal {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
+  z-index: 1000;
+  position: absolute;
+  top: 20%;
+  left: 2%;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: black;
+  padding: 0;
+  height: 330px;
+  width: 96%;
+  border-radius: 10px; }
+  .avatarSelectModal .avatarSelectModalSlider {
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding: 30px 0; }
+  .avatarSelectModal h4 {
+    font-family: "Cabin Sketch";
+    padding: 0;
+    margin: 20px 0 0;
+    text-align: center; }
+  .avatarSelectModal .avatarList {
+    display: flex;
+    flex-wrap: no-wrap;
+    flex-direction: row;
+    -webkit-overflow-scrolling: touch; }
+    .avatarSelectModal .avatarList .selectionAvatars {
+      -webkit-overflow-scrolling: touch;
+      border-radius: 5px;
+      height: 30vw;
+      margin: 0 20px;
+      background-color: rgba(0, 128, 128, 0.1); }
+
+.mockmodal:focus {
+  outline: none; }
+
+body {
+  background: url(../img/background/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  z-index: 1; }
+
+#mainContainer {
+  position: absolute;
+  left: 0vw;
+  top: 0vw;
+  height: 85%;
+  width: 94%;
+  margin: 15% 3% 0% 3%;
+  border-radius: 4px;
+  opacity: 0.95; }
+
+.btnDiv {
+  margin: 0;
+  margin-top: -5vw;
+  min-width: 50%; }
+  .btnDiv h6 {
+    position: relative;
+    top: 17px;
+    left: -5px; }
+
+.avatarChoose {
+  margin-top: 0vw;
+  width: 12vw !important;
+  height: 12vw !important;
+  overflow: hidden; }
+
+.buttonAvatar {
+  -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
+  filter: drop-shadow(0 10px 0px white);
+  margin: auto;
+  vertical-align: middle;
+  display: inline-block;
+  min-width: 75%;
+  min-height: 75%;
+  max-width: 100%;
+  max-height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover; }
+
+.btnLabel {
+  display: inline-block;
+  width: 30%;
+  line-height: 18px;
+  font-size: 20px;
+  color: black !important;
+  font-family: "Cabin Sketch";
+  text-transform: uppercase;
+  box-sizing: border-box; }
+
+.carouselContainer {
+  margin: 20px 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  text-align: center;
+  padding: 0;
+  font-family: "Amatic SC"; }
+  .carouselContainer .row {
+    margin: 0;
+    padding: 2% 0; }
+  .carouselContainer .card {
+    margin: 0 5%;
+    padding: 0;
+    max-height: 90%;
+    max-width: 90%; }
+  .carouselContainer .card-title {
+    color: black !important;
+    font-weight: bold;
+    line-height: 12px;
+    display: inline;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding: 15px 10px !important; }
+  .carouselContainer .subfact {
+    display: inline;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 12px;
+    margin: 0;
+    padding: 5px; }
+
+.childLandingContainer {
+  margin: 20px 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1vw; }
+  .childLandingContainer h4 {
+    font-family: "Cabin Sketch";
+    font-size: 40px; }
+  .childLandingContainer .card {
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 140px !important;
+    min-height: 14em;
+    border-radius: 10px; }
+    .childLandingContainer .card .card-image {
+      width: 100%;
+      height: 130px;
+      margin: 0;
+      overflow: hidden; }
+    .childLandingContainer .card img {
+      margin: auto;
+      display: inline-block;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      z-index: 1000; }
+    .childLandingContainer .card .card-content {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(0, 128, 128, 0.5);
+      overflow-y: hidden;
+      position: absolute;
+      top: 63%; }
+    .childLandingContainer .card h4 {
+      margin: 0;
+      white-space: nowrap;
+      padding: 5px;
+      width: 100%;
+      font-size: 35px;
+      text-align: center;
+      color: white; }
+
+.childLoginContainer {
+  margin: 20px 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1vw; }
+  .childLoginContainer h4 {
+    font-family: "Cabin Sketch";
+    font-size: 25px;
+    display: inline-block; }
+  .childLoginContainer a {
+    display: inline-block;
+    margin: 0;
+    margin-left: 30px;
+    margin-top: -10px; }
+  .childLoginContainer .childUserSelectSlider {
+    margin: 0;
+    overflow: auto;
+    width: 100%;
+    padding: 10px 0; }
+  .childLoginContainer .childUserList {
+    display: flex;
+    flex-wrap: no-wrap;
+    flex-direction: row;
+    margin: auto; }
+  .childLoginContainer .card {
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 140px !important;
+    height: 140px;
+    border-radius: 10px; }
+    .childLoginContainer .card .card-image {
+      width: 100%;
+      height: 100px;
+      margin: 0;
+      overflow: hidden; }
+    .childLoginContainer .card img {
+      margin: auto;
+      display: inline-block;
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      z-index: 1000; }
+    .childLoginContainer .card .card-content {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(0, 128, 128, 0.5);
+      overflow-y: hidden;
+      position: absolute;
+      top: 63%; }
+    .childLoginContainer .card h4 {
+      margin: 0;
+      white-space: nowrap;
+      padding: 5px;
+      width: 100%;
+      font-size: 27px;
+      text-align: center;
+      color: white; }
+    .childLoginContainer .card .add-child-btn {
+      margin: 0 !important;
+      top: 15%; }
+
+.childRegisterContainer {
+  margin: 20px 25px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100%;
+  text-align: center;
+  padding: 1vw; }
+  .childRegisterContainer h4 {
+    font-family: "Cabin Sketch";
+    font-size: 40px;
+    font-weight: bold; }
+  .childRegisterContainer p {
+    margin: 0;
+    margin-top: -4vw;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #ef5350;
+    padding: 0;
+    letter-spacing: 1.3px; }
+  .childRegisterContainer .row:nth-of-type(1) {
+    margin-top: 8vw; }
+  .childRegisterContainer .btn {
+    margin: 20px;
+    border-radius: 20px; }
+
+.errormodal {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
+  z-index: 1000;
+  position: absolute;
+  top: 40%;
+  left: 7%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 2px;
+  height: 155px;
+  width: 86%;
+  overflow-y: hidden;
+  border-radius: 10px;
+  text-align: center; }
+  .errormodal .btn-floating {
+    margin: 10px;
+    position: absolute;
+    top: 3px;
+    right: 0px; }
+  .errormodal .mockmodal-content {
+    display: inline-block;
+    margin: 5%;
+    margin-top: 8%;
+    margin-left: -3vw;
+    width: 70%; }
+  .errormodal h4:nth-of-type(1) {
+    font-family: 'Amatic SC', cursive;
+    font-size: 31px;
+    margin-bottom: -10px;
+    padding: 0; }
+  .errormodal .errormodal-photo-container {
+    max-width: 100px;
+    min-width: 100px;
+    margin: 8% 2% 10%;
+    float: left;
+    overflow: hidden;
+    border-radius: 2px;
+    height: 90px; }
+  .errormodal .errormodal-photo {
+    width: 80px; }
+  .errormodal h5 {
+    font-size: 16px !important;
+    margin-top: 8px; }
+  .errormodal .buttonRow {
+    margin-top: 15px; }
+    .errormodal .buttonRow .btn {
+      width: 38%;
+      margin: 0 2px; }
+    .errormodal .buttonRow .btn:nth-of-type(1) {
+      margin-left: 12%; }
+
+.mockmodal:focus {
+  outline: none; }
+
+#google-button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 0;
+  color: slategray;
+  width: 150px;
+  border-radius: 2px;
+  display: inline-block;
+  height: 35px;
+  outline: 0;
+  text-transform: uppercase;
+  vertical-align: middle;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-tap-highlight-color: transparent; }
+  #google-button span.icon {
+    background: url("/img/icon/g-logo.png") transparent 0px 50% no-repeat;
+    background-size: 25px 25px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 25px;
+    margin-bottom: 2px;
+    margin-left: -10px; }
+
+#customBtn:hover {
+  cursor: pointer; }
+
+.largeBtn {
+  margin: 4%;
+  width: 90%;
+  border-radius: 5px;
+  font-family: "Neucha";
+  font-size: 35px !important; }
+  .largeBtn i {
+    font-size: 40px !important; }
+
+.navBar {
+  position: absolute;
+  width: 100%;
+  height: 5em; }
+  .navBar .fixed-action-btn {
+    display: inline-block;
+    position: relative;
+    top: -.7em;
+    padding: 1em 1em 0; }
+    .navBar .fixed-action-btn img {
+      -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
+      filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
+      margin: 10%;
+      vertical-align: middle;
+      display: inline-block;
+      min-width: 65%;
+      min-height: 65%;
+      max-width: 80%;
+      max-height: 80%;
+      object-position: 50% 50%;
+      object-fit: contain; }
+    .navBar .fixed-action-btn .btn-floating {
+      width: 4.5em !important;
+      height: 4.5em !important;
+      background-color: #EE6E73; }
+    .navBar .fixed-action-btn ul {
+      top: 6em;
+      width: 5em;
+      padding: 0;
+      margin: 0; }
+  .navBar .mainHeader {
+    margin: 0;
+    padding: 1%;
+    font-family: 'Londrina Shadow', cursive;
+    font-size: 4em;
+    color: #4e342e; }
+
+.parentLoginContainer {
+  margin: 20px 25px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100%;
+  text-align: center;
+  padding: 1vw; }
+  .parentLoginContainer h4 {
+    font-family: "Amatic SC";
+    font-size: 32px !important;
+    margin: 0;
+    margin-top: -3px;
+    padding: 4px;
+    padding-bottom: 0; }
+  .parentLoginContainer p {
+    margin: 0;
+    margin-top: -1.4vw;
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 1.3px;
+    color: #ef5350;
+    font-weight: 1.5; }
+  .parentLoginContainer .row {
+    height: 60%;
+    padding: 0;
+    margin: 0; }
+  .parentLoginContainer form {
+    width: 96%;
+    margin: 0 2%; }
+  .parentLoginContainer form .row:nth-of-type(1) {
+    margin-top: 20px; }
+  .parentLoginContainer .pagination {
+    margin: 5px auto;
+    padding: 1px;
+    width: 34%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-family: "Amatic SC";
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px; }
+    .parentLoginContainer .pagination .active {
+      margin-top: 4px; }
+    .parentLoginContainer .pagination .waves-effect {
+      background-color: rgba(0, 0, 0, 0.09);
+      margin-bottom: 4px; }
+  .parentLoginContainer .input-field {
+    padding: 0;
+    margin: 1vw 5vw; }
+  .parentLoginContainer .btn {
+    margin: 1vw; }
+  .parentLoginContainer .btnRow {
+    width: 80%;
+    margin: 0 10%; }
+
+.top-right-btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  margin: 0 !important;
+  z-index: 2000; }

@@ -1,0 +1,44 @@
+.btnDiv {
+    margin: 0;
+    margin-top: -5vw;
+    min-width: 50%;
+
+    h6 {
+        position: relative;
+        top: 17px;
+        left: -5px;
+    }
+}
+
+.avatarChoose {
+    margin-top: 0vw;
+    width: 12vw !important;
+    height: 12vw !important;
+    overflow: hidden;
+}
+
+.buttonAvatar {
+    -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
+    filter: drop-shadow(0 10px 0px white); 
+    margin: auto;
+    vertical-align: middle;
+    display: inline-block;
+    min-width: 75%;
+    min-height: 75%;
+    max-width: 100%;
+    max-height: 100%;
+    object-position: 50% 50%;
+    object-fit: cover;
+}
+
+.btnLabel {
+    display: inline-block;
+    width: 30%;
+    line-height: 18px;
+    font-size: 20px;
+    color: black !important;
+    font-family: "Cabin Sketch";
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+

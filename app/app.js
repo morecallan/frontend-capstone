@@ -1,49 +1,71 @@
 "use strict";
 
-var app = angular.module("MovieDatabaseApp", ["ngRoute", "focus-if", "ui-bootstrap"])
+var app = angular.module("ToothBrushingApp", ["ngRoute"])
     .constant("firebaseURL", "https://tooth-brushing.firebaseio.com/");
 
-let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
-    if (AuthFactory.isAuthenticated()) {
+
+let isAuth = (authFactory) => new Promise((resolve, reject) => {
+    if (authFactory.isAuthenticated()) {
         resolve();
     } else {
         reject();    
     }
 });
 
+let isChildAuth = ($rootScope) => {
+    if (Object.getOwnPropertyNames($rootScope.selectedChild).length === 0) {
+        return false;
+    } else {
+        return true;    
+    }
+};
+
+
+
 app.config(function($routeProvider) {
     $routeProvider
-        .when("/", {
+        .when("/splash", {
             templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl",
+            controller:  "loginCtrl"
+        })
+        .when("/parentregister", {
+            templateUrl: "partials/splash.html",
+            controller:  "loginCtrl"
+        })
+        .when("/parentlogin", {
+            templateUrl: "partials/splash.html",
+            controller:  "loginCtrl"
+        })
+        .when("/childlogin", {
+            templateUrl: "partials/splash.html",
+            controller:  "loginCtrl",
             resolve: {isAuth}
         })
-        .when("/splash",{
+        .when("/childregister", {
             templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl"
+            controller:  "loginCtrl",
+            resolve: {isAuth}
         })
-        .when("/login", {
-            templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl"
+        .when("/childlanding/:subuid", {
+            templateUrl: "partials/child-landing.html",
+            controller:  "childAcctCtrl",
+            resolve: {isAuth, isChildAuth}
         })
         .when("/logout",{
             templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl"
+            controller:  "loginCtrl"
         })
-        .when("/register", {
-            templateUrl: "partials/splash.html",
-            controller:  "LoginCtrl"
-        })
-        .otherwise("/"); 
+        .otherwise("/splash"); 
 });
 
-app.run(($location) => {
-    let watchlistRef = new Firebase("https://tooth-brushing.firebaseio.com/");
-    watchlistRef.unauth();
 
-    watchlistRef.onAuth(authData => {
+app.run(($location) => {
+    let brushingDbRef = new Firebase("https://tooth-brushing.firebaseio.com/");
+    brushingDbRef.unauth();
+
+    brushingDbRef.onAuth(authData => {
         if(!authData) {
-            $location.path("/login");
+            $location.path("/splash");
         }
     });
 });

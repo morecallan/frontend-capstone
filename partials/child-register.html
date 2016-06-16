@@ -1,0 +1,57 @@
+<div class="container childRegisterContainer">
+  <div class="col s8 offset-s2">
+    <h4>"I'm ready to brush!"</h4>
+    <p>Create Child Account</p>
+  </div>
+
+  <form>
+    <div class="row">
+      <div class="input-field col s10 offset-s1">
+        <i class="material-icons prefix">face</i>
+        <input type="text" autofocus="true" ng-model="childAccount.firstName">
+        <label>First Name</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s5 offset-s1">
+        <i class="material-icons prefix">cake</i>
+        <input type="text" pattern="[0-9]" ng-model="childAccount.age" maxlength="2">
+        <label>Age</label>
+      </div>
+
+      <div class="col s5 btnDiv">
+         <a class="btn-floating btn-large waves-effect waves-light avatarChoose"><img class="buttonAvatar" ng-click="showAvatarModal()" src="{{childAccount.avatar}}"></a>
+         <h6 class="btnLabel">Select your avatar</h6>
+      </div>
+    </div>
+  
+  <button class="btn" ng-click="checkChildRegForm()"><i class="material-icons left">person_add</i>Add Me!</button>
+      
+  </form>
+</div>
+
+
+
+
+<!-- -------------------------     ERROR MODAL     ------------------------- -->
+<div class="errormodal" ng-keypress="closeModal()" ng-click="closeModal()" id="errorMessageBox" autofocus="true" ng-show="childRegError" ng-if="childRegError" ng-focus="childRegError">
+  <a class="waves-effect waves-green btn-floating teal"><i class="material-icons left">close</i></a>
+  <div class="errormodal-photo-container"><img class="errormodal-photo" src="img/avatar/av11.png"></div>
+  <div class="mockmodal-content">
+    <h4>Oops! Houston we have a problem.</h4>
+    <p>{{errorMessage}}</p>
+  </div>   
+</div>
+
+<!-- -------------------------- AVATAR SELECT MODAL ------------------------- -->
+<div class="avatarSelectModal" ng-keypress="closeAvatarModal()" ng-click="closeAvatarModal()" id="avatarSelectModal" autofocus="true" ng-show="viewAvatars" ng-if="viewAvatars" ng-focus="viewAvatars">
+  <h4>Select Your Avatar</h4>
+  <div class="avatarSelectModalSlider">
+    <ul class="avatarList">
+      <li ng-repeat="avatar in avatars">
+        <img src="./{{avatar.img}}" class="selectionAvatars z-depth-2" ng-click="assignAvatar(avatar.img)"> 
+      </li>
+    </ul>   
+  </div>
+</div>
