@@ -1,0 +1,33 @@
+.childRegisterContainer {
+    margin: 20px 25px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .8);
+    height: 100%;
+    text-align: center;
+    padding: 1vw;
+
+    h4 {
+        font-family: "Cabin Sketch";
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    p {
+        margin: 0;
+        margin-top: -4vw;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #ef5350;  
+        padding: 0;
+        letter-spacing: 1.3px;
+    }
+
+    .row:nth-of-type(1) {
+        margin-top: 8vw;
+    }
+
+    .btn {
+        margin: 20px;
+        border-radius: 20px;
+    }
+}
