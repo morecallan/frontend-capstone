@@ -1,6 +1,9 @@
-#loaderDiv {
-   position: fixed;
-   top: 48%;
-   left: 48%;
-   z-index: 3000;
+#loaderContainer {
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 15px;
+    padding: 10px;
+    position: fixed;
+    top: 48%;
+    left: 48%;
+    z-index: 1100;
 }

@@ -1,0 +1,56 @@
+
+<div ng-repeat="brushInfo in usersBrushingData">
+    <p>{{brushInfo.timestamp}}</p>
+</div> 
+
+<div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+
+<table class="bordered highlight">
+    
+
+    <thead>
+      <tr>
+          <th data-field="">&nbsp;</th>
+          <th data-field="">Morning</th>
+          <th data-field="">Evening</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th>Monday</th>
+        <td>m-mon</td>
+        <td>e-mon</td>
+      </tr>
+      <tr>
+        <th>Tuesday</th>
+        <td>m-tues</td>
+        <td>e-tues</td>
+      </tr>
+      <tr>
+        <th>Wednesday</th>
+        <td>m-wed</td>
+        <td>e-wed</td>
+      </tr>
+      <tr>
+        <th>Thursday</th>
+        <td>m-thurs</td>
+        <td>e-thurs</td>
+      </tr>
+      <tr>
+        <th>Friday</th>
+        <td>m-fri</td>
+        <td>e-fri</td>
+      </tr>
+      <tr>
+        <th>Saturday</th>
+        <td>m-sat</td>
+        <td>e-sat</td>
+      </tr>
+      <tr>
+        <th>Sunday</th>
+        <td>m-sun</td>
+        <td>e-sun</td>
+      </tr>
+    </tbody>
+</table>

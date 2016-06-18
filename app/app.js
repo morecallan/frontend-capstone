@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("ToothBrushingApp", ["ngRoute"])
+var app = angular.module("ToothBrushingApp", ["ngRoute", "ui.calendar"])
     .constant("firebaseURL", "https://tooth-brushing.firebaseio.com/");
 
 
@@ -54,6 +54,11 @@ app.config(function($routeProvider) {
         .when("/brushing/:subuid",{
             templateUrl: "partials/brushing.html",
             controller:  "brushingCtrl",
+            resolve: {isAuth, isChildAuth}
+        })
+        .when("/brushingchart/:subuid",{
+            templateUrl: "partials/brush-chart.html",
+            controller:  "brushingMoreCtrl",
             resolve: {isAuth, isChildAuth}
         })
         .when("/logout",{

@@ -32,7 +32,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         firstName: "",
         age: "",
         avatar: "img/avatar/av2.png",
-        awards: [],
+        awards: "",
         uid: "",
         subuid: ""
     };
@@ -201,7 +201,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         } else if (!$scope.deleteMode) {
             $scope.exitDeleteMode();
         }
-    }
+    };
 
     $scope.enterDeleteMode = () => {
         let childAcctCards = document.getElementsByClassName("child-login-card");
@@ -220,7 +220,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.activateAreYouSureModal = (child) => {
         $scope.childToDelete = child;
         $scope.deleteButtonClicked = true;
-    }
+    };
 
     $scope.$watch(() => {
         if ($rootScope.children.length >= 4) {
