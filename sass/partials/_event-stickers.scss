@@ -1,0 +1,24 @@
+.stickerEventMorning {
+    height: 80px;
+    background: url(../img/avatar/av10.png) no-repeat center center;
+    background-size: 80%;
+    z-index: 1;
+}
+
+.fc-toolbar h2 {
+    font-family: "Amatic SC";
+    font-size: 50px;
+    padding: 10px;
+}
+
+.fc-event-time{
+   display : none;
+}
+
+.fc-event .fc-time {
+   display : none;    
+}
+
+.fc-event .fc-title {
+   display : none;    
+}
