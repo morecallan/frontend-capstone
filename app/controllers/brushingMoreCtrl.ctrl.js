@@ -7,13 +7,30 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
     **               SELECTED USER             **
     ********************************************/
     $scope.usersBrushingData = "";
+
+    Date.prototype.addHours = function(h) {    
+       this.setTime(this.getTime() + (h*60*60*1000)); 
+       return this;   
+    };
     
 
     $scope.getUserBrushingData = () => {
         brushingDataFactory.returnAllBrushingDataForChild().then((returnBrushingData)=>{
             $scope.usersBrushingData = returnBrushingData;
+            $('#calendar').fullCalendar('changeView', "basicWeek");
+            $scope.eventPlaceholder = returnBrushingData;
+            $scope.eventPlaceholder.forEach((event)=>{
+                event.title = 'BrushedTeeth';
+                event.start = event.timestamp;
+                let datePlusHrs = new Date(event.timestamp).addHours(2);
+                event.end = datePlusHrs;
+                event.allDay = false;
+                $scope.events.push(event);
+            });
         });
     };
+
+    $scope.eventSources = [];
 
     $scope.getUserBrushingData();
 
@@ -141,5 +158,4 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
     /* event sources array*/
     $scope.eventSources = [$scope.events, $scope.eventSource, $scope.eventsF];
     $scope.eventSources2 = [$scope.calEventsExt, $scope.eventsF, $scope.events];
-
 });
