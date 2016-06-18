@@ -313,6 +313,9 @@ body {
   margin-bottom: 10px;
   margin-top: 15px; }
 
+.fc-toolbar {
+  padding: 10px 20px; }
+
 .fc-toolbar h2 {
   font-family: "Amatic SC";
   font-size: 50px;
@@ -344,7 +347,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   color: #fff;
-  font-family: Neucha;
+  font-family: Neucha !important;
   font-size: 20px !important;
   background-color: #26a69a !important;
   text-align: center;
@@ -353,8 +356,36 @@ body {
   opacity: 1 !important;
   background-image: none !important; }
 
+.fc-button-group {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  height: 36px;
+  margin: 20px !important; }
+
+.fc-button-group > * {
+  margin: 0 0 0 1px !important; }
+
+.fc-prev-button, .fc-next-button {
+  margin-top: 0px !important;
+  max-width: 30px !important;
+  box-shadow: none; }
+
 .fc-icon {
-  margin: 0px !important; }
+  margin: 0px !important;
+  margin-left: -1em !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  font-family: Neucha !important;
+  width: 2em; }
+
+.fc-icon-left-single-arrow:after {
+  font-size: 150%;
+  top: 0;
+  left: 0; }
+
+.fc-icon-right-single-arrow:after {
+  font-size: 150%;
+  top: 0;
+  left: 0; }
 
 .fc-button:hover {
   background-color: #2bbbad !important; }
