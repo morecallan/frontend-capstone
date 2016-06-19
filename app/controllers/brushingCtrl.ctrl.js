@@ -6,15 +6,22 @@ app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routePa
     /********************************************
     **               SELECTED USER             **
     ********************************************/
-    
+    $rootScope.alreadyBrushedForThisTime = false;
 
     $scope.submitBrushingCompleteData = () => {
         let brushTime = new Date();
-        brushingDataFactory.submitBrushingCompleteData($routeParams.subuid, brushTime).then(() => {
-            brushingDataFactory.returnAllBrushingDataForChild().then((returnBrushingData)=>{
-                $location.path("/brushingchart/" + $rootScope.selectedChild.subuid);
+        var promise = brushingDataFactory.checkForExistingDataInTimeslot($routeParams.subuid, brushTime);
+        promise.then(function() {
+            brushingDataFactory.excuteBrushingSubmit($routeParams.subuid, brushTime).then(function() {
+                brushingDataFactory.returnAllBrushingDataForChild().then((returnBrushingData)=>{
+                    $location.path("/brushingchart/" + $rootScope.selectedChild.subuid);
+                });
+            }, function() {
+                $rootScope.alreadyBrushedForThisTime = true;
+                    brushingDataFactory.returnAllBrushingDataForChild().then((returnBrushingData)=>{
+                        $location.path("/brushingchart/" + $rootScope.selectedChild.subuid);
+                    });
             });
         });
     };
-
 });

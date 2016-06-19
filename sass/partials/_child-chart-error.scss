@@ -1,18 +1,18 @@
-.errormodal {
+.childErrorModal {
     box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
     z-index: 1000;
 
     position: absolute;
     top: 40%;
     left: 7%;
-    background-color: rgba(255, 255, 255, .9);
-    color: black;
+    background-color: rgba(0, 128, 128, .7);
     padding: 2px;
     height: 155px;
     width: 86%;
     overflow-y: hidden;
     border-radius: 10px;
     text-align: center;
+    color: white !important;
 
     .btn-floating {
         margin: 10px;
@@ -53,20 +53,8 @@
 
     h5 {
         font-size: 16px !important;
+        margin-bottom: -5px;
         margin-top: 8px;
-    }
-
-    .buttonRow {
-        margin-top: 15px;
-
-        .btn {
-            width: 38%;
-            margin: 0 2px;
-        }
-
-        .btn:nth-of-type(1) {
-            margin-left: 12%;
-        }
     }
 
     p {
@@ -76,6 +64,16 @@
         font-family: Neucha !important;
         font-size: 12px;
         margin-bottom: 12px;
+    }
+
+    .btn {
+        background-color: #EE6E73;
+    }
+
+    i {
+        position: relative;
+        top: 7px;
+        left: -7px;
     }
 }
 

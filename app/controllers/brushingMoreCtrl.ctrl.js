@@ -6,6 +6,14 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
     /********************************************
     **               SELECTED USER             **
     ********************************************/
+    $scope.$watch($rootScope.morningOrNight);
+
+    $scope.closeModal = () => {
+        $scope.userError = false;
+        $scope.alreadyBrushedForThisTime = false;
+    };
+
+
     $('#calendar').fullCalendar("defaultView", "basicWeek");
 
 
@@ -28,12 +36,11 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
                 event.end = newDateObj;
                 event.allDay = false;
                 event.className = "stickerEventMorning";
-                console.log("event", event);
-                event.backgroundColor = "rgba(255,255,255,0.8)"
-                event.borderColor = "rgba(255,255,255,0.8)"
+                event.backgroundColor = "rgba(255,255,255,0.8)";
+                event.borderColor = "rgba(255,255,255,0.8)";
                 $scope.events.push(event);
             });
-    }
+    };
 
 
     $scope.populateBrushingData();
