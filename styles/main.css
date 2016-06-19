@@ -121,6 +121,67 @@ body {
     margin: 0;
     padding: 5px; }
 
+.childErrorModal {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
+  z-index: 1000;
+  position: absolute;
+  top: 40%;
+  left: 7%;
+  background-color: rgba(0, 128, 128, 0.7);
+  padding: 2px;
+  height: 155px;
+  width: 86%;
+  overflow-y: hidden;
+  border-radius: 10px;
+  text-align: center;
+  color: white !important; }
+  .childErrorModal .btn-floating {
+    margin: 10px;
+    position: absolute;
+    top: 3px;
+    right: 0px; }
+  .childErrorModal .mockmodal-content {
+    display: inline-block;
+    margin: 5%;
+    margin-top: 8%;
+    margin-left: -3vw;
+    width: 70%; }
+  .childErrorModal h4:nth-of-type(1) {
+    font-family: 'Amatic SC', cursive;
+    font-size: 31px;
+    margin-bottom: -10px;
+    padding: 0; }
+  .childErrorModal .errormodal-photo-container {
+    max-width: 100px;
+    min-width: 100px;
+    margin: 8% 2% 10%;
+    float: left;
+    overflow: hidden;
+    border-radius: 2px;
+    height: 90px; }
+  .childErrorModal .errormodal-photo {
+    width: 80px; }
+  .childErrorModal h5 {
+    font-size: 16px !important;
+    margin-bottom: -5px;
+    margin-top: 8px; }
+  .childErrorModal p {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-family: Neucha !important;
+    font-size: 12px;
+    margin-bottom: 12px; }
+  .childErrorModal .btn {
+    background-color: #EE6E73; }
+  .childErrorModal i {
+    position: relative;
+    top: 7px;
+    left: -7px; }
+
+.mockmodal:focus {
+  outline: none; }
+
 .childLandingContainer {
   margin: 20px 25px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -301,9 +362,120 @@ body {
       margin: 0 2px; }
     .errormodal .buttonRow .btn:nth-of-type(1) {
       margin-left: 12%; }
+  .errormodal p {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-family: Neucha !important;
+    font-size: 12px;
+    margin-bottom: 12px; }
 
 .mockmodal:focus {
   outline: none; }
+
+.stickerEventMorning {
+  height: 150px;
+  background: url(../img/avatar/av1.png) no-repeat center center;
+  background-size: 98%;
+  z-index: 1;
+  position: relative;
+  top: 10px;
+  border-radius: 5px; }
+
+.stickerEventNight {
+  height: 150px;
+  background: url(../img/avatar/av10.png) no-repeat -1px center;
+  background-size: 140%;
+  z-index: 1;
+  position: relative;
+  top: 200px;
+  border-radius: 5px; }
+
+.fc-toolbar {
+  padding: 10px 20px; }
+
+.fc-toolbar h2 {
+  font-family: "Amatic SC";
+  font-size: 50px;
+  padding: 10px;
+  color: white; }
+
+.fc-day-grid-container {
+  background-color: #F6F0DA;
+  overflow: hidden !important; }
+
+.fc-day-header {
+  font-family: "Amatic SC";
+  font-size: 22px;
+  padding: 10px 4px;
+  color: white; }
+
+.fc-button, .fc-button .fc-prev-button, .fc-button .fc-next-button {
+  margin-top: 20px !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 2px !important;
+  display: inline-block;
+  height: 36px !important;
+  line-height: 36px;
+  outline: 0;
+  padding: 2% 20px !important;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: #fff;
+  font-family: Neucha !important;
+  font-size: 20px !important;
+  background-color: #26a69a !important;
+  text-align: center;
+  letter-spacing: .5px;
+  cursor: pointer;
+  opacity: 1 !important;
+  background-image: none !important; }
+
+.fc-button-group {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  height: 36px;
+  margin: 20px !important; }
+
+.fc-button-group > * {
+  margin: 0 0 0 1px !important; }
+
+.fc-prev-button, .fc-next-button {
+  margin-top: 0px !important;
+  max-width: 30px !important;
+  box-shadow: none; }
+
+.fc-icon {
+  margin: 0px !important;
+  margin-left: -1em !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  font-family: Neucha !important;
+  width: 2em; }
+
+.fc-icon-left-single-arrow:after {
+  font-size: 150%;
+  top: 0;
+  left: 0; }
+
+.fc-icon-right-single-arrow:after {
+  font-size: 150%;
+  top: 0;
+  left: 0; }
+
+.fc-button:hover {
+  background-color: #2bbbad !important; }
+
+.fc-event-time {
+  display: none; }
+
+.fc-event .fc-time {
+  display: none; }
+
+.fc-event .fc-title {
+  display: none; }
 
 #google-button {
   display: inline-block;
@@ -340,6 +512,15 @@ body {
   font-size: 35px !important; }
   .largeBtn i {
     font-size: 40px !important; }
+
+#loaderContainer {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 10px;
+  position: fixed;
+  top: 48%;
+  left: 42%;
+  z-index: 1100; }
 
 .navBar {
   position: absolute;

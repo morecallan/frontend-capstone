@@ -1,6 +1,6 @@
 <div class="container childLandingContainer">
   <div class="col s8 offset-s2">
-    <h4>Hey {{selectedChild.firstName}}, are you ready to brush?</h4>
+    <h4>Hey {{selectedChild.firstName}}, BRUSH YOUR DAMN TEEF?</h4>
   </div>
 
 
@@ -18,8 +18,7 @@
       </div>
   </div>
 
-  <a class="waves-effect waves-light btn-large largeBtn" ng-href="#/brushingchart/{{selectedChild.subuid}}"><i class="material-icons right">insert_chart</i>View Your Chart</a>
-  <a class="waves-effect waves-light btn-large largeBtn" ng-href="#/brushing/{{selectedChild.subuid}}"><i class="material-icons right">timer</i>Brush Your Teeth!</a>
+  <a class="waves-effect waves-light btn-large largeBtn" ng-click="submitBrushingCompleteData()"><i class="material-icons right">timer</i>I brushed my damn teeth!</a>
 
 
 </div>

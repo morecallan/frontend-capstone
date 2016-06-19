@@ -1,0 +1,11 @@
+<div id="calendar" ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+
+
+<div class="childErrorModal" ng-keypress="closeModal()" ng-click="closeModal()" id="youHaveAlreadyBrushedToday" autofocus="true" ng-show="alreadyBrushedForThisTime" ng-if="alreadyBrushedForThisTime" ng-focus="alreadyBrushedForThisTime">
+  <h4>Oops!</h4>
+  <h5>You've already brushed this {{morningOrNight}}.</h5>
+  <p><i class="material-icons">record_voice_over</i>Psst. Brushing too much can ruin the protective enamel on your teeth.</p>
+  <div class="row">
+    <button class="btn col s4 offset-s4" ng-click="closeModal()">Okay!</button>
+  </div>
+</div>

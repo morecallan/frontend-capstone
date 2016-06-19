@@ -19,6 +19,8 @@
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC|Neucha|Cabin+Sketch|Unkempt|Londrina+Shadow' rel='stylesheet' type='text/css'>
   <!-- CSS ANIMATIONS -->
   <link rel="stylesheet" type="text/css" href="styles/animate.css">
+  <!-- FULL CALENDAR -->
+  <link rel="stylesheet" href="lib/bower_components/fullcalendar/dist/fullcalendar.css"
   <!-- CUSTOMIZED STYLING -->
   <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
@@ -33,46 +35,48 @@
 
 
   <!-- LOADING SPINNER -->
-  <div id="loaderContainer" class="preloader-wrapper big active" loader>
-      <div class="spinner-layer spinner-blue">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
+  <div id="loaderContainer" loader>
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spincner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="spinner-layer spinner-red">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="spinner-layer spinner-yellow">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="spinner-layer spinner-green">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
-      </div>
+    </div>
   </div>
   <!-- END OF LOADING SPINNER-->
   
@@ -84,9 +88,9 @@
 
 
   <!-- Materialize: jQuery (necessary for Materialize's JavaScript plugins) -->
-  <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
   <!-- Angular: Latest compiled and minified JavaScript -->
-  <script src="lib/bower_components/angular/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
   <!-- Angular Route: Latest compiled and minified JavaScript -->
   <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
   <!-- Angular Fire: Latest compiled and minified JavaScript -->
@@ -95,18 +99,30 @@
   <!-- Materialize: Latest compiled and minified JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.min.js"></script>
+  <!-- jquery: Version req by UI Calendar-->
+  <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Angular: Version req by UI Calendar-->
+  <script src="lib/bower_components/angular/angular.min.js"></script>
+  <script src="lib/bower_components/moment/moment.js"></script>
+  <script src="lib/bower_components/fullcalendar/dist/fullcalendar.js"></script>
+  <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+  <script type="text/javascript" src="lib/bower_components/angular-ui-calendar/src/calendar.js"></script>
   <!-- APP -->
   <script type="text/javascript" src="app/app.js"></script>
   <!-- FACTORIES -->
   <script type="text/javascript" src="app/factories/httpInterceptor.factory.js"></script>
   <script type="text/javascript" src="app/factories/authFactory.factory.js"></script>
   <script type="text/javascript" src="app/factories/addChildFactory.factory.js"></script>
+  <script type="text/javascript" src="app/factories/brushingDataFactory.factory.js"></script>
   <!-- DIRECTIVES -->
   <script type="text/javascript" src="app/directives/errSrc.directive.js"></script>
   <script type="text/javascript" src="app/directives/select.directive.js"></script>
   <!-- CONTROLLERS LAST -->
+  <!-- <script type="text/javascript" src="app/controllers/calendarCtrl.ctrl.js"></script> -->
   <script type="text/javascript" src="app/controllers/navCtrl.ctrl.js"></script>
   <script type="text/javascript" src="app/controllers/loginCtrl.ctrl.js"></script>
   <script type="text/javascript" src="app/controllers/childAcctCtrl.ctrl.js"></script>
+  <script type="text/javascript" src="app/controllers/brushingCtrl.ctrl.js"></script>
+  <script type="text/javascript" src="app/controllers/brushingMoreCtrl.ctrl.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ app.factory("addChildFactory", function($q, $http, firebaseURL, authFactory){
                     firstName: childAccount.firstName,
                     age: childAccount.age,
                     avatar: childAccount.avatar,
-                    awards: [], 
+                    awards: childAccount.awards, 
                     uid:user.uid,
                     subuid: ""
                 }))
