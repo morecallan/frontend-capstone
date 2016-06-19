@@ -29,13 +29,18 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
         $scope.eventPlaceholder = returnBrushingData;
             $('#calendar').fullCalendar("changeView", "basicWeek");
             $scope.eventPlaceholder.forEach((event)=>{
+                console.log(event);
+                let eventHours = new Date(event.timestamp);
+                eventHours = eventHours.getHours();
+                if (eventHours >= 0 && eventHours <= 13) {
+                    event.className = "stickerEventMorning";
+                } else if (eventHours >= 14 && eventHours <= 23) {
+                    event.className = "stickerEventNight";
+                }
                 event.title = "I Brushed My Teeth!";
-                event.start = new Date(event.timestamp);
-                let startTime = new Date(event.timestamp);
-                let newDateObj = new Date(startTime.getTime() + (480*60000));
-                event.end = newDateObj;
+                let start = new Date(event.timestamp);
+                event.start = start;
                 event.allDay = false;
-                event.className = "stickerEventMorning";
                 event.backgroundColor = "rgba(255,255,255,0.8)";
                 event.borderColor = "rgba(255,255,255,0.8)";
                 $scope.events.push(event);
@@ -94,9 +99,6 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
           center: '',
           right: 'today prev,next'
         },
-        eventClick: $scope.alertOnEventClick,
-        eventDrop: $scope.alertOnDrop,
-        eventResize: $scope.alertOnResize,
         eventRender: $scope.eventRender,
         eventbackgroundColor: "#000000"
       }

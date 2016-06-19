@@ -3,9 +3,21 @@
     background: url(../img/avatar/av1.png) no-repeat center center;
     background-size: 98%;
     z-index: 1;
-    margin-bottom: 10px;
-    margin-top: 15px;
+    position: relative;
+    top: 10px;
+    border-radius: 5px;
 }
+
+.stickerEventNight {
+    height: 150px;
+    background: url(../img/avatar/av10.png) no-repeat -1px center;
+    background-size: 140%;
+    z-index: 1;
+    position: relative;
+    top: 200px;
+    border-radius: 5px;
+}
+
 
 .fc-toolbar {
     padding: 10px 20px;
