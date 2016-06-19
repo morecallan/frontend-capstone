@@ -522,6 +522,19 @@ body {
   left: 42%;
   z-index: 1100; }
 
+.musicContainer .seekBase {
+  height: 30px;
+  width: 90%;
+  border: 1px solid #cccccc; }
+
+.musicContainer .seekLoad {
+  height: 30px;
+  width: 0;
+  background-color: #E0EAF1; }
+
+.musicContainer li {
+  cursor: pointer; }
+
 .navBar {
   position: absolute;
   width: 100%;

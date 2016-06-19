@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("ToothBrushingApp", ["ngRoute", "ui.calendar"])
+var app = angular.module("ToothBrushingApp", ["ngRoute", "ui.calendar", "angularSoundManager"])
     .constant("firebaseURL", "https://tooth-brushing.firebaseio.com/");
 
 
