@@ -1,63 +1,6 @@
 "use strict";
 
-app.factory("brushingDataFactory", function($rootScope, $q, $http, $timeout, firebaseURL, authFactory){
-
- let checkForExistingDataInTimeslot = (childSubuid, brushTime) => {
-        //Checking today's information
-        let today = new Date();
-        let dateOfToday = today.getDate(); let monthOfToday = today.getMonth(); let yearOfToday = today.getYear();
-        let todayParsed = `${dateOfToday}, ${monthOfToday}, ${yearOfToday}`;
-
-        let deferred = $q.defer();
-       
-
-        //Promise checking to see if user has existing sticker for that day - morning/evening
-        returnAllBrushingDataForChild().then((brushingDataForChild) => {
-            brushingDataForChild.forEach((dataPiece) => {
-                let timeOfBrushing = new Date(dataPiece.timestamp);
-                let hourOfBrushing = timeOfBrushing.getHours();
-                let dateOfBrushing = timeOfBrushing.getDate(); let monthOfBrushing = timeOfBrushing.getMonth(); let yearOfBrushing = timeOfBrushing.getYear();
-                let timeOfBrushingParsed = `${dateOfBrushing}, ${monthOfBrushing}, ${yearOfBrushing}`;
-
-                if (timeOfBrushingParsed === todayParsed) {
-                    if (hourOfBrushing >= 0 && hourOfBrushing <= 13) {
-                        $rootScope.morningSticker = true;
-                    } else if (hourOfBrushing >= 14 && hourOfBrushing <= 23) {
-                        $rootScope.eveningSticker = true;
-                    }
-                }
-            });
-
-            //Tells the error message whether the user has completed their designated timeslot yet or not
-            let hourOfBrushTime = brushTime.getHours();
-            if (hourOfBrushTime >= 0 && hourOfBrushTime <= 13 && !$rootScope.morningSticker) {
-                $rootScope.morningOrNight = "morning";
-                $rootScope.morningSticker = true;
-            } else if (hourOfBrushTime >= 14  && hourOfBrushTime <= 23 && !$rootScope.eveningSticker) {
-                $rootScope.morningOrNight = "evening";
-                $rootScope.eveningSticker = true;
-            } else {
-                $rootScope.morningOrNight = "";
-            }
-
-            let promiseResolve =(resolve,reject) => {   
-                $timeout(function() {    
-                    let m = $rootScope.morningSticker;     
-                    let e = $rootScope.eveningSticker;     
-                    if (m || e) {
-                        deferred.reject();
-                    } else {
-                        deferred.resolve();
-                    }            
-                }, 100);
-            };
-
-            promiseResolve();
-        });
-
-
-        return deferred.promise;
-};
+app.factory("brushingDataFactory", function($rootScope, $location, $q, $http, $timeout, firebaseURL, authFactory){
 
 
 //Firebase: Adds a brushing time stamp to firebase for selected subuer  (Selected child subuid passed).
@@ -98,9 +41,63 @@ app.factory("brushingDataFactory", function($rootScope, $q, $http, $timeout, fir
         }); 
     };
 
-   
+//Checks to see if users submission is ready to go
+   let runBrushingDataCheckThenSubmitNewIfCool = (childSubuid, brushTime) => {
+        let morningStickerForToday = false;
+        let eveningStickerForToday = false;
+        let submittable = 0;
+
+        //Checking today's information
+        let today = new Date();
+        let dateOfToday = today.getDate(); let monthOfToday = today.getMonth(); let yearOfToday = today.getYear();
+        let todayParsed = `${dateOfToday}, ${monthOfToday}, ${yearOfToday}`;
+
+        returnAllBrushingDataForChild().then((brushingDataForChild) => {
+            brushingDataForChild.forEach((dataPiece) => {
+                let timeOfBrushing = new Date(dataPiece.timestamp);
+                let hourOfBrushing = timeOfBrushing.getHours();
+                let dateOfBrushing = timeOfBrushing.getDate(); let monthOfBrushing = timeOfBrushing.getMonth(); let yearOfBrushing = timeOfBrushing.getYear();
+                let timeOfBrushingParsed = `${dateOfBrushing}, ${monthOfBrushing}, ${yearOfBrushing}`;
+
+                let morningBrushingExisting = hourOfBrushing >= 0 && hourOfBrushing <= 13;
+                let eveningBrushingExisting = hourOfBrushing >= 14 && hourOfBrushing <= 23;
+
+                //checking to see if user has completed brushing for today
+                if (timeOfBrushingParsed === todayParsed) {
+                    if (morningBrushingExisting) {
+                        morningStickerForToday = true;
+                        $rootScope.morningOrNight = "morning";
+                    } else if (eveningBrushingExisting) {
+                        eveningStickerForToday = true;
+                        $rootScope.morningOrNight = "evening";
+                    }
+                }
+            });
+
+            let morningBrushingAttemptToSubmit = brushTime.getHours() >= 0 && brushTime.getHours() <= 13;
+            let eveningBrushingAttemptToSubmit = brushTime.getHours() >= 14 && brushTime.getHours() <= 23;
+
+            if (morningStickerForToday && morningBrushingAttemptToSubmit) {
+                $rootScope.alreadyBrushedForThisTime = true;
+                returnAllBrushingDataForChild().then((returnBrushingData)=>{
+                    $location.path("/brushingchart/" + childSubuid);
+                });
+             } else if (eveningStickerForToday && eveningBrushingAttemptToSubmit) {
+                $rootScope.alreadyBrushedForThisTime = true;
+                returnAllBrushingDataForChild().then((returnBrushingData)=>{
+                    $location.path("/brushingchart/" + childSubuid);
+                });
+             } else {
+                excuteBrushingSubmit(childSubuid, brushTime).then(() => {
+                    returnAllBrushingDataForChild().then((returnBrushingData)=>{
+                        $location.path("/brushingchart/" + childSubuid);
+                    });
+                });
+             }
+        });
+   };
 
 
 
-    return {checkForExistingDataInTimeslot:checkForExistingDataInTimeslot, excuteBrushingSubmit: excuteBrushingSubmit, returnAllBrushingDataForChild:returnAllBrushingDataForChild};
+    return {excuteBrushingSubmit: excuteBrushingSubmit, returnAllBrushingDataForChild:returnAllBrushingDataForChild, runBrushingDataCheckThenSubmitNewIfCool:runBrushingDataCheckThenSubmitNewIfCool};
 });
