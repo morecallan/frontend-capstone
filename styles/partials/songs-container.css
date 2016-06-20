@@ -1,0 +1,26 @@
+.songsContainer {
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  left: -1.5em;
+  top: -1em; }
+  .songsContainer .btn {
+    width: 120px !important;
+    height: 120px !important;
+    padding: 0 !important;
+    margin: 10px;
+    overflow: hidden !important;
+    border-radius: 15px !important; }
+    .songsContainer .btn img {
+      width: 100% !important;
+      opacity: .95; }
+  .songsContainer .songCard {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px; }

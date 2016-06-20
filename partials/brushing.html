@@ -23,7 +23,11 @@
 
 <div class="container">
   <div class="songsContainer">
-    
+    <div ng-repeat="song in songs">
+      <div class="btn" class="songCard z-depth-2">
+        <img src="{{song.img}}" music-player add-song="song">
+      </div>
+    </div>
   </div>
 </div>
 
@@ -72,7 +76,7 @@
                 <button class="btn" play-pause-toggle data-play="Play!" data-pause="Pause!">Play Toggle</button>
 
                 <!-- Is Playing: {{ isPlaying }} -->
-                <br/>
+                <!-- <br/>
                 <br/>Volume: {{ volume }} -
                 <button class="btn" music-volume data-type="increase">+</button>
                 -
