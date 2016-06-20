@@ -362,13 +362,6 @@ body {
       margin: 0 2px; }
     .errormodal .buttonRow .btn:nth-of-type(1) {
       margin-left: 12%; }
-  .errormodal p {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    font-family: Neucha !important;
-    font-size: 12px;
-    margin-bottom: 12px; }
 
 .mockmodal:focus {
   outline: none; }

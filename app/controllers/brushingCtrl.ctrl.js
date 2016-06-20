@@ -17,33 +17,66 @@ app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routePa
     $scope.songs = [
             {
                 id: 'one',
-                title: 'Rain',
-                artist: 'Drake',
-                url: 'http://www.schillmania.com/projects/soundmanager2/demo/_mp3/rain.mp3'
+                title: 'Jump for Joy',
+                artist: 'Scott Holmes',
+                url: './songs/JumpForJoy.m4a',
+                img: './img/songCovers/dance1.png'
             },
             {
                 id: 'two',
-                title: 'Walking',
-                artist: 'Nicki Minaj',
-                url: 'http://www.schillmania.com/projects/soundmanager2/demo/_mp3/walking.mp3'
+                title: 'Requiem For A Fish',
+                artist: 'The Freak Fandango Orchestra',
+                url: './songs/RequiemForAFish.m4a',
+                img: './img/songCovers/dance2.png'
             },
             {
                 id: 'three',
-                title: 'Barrlping with Carl (featureblend.com)',
-                artist: 'Akon',
-                url: 'http://www.freshly-ground.com/misc/music/carl-3-barlp.mp3'
+                title: 'Running',
+                artist: 'Jens East',
+                url: './songs/RequiemForAFish.m4a',
+                img: './img/songCovers/dance3.png'
             },
             {
                 id: 'four',
-                title: 'Angry cow sound?',
-                artist: 'A Cow',
-                url: 'http://www.freshly-ground.com/data/audio/binaural/Mak.mp3'
+                title: 'Cheese',
+                artist: 'David Szesztay',
+                url: './songs/Cheese.m4a',
+                img: './img/songCovers/dance4.png'
             },
             {
                 id: 'five',
-                title: 'Things that open, close and roll',
-                artist: 'Someone',
-                url: 'http://www.freshly-ground.com/data/audio/binaural/Things%20that%20open,%20close%20and%20roll.mp3'
+                title: 'Toy Shop',
+                artist: 'David Szesztay',
+                url: './songs/ToyShop.m4a',
+                img: './img/songCovers/dance5.png'
+            },
+            {
+                id: 'six',
+                title: "They're Coming",
+                artist: 'Elysian Bailey',
+                url: './songs/TheyreComing.m4a',
+                img: './img/songCovers/dance6.png'
+            },
+            {
+                id: 'seven',
+                title: 'The Plan Worked',
+                artist: 'Dave Depper',
+                url: './songs/ThePlanWorked.m4a',
+                img: './img/songCovers/dance7.png'
+            },
+            {
+                id: 'eight',
+                title: 'Theme From YUM',
+                artist: 'Dr. Sparkles',
+                url: './songs/ThemeFromYUM.m4a',
+                img: './img/songCovers/dance8.png'
+            },
+            {
+                id: 'nine',
+                title: 'Upbeat Whistle',
+                artist: 'Dave Depper',
+                url: './songs/UpbeatWhistle.m4a',
+                img: './img/songCovers/dance9.png'
             }
         ];
 });
