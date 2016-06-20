@@ -103,9 +103,6 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
       }
     };
 
-
-
-
     /* event sources array*/
     $scope.eventSources = [$scope.events];
 });

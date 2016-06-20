@@ -12,12 +12,12 @@
       <div class="row">
         <div class="col s2" ng-show="allSongsSelected"><i class="midSmall material-icons disabled">library_add</i></div>
         <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons achieved" >library_add</i></div>
-          <div ng-repeat="selectedSong in playlist">
+          <div ng-repeat="selectedSong in playlist" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
             <div class="btn pink col s2" class="songCard z-depth-2">
               <img src="{{selectedSong.img}}">
             </div>
           </div>
-          <div ng-repeat="songLeft in songsLeft">
+          <div ng-repeat="songLeft in songsLeft" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
             <div class="btn blue-grey col s2" class="songCard z-depth-1">
               <i class="material-icons">{{songLeft.icon}}</i>
             </div>
@@ -44,18 +44,11 @@
   </div>
 
 <!-- -------------------------- SONG PLAY MODE ------------------------- -->
-
+  
   <div class="container" ng-show="!selectSongMode">
+    <ng-fader></ng-fader>
     <sound-manager></sound-manager>
     <p>Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})</p>
-
-    <p>Is Playing: {{ isPlaying }}</p>
-
-    <ul class="playlist">
-        <li ng-repeat="song in playlist">
-            <a play-from-playlist="song">{{ song.title }}</a>
-        </li>
-    </ul>
   </div>
 </div>
 

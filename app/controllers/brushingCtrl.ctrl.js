@@ -144,4 +144,6 @@ app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routePa
                 chosenAlready: false
             }
         ];
+
+    
 });
