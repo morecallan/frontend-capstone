@@ -51,6 +51,7 @@ app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routePa
     $scope.switchToBrushingMode = () => {
         $scope.selectSongMode = false;
         $scope.usersPlaylist[0].play();
+        $timeout($scope.submitBrushingCompleteData, 120100);
     };
 
     $scope.nowPlaying = "";
