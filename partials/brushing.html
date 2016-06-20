@@ -1,23 +1,30 @@
-<div class="container childLandingContainer">
-  <div class="col s8 offset-s2">
-    <h4>Hey {{selectedChild.firstName}}, BRUSH YOUR DAMN TEEF?</h4>
+<div class="container">
+  <div class="col s8 offset-s2 songSelectTitle">
+    <div class="imgContainer"><img src="{{selectedChild.avatar}}"></div>
+    <h4>Hey {{selectedChild.firstName}}!</h4>
+    <p>Make your own brushing song by selecting 4 boxes below!</p>
   </div>
 
+ <!-- -------------------------- MUSIC SELECTION ------------------------- -->
 
-<!-- -------------------------- AVATAR SELECTED ------------------------- -->
-  <!-- <div class="childUserSelected">
-      <div class="card">
-        <div>
-          <div class="card-image valign-wrapper">
-            <img src="{{selectedChild.avatar}}" class="valign">  
-          </div>
-          <div class="card-content">
-            <h4>{{selectedChild.firstName}}</h4>
-          </div>
+<div class="container songSelectContainer">
+  <div class="row">
+    <div class="col s2" ng-show="allSongsSelected"><i class="midSmall material-icons disabled">library_add</i></div>
+    <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons achieved" >library_add</i></div>
+      <div ng-repeat="selectedSong in selectedSongs">
+        <div class="btn pink col s2" class="songCard z-depth-2">
+          <img src="{{song.img}}">
         </div>
       </div>
+      <div ng-repeat="songLeft in songsLeft">
+        <div class="btn blue-grey col s2" class="songCard z-depth-1">
+          <i class="material-icons">{{songLeft.icon}}</i>
+        </div>
+      </div>
+    <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons disabled" >play_circle_outline</i></div>
+    <div class="col s2" ng-show="allSongsSelected"><i class="midSmall material-icons achieved">play_circle_filled</i></div>
   </div>
- -->
+</div>
 
 <!-- -------------------------- MUSIC SELECTION ------------------------- -->
 

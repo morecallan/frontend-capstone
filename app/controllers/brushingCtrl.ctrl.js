@@ -13,6 +13,25 @@ app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routePa
         brushingDataFactory.runBrushingDataCheckThenSubmitNewIfCool($routeParams.subuid, brushTime);
     };
 
+    $scope.allSongsSelected = false;
+    
+    $scope.songsLeft = [
+        {
+            icon: 'music_note'
+        },
+        {
+            icon: 'music_note'
+        },
+        {
+            icon: 'music_note'
+        },
+        {
+            icon: 'music_note'
+        },
+    ];
+
+    $scope.selectedSongs = [];
+
 
     $scope.songs = [
             {
