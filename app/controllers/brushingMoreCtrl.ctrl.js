@@ -23,19 +23,32 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
         $scope.events = [];
         brushingDataFactory.returnAllBrushingDataForChild().then((returnBrushingData)=>{
             $scope.renderDataForCalendar(returnBrushingData);
+                let usersLastEventCardsMorning = document.getElementsByClassName("stickerEventMorningJustAdded");
+                let usersLastEventCardsEvening = document.getElementsByClassName("stickerEventEveningJustAdded");
+                if (usersLastEventCardsMorning.length === 1) {
+                    usersLastEventCardsMorning[0].classList.add("animated", "tada");
+                } else if (usersLastEventCardsEvening.length === 1) {
+                    usersLastEventCardsEvening[0].classList.add("animated", "tada");
+                }
         });         
     };
 
     $scope.renderDataForCalendar = (returnBrushingData) => {
         $scope.eventPlaceholder = returnBrushingData;
             $('#calendar').fullCalendar("changeView", "basicWeek");
-            $scope.eventPlaceholder.forEach((event)=>{
+            $scope.eventPlaceholder.forEach((event, index)=>{
                 let eventHours = new Date(event.timestamp);
                 eventHours = eventHours.getHours();
                 if (eventHours >= 0 && eventHours <= 13) {
                     event.className = "stickerEventMorning";
+                    if (index === $scope.eventPlaceholder.length - 1) {
+                        event.className = "stickerEventMorningJustAdded";  
+                    }
                 } else if (eventHours >= 14 && eventHours <= 23) {
                     event.className = "stickerEventNight";
+                    if (index === $scope.eventPlaceholder.length - 1) {
+                        event.className = "stickerEventEveningJustAdded";  
+                    }
                 }
                 event.title = "I Brushed My Teeth!";
                 let start = new Date(event.timestamp);
@@ -65,7 +78,6 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
       if(uiCalendarConfig.calendars[calendar]){
         uiCalendarConfig.calendars[calendar].fullCalendar('render');
       }
-
     };
 
     $scope.eventRender = function( event, element, view ) {
