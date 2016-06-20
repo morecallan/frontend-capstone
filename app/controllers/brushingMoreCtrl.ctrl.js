@@ -20,6 +20,7 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
     $scope.events = [];
 
     $scope.populateBrushingData = () => {
+        $scope.events = [];
         brushingDataFactory.returnAllBrushingDataForChild().then((returnBrushingData)=>{
             $scope.renderDataForCalendar(returnBrushingData);
         });         
@@ -29,7 +30,6 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
         $scope.eventPlaceholder = returnBrushingData;
             $('#calendar').fullCalendar("changeView", "basicWeek");
             $scope.eventPlaceholder.forEach((event)=>{
-                console.log(event);
                 let eventHours = new Date(event.timestamp);
                 eventHours = eventHours.getHours();
                 if (eventHours >= 0 && eventHours <= 13) {
@@ -41,6 +41,7 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
                 let start = new Date(event.timestamp);
                 event.start = start;
                 event.allDay = false;
+                event.stick = true;
                 event.backgroundColor = "rgba(255,255,255,0.8)";
                 event.borderColor = "rgba(255,255,255,0.8)";
                 $scope.events.push(event);
@@ -54,35 +55,21 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    
 
-    /* add custom event*/
-    $scope.addEvent = function() {
-      $scope.events.push({
-        title: 'Open Sesame',
-        start: new Date(y, m, 28),
-        end: new Date(y, m, 29),
-        className: ['openSesame']
-      });
-    };
-    /* remove event */
-    $scope.remove = function(index) {
-      $scope.events.splice(index,1);
-    };
     /* Change View */
     $scope.changeView = function(view,calendar) {
-      uiCalendarConfig.calendars[calendar].fullCalendar('changeView',view);
+        uiCalendarConfig.calendars[calendar].fullCalendar('changeView',view);
     };
     /* Change View */
     $scope.renderCalender = function(calendar) {
       if(uiCalendarConfig.calendars[calendar]){
         uiCalendarConfig.calendars[calendar].fullCalendar('render');
       }
+
     };
-     /* Render Tooltip */
-    $scope.eventRender = function( event, element, view ) { 
-        element.attr({'tooltip': event.title,
-                     'tooltip-append-to-body': true});
+
+    $scope.eventRender = function( event, element, view ) {
+        $scope.populateBrushingData(); 
         $compile(element)($scope);
     };
 
@@ -103,6 +90,8 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
         eventbackgroundColor: "#000000"
       }
     };
+
+
 
 
     /* event sources array*/
