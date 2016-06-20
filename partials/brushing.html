@@ -1,121 +1,63 @@
 <div class="container">
-  <div class="col s8 offset-s2 songSelectTitle">
-    <div class="imgContainer"><img src="{{selectedChild.avatar}}"></div>
-    <h4>Hey {{selectedChild.firstName}}!</h4>
-    <p>Make your own brushing song by selecting 4 boxes below!</p>
-  </div>
+  <div  ng-show="selectSongMode">
+    <div class="col s8 offset-s2 songSelectTitle">
+      <div class="imgContainer"><img src="{{selectedChild.avatar}}"></div>
+      <h4>Hey {{selectedChild.firstName}}!</h4>
+      <p>Make your own brushing song by selecting 4 boxes below!</p>
+    </div>
 
- <!-- -------------------------- MUSIC SELECTION ------------------------- -->
+   <!-- -------------------------- MUSIC SELECTION ------------------------- -->
 
-<div class="container songSelectContainer">
-  <div class="row">
-    <div class="col s2" ng-show="allSongsSelected"><i class="midSmall material-icons disabled">library_add</i></div>
-    <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons achieved" >library_add</i></div>
-      <div ng-repeat="selectedSong in selectedSongs">
-        <div class="btn pink col s2" class="songCard z-depth-2">
-          <img src="{{song.img}}">
-        </div>
+    <div class="container songSelectContainer">
+      <div class="row">
+        <div class="col s2" ng-show="allSongsSelected"><i class="midSmall material-icons disabled">library_add</i></div>
+        <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons achieved" >library_add</i></div>
+          <div ng-repeat="selectedSong in playlist">
+            <div class="btn pink col s2" class="songCard z-depth-2">
+              <img src="{{selectedSong.img}}">
+            </div>
+          </div>
+          <div ng-repeat="songLeft in songsLeft">
+            <div class="btn blue-grey col s2" class="songCard z-depth-1">
+              <i class="material-icons">{{songLeft.icon}}</i>
+            </div>
+          </div>
+        <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons disabled" >play_circle_outline</i></div>
+        <div class="col s2" ng-show="allSongsSelected" ng-click="switchToBrushingMode()"><i class="midSmall material-icons achieved">play_circle_filled</i></div>
       </div>
-      <div ng-repeat="songLeft in songsLeft">
-        <div class="btn blue-grey col s2" class="songCard z-depth-1">
-          <i class="material-icons">{{songLeft.icon}}</i>
+    </div>
+
+
+
+  <!-- -------------------------- MUSIC SELECTION ------------------------- -->
+
+    <div class="container">
+      <div class="songsContainer">
+        <div ng-repeat="song in songs">
+            <div class="btn" class="songCard z-depth-2" ng-init="thisSongChosenAlready = song.chosenAlready" ng-class="{thisSongChosenAlready:'disabledOpacity'}">
+              <img src="{{song.img}}" music-player ng-click="addSongToPaylist(song, $index)">
+              <div class="disabledOverlay" ng-show="song.chosenAlready"></div>
+            </div>
         </div>
-      </div>
-    <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons disabled" >play_circle_outline</i></div>
-    <div class="col s2" ng-show="allSongsSelected"><i class="midSmall material-icons achieved">play_circle_filled</i></div>
-  </div>
-</div>
-
-<!-- -------------------------- MUSIC SELECTION ------------------------- -->
-
-<div class="container">
-  <div class="songsContainer">
-    <div ng-repeat="song in songs">
-      <div class="btn" class="songCard z-depth-2">
-        <img src="{{song.img}}" music-player add-song="song">
       </div>
     </div>
   </div>
-</div>
 
+<!-- -------------------------- SONG PLAY MODE ------------------------- -->
 
- <!-- <div class="container musicContainer">
-        <div class="row">
-            <div class="col m12">
+  <div class="container" ng-show="!selectSongMode">
+    <sound-manager></sound-manager>
+    <p>Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})</p>
 
-                <h5>Songs</h5>
-                <ul>
-                    <li ng-repeat="song in songs">
-                        <button class="btn" music-player="play" add-song="song">{{ song.title }}</button>
-                        <button class="btn" music-player add-song="song">+</button>
-                    </li>
-                </ul>
+    <p>Is Playing: {{ isPlaying }}</p>
 
-                <button class="btn" play-all="songs">Play all</button>
-                <button class="btn" play-all="songs" data-play="false">Add all</button>
-
-            </div>
-        </div>
-
-        <hr />
-
-        <div class="row">
-            <div class="col m12">
-                init soundManager2 player
-                <sound-manager></sound-manager>
-
-                <p>
-                    Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})
-                </p>
-
-                <div class="seekBase" seek-track>
-                    <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
-                </div>
-                <br />
-                <button class="btn" play-music>Play</button>
-                -
-                <button class="btn" pause-music>Pause</button>
-                -
-                <button class="btn" stop-music>Stop</button>
-                -
-                <button class="btn" repeat-music>Repeat ({{ repeat }})</button>
-                -
-                <button class="btn" play-pause-toggle data-play="Play!" data-pause="Pause!">Play Toggle</button>
-
-                <!-- Is Playing: {{ isPlaying }} -->
-                <!-- <br/>
-                <br/>Volume: {{ volume }} -
-                <button class="btn" music-volume data-type="increase">+</button>
-                -
-                <button class="btn" music-volume data-type="decrease">-</button>
-                -
-                <button class="btn" mute-music>Mute ({{ mute }})</button>
-                <br/>
-                <br/>
-                <button class="btn" prev-track>Prev Track</button>
-                -
-                <button class="btn" next-track>Next Track</button>
-                -
-                <button class="btn" clear-playlist>Clear Playlist</button>
-                <br/>
-                <br/>
-                <h5>Playlist</h5>
-                <ul>
-                    <li ng-repeat="song in playlist">
-                        <a play-from-playlist="song">{{ song.title }}</a>
-                        -
-                        <a remove-from-playlist="song" data-index="{{$index}}">
-                            <small>(remove)</small>
-                        </a>
-                        <span ng-if="currentPlaying.id == song.id"> - (current)</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
+    <ul class="playlist">
+        <li ng-repeat="song in playlist">
+            <a play-from-playlist="song">{{ song.title }}</a>
+        </li>
+    </ul>
+  </div>
 
   <a class="waves-effect waves-light btn-large largeBtn" ng-click="submitBrushingCompleteData()"><i class="material-icons right">timer</i>I brushed my damn teeth!</a>
-
-
 </div>
 

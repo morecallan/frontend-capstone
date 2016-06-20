@@ -636,7 +636,8 @@ body {
     padding: 0 !important;
     margin: 10px;
     overflow: hidden !important;
-    border-radius: 15px !important; }
+    border-radius: 15px !important;
+    position: relative; }
     .songsContainer .btn img {
       width: 100% !important;
       opacity: .95; }
@@ -646,15 +647,26 @@ body {
     border-radius: 15px;
     overflow: hidden;
     margin: 10px; }
+  .songsContainer .disabledOverlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: not-allowed;
+    width: 110px !important;
+    height: 110px !important;
+    border-radius: 15px !important;
+    position: absolute;
+    top: 0px;
+    left: 0px; }
+  .songsContainer .disabledOpacity {
+    opacity: 0.1; }
 
 .songSelectTitle .imgContainer {
   width: 10% !important;
   max-width: 10% !important;
   overflow: none;
   position: absolute;
-  right: 10px;
-  top: 5px;
-  z-index: -50; }
+  right: -10px;
+  top: -10px;
+  z-index: 100; }
 
 .songSelectTitle img {
   -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);

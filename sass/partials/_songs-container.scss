@@ -16,6 +16,7 @@
         margin: 10px;
         overflow: hidden !important;
         border-radius: 15px !important;
+        position: relative;
 
         img {
             width: 100% !important;
@@ -30,6 +31,21 @@
         border-radius: 15px;
         overflow: hidden;
         margin: 10px;
+    }
+
+    .disabledOverlay {
+        background-color: rgba(0, 0, 0, .6);
+        cursor: not-allowed;
+        width: 110px !important;
+        height: 110px !important;
+        border-radius: 15px !important;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .disabledOpacity {
+        opacity: 0.1;
     }
 }
 
