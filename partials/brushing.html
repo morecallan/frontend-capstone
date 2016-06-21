@@ -29,6 +29,7 @@
 
 
 
+
   <!-- -------------------------- MUSIC SELECTION ------------------------- -->
 
     <div class="container">
@@ -45,10 +46,9 @@
 
 <!-- -------------------------- SONG PLAY MODE ------------------------- -->
   
-  <div class="container" ng-show="!selectSongMode">
+  <div class="container slideshowContainer" ng-show="!selectSongMode">
     <ng-fader></ng-fader>
     <sound-manager></sound-manager>
-    <p>Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})</p>
   </div>
 </div>
 
