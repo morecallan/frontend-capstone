@@ -11,7 +11,10 @@ app.controller('navCtrl', function ($scope, $location, $rootScope, firebaseURL, 
     $rootScope.selectedParent = authFactory.getUser();
 
     $rootScope.childIsAuth = false;
+    $scope.$watch($rootScope.childIsAuth);
     $rootScope.isParentAuth = false;
+    $scope.$watch($rootScope.isParentAuth);
+
 
     $scope.$watch(() => {
         if ($rootScope.selectedParent !== null) {

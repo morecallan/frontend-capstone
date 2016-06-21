@@ -8,6 +8,8 @@
 
 
 .songSelectTitle {
+    opacity: 1;
+
     .imgContainer {
         width: 10% !important;
         max-width: 10% !important;
@@ -53,8 +55,11 @@
 
 
 .songSelectContainer {
+    opacity: 1;
+    z-index: 1000;
     background-color: rgba(0, 0, 0, .6);
     border-radius: 10px 10px 0px 0px;
+    padding: 0px 25px;
 
     .achieved {
         color: #8bc34a;

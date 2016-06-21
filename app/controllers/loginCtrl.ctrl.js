@@ -216,6 +216,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     }
 
      if($location.path() === "/childlogin"){
+        $rootScope.childIsAuth = false;
         $scope.parentMode = false;
         $scope.childMode = true;
         $scope.modeLogin = true;
