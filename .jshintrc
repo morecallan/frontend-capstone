@@ -8,6 +8,7 @@
   "unused": false,
   "globals": { 
     "$": true,
-    "app": true
+    "app": true,
+    "soundManager": true
   }
 }

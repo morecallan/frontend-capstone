@@ -1,24 +1,55 @@
-<div class="container childLandingContainer">
-  <div class="col s8 offset-s2">
-    <h4>Hey {{selectedChild.firstName}}, BRUSH YOUR DAMN TEEF?</h4>
-  </div>
+<div class="container songContainer">
+  <div  ng-show="selectSongMode">
+    <div class="col s8 offset-s2 songSelectTitle">
+      <div class="imgContainer"><img src="{{selectedChild.avatar}}"></div>
+      <h4>Hey {{selectedChild.firstName}}!</h4>
+      <p>Make your own brushing song by selecting 4 boxes below!</p>
+    </div>
+
+   <!-- -------------------------- MUSIC SELECTION ------------------------- -->
+
+    <div class="container songSelectContainer">
+      <div class="row">
+        <div class="col s2" ng-show="allSongsSelected"><i class="midSmall material-icons disabled">library_add</i></div>
+        <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons achieved" >library_add</i></div>
+          <div ng-repeat="selectedSong in playlist" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+            <div class="btn pink col s2" class="songCard z-depth-2">
+              <img src="{{selectedSong.img}}">
+            </div>
+          </div>
+          <div ng-repeat="songLeft in songsLeft" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+            <div class="btn blue-grey col s2" class="songCard z-depth-1">
+              <i class="material-icons">{{songLeft.icon}}</i>
+            </div>
+          </div>
+        <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons disabled" >play_circle_outline</i></div>
+        <div class="col s2" ng-show="allSongsSelected" ng-click="switchToBrushingMode()"><i class="midSmall material-icons achieved">play_circle_filled</i></div>
+      </div>
+    </div>
 
 
-<!-- -------------------------- AVATAR SELECTED ------------------------- -->
-  <div class="childUserSelected">
-      <div class="card">
-        <div>
-          <div class="card-image valign-wrapper">
-            <img src="{{selectedChild.avatar}}" class="valign">  
-          </div>
-          <div class="card-content">
-            <h4>{{selectedChild.firstName}}</h4>
-          </div>
+
+
+  <!-- -------------------------- MUSIC SELECTION ------------------------- -->
+
+    <div class="container">
+      <div class="songsContainer">
+        <div ng-repeat="song in songs">
+            <div class="btn" class="songCard z-depth-2" ng-init="thisSongChosenAlready = song.chosenAlready" ng-class="{thisSongChosenAlready:'disabledOpacity'}">
+              <img src="{{song.img}}" music-player ng-click="addSongToPaylist(song, $index)">
+              <div class="disabledOverlay" ng-show="song.chosenAlready"></div>
+            </div>
         </div>
       </div>
+    </div>
   </div>
 
-  <a class="waves-effect waves-light btn-large largeBtn" ng-click="submitBrushingCompleteData()"><i class="material-icons right">timer</i>I brushed my damn teeth!</a>
-
-
+<!-- -------------------------- SONG PLAY MODE ------------------------- -->
+  <div class="slideshowContainer" ng-show="!selectSongMode">
+    <div class="container">
+      <ng-fader></ng-fader>
+      <sound-manager></sound-manager>
+    </div>
+  </div>
 </div>
+

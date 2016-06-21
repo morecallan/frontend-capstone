@@ -1,0 +1,107 @@
+.songContainer {
+    width: 100%;
+    background: url(../img/background/musicNote.png)  no-repeat -50px center fixed;
+    background-size: 100%;
+    z-index: 1;
+    padding: 0;
+}
+
+
+.songSelectTitle {
+    .imgContainer {
+        width: 10% !important;
+        max-width: 10% !important;
+        overflow: none;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        z-index: 100;
+    }
+
+    img {
+        -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
+        filter: drop-shadow(0 10px 0px white); 
+        margin: auto;
+        vertical-align: middle;
+        display: inline-block;
+        min-width: 75%;
+        min-height: 75%;
+        max-width: 100%;
+        max-height: 100%;
+        object-position: 50% 50%;
+        object-fit: cover;
+    }
+
+    h4 {
+        font-family: "Cabin Sketch";
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        margin: 0 10%;
+        text-align: center;
+    }
+
+    p {
+        margin: 0;
+        margin-top: -7px;
+        margin-bottom: 7px;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+
+
+.songSelectContainer {
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 10px 10px 0px 0px;
+
+    .achieved {
+        color: #8bc34a;
+        -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
+        filter: drop-shadow(0 10px 0px white); 
+    }
+
+    .midSmall {
+        font-size: 3em !important;
+        padding: 10px !important;
+        display: inline-block !important;
+    }
+
+    i {
+        margin-top: 20% !important;
+        cursor: default;
+    }
+
+    .btn {
+        width: 60px !important;
+        height: 60px !important;
+        padding: 0 !important;
+        margin: 10px;
+        overflow: hidden !important;
+        border-radius: 15px !important;
+        position: relative !important;
+        left: 15px !important;
+
+        img {
+            width: 100% !important;
+            opacity: .95;  
+        }
+
+        i {
+            width: 40px;
+            font-size: 4em !important;
+            margin: 10px !important;
+            margin-left: 0 !important;
+            text-align: center;
+        }
+    }
+
+    .songCard {
+        width: 100px;
+        height: 100px;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 10px;
+    }
+}
