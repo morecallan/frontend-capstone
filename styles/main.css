@@ -366,46 +366,51 @@ body {
 .mockmodal:focus {
   outline: none; }
 
+.fc-event-containter {
+  position: relative !important; }
+
 .stickerEventMorning {
   height: 150px;
+  width: 62px;
   background: url(../img/avatar/av1.png) no-repeat center center;
   background-size: 98%;
   z-index: 1;
-  position: relative;
-  top: 10px;
-  border-radius: 5px; }
+  margin-top: 20px; }
 
 .stickerEventNight {
   height: 150px;
+  width: 62px;
   background: url(../img/avatar/av10.png) no-repeat -1px center;
   background-size: 140%;
   z-index: 1;
-  position: relative;
-  top: 200px;
-  border-radius: 5px; }
+  margin-top: 20px;
+  position: absolute;
+  top: 190px; }
 
 .stickerEventMorningJustAdded {
   height: 150px;
+  width: 62px;
   background: url(../img/avatar/av1.png) no-repeat center center;
   background-size: 98%;
-  z-index: 1;
-  border-radius: 5px; }
+  z-index: 1; }
 
 .stickerEventEveningJustAdded {
   height: 150px;
+  width: 62px;
   background: url(../img/avatar/av10.png) no-repeat -1px center;
   background-size: 140%;
   z-index: 1;
-  position: relative;
-  top: 45px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  position: absolute;
+  top: 190px; }
 
 .fc-toolbar {
   padding: 10px 20px; }
 
 .fc-toolbar h2 {
   font-family: "Amatic SC";
-  font-size: 50px;
+  font-size: 42px;
+  font-weight: bold;
   padding: 10px;
   color: white; }
 
@@ -637,23 +642,28 @@ body {
     margin: 0 10%; }
 
 .slideshowContainer {
-  margin-top: 6em;
+  margin-top: 4.5em;
   border-radius: 15px;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 10px;
+  background-color: white;
+  color: white; }
 
 .subtitleForSlideshow {
   background-color: white; }
 
 .songsContainer {
-  width: 450px;
+  width: 456px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   overflow: hidden;
   position: relative;
-  left: -1.2em;
-  top: -1em; }
+  left: 0em;
+  top: -1em;
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgba(0, 0, 0, 0.6); }
   .songsContainer .btn {
     width: 110px !important;
     height: 110px !important;
@@ -682,6 +692,13 @@ body {
     left: 0px; }
   .songsContainer .disabledOpacity {
     opacity: 0.1; }
+
+.songContainer {
+  width: 100%;
+  background: url(../img/background/musicNote.png) no-repeat -50px center fixed;
+  background-size: 100%;
+  z-index: 1;
+  padding: 0; }
 
 .songSelectTitle .imgContainer {
   width: 10% !important;
@@ -715,13 +732,14 @@ body {
 
 .songSelectTitle p {
   margin: 0;
-  margin-top: -5px;
+  margin-top: -7px;
+  margin-bottom: 7px;
   padding: 0;
   text-align: center; }
 
 .songSelectContainer {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px; }
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px 10px 0px 0px; }
   .songSelectContainer .achieved {
     color: #8bc34a;
     -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
@@ -731,7 +749,8 @@ body {
     padding: 10px !important;
     display: inline-block !important; }
   .songSelectContainer i {
-    margin-top: 20% !important; }
+    margin-top: 20% !important;
+    cursor: default; }
   .songSelectContainer .btn {
     width: 60px !important;
     height: 60px !important;

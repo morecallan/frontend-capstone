@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container songContainer">
   <div  ng-show="selectSongMode">
     <div class="col s8 offset-s2 songSelectTitle">
       <div class="imgContainer"><img src="{{selectedChild.avatar}}"></div>
@@ -45,10 +45,11 @@
   </div>
 
 <!-- -------------------------- SONG PLAY MODE ------------------------- -->
-  
-  <div class="container slideshowContainer" ng-show="!selectSongMode">
-    <ng-fader></ng-fader>
-    <sound-manager></sound-manager>
+  <div class="slideshowContainer" ng-show="!selectSongMode">
+    <div class="container">
+      <ng-fader></ng-fader>
+      <sound-manager></sound-manager>
+    </div>
   </div>
 </div>
 

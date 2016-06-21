@@ -38,9 +38,12 @@
     width: 100%;
     height: auto;
     position: relative;
+    border-radius: 5px 5px 0px 0px;
+
 }
 
 .ng-fader li h6 {
+    color: white;
     border: medium none;
     margin: 0;
     width: 0;
@@ -64,7 +67,8 @@
     color: white;
     font-weight: bold;
     text-align: center;
-    padding:;
+    padding: 15px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 .ng-fader-pagination {
