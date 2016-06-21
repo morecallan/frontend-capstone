@@ -41,6 +41,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.lessThanFourChildren = true;
 
     $rootScope.selectedChild = {};
+    $rootScope.selectedParent = authFactory.getUser();
 
 
 
@@ -53,39 +54,6 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         $scope.childRegError = false;
         $scope.deleteButtonClicked = false;
     };
-
-    /********************************************
-    **        WHICH PARTIAL SHOULD I SHOW?     **
-    ********************************************/
-
-    if($location.path() === "/parentlogin"){
-        $scope.parentMode = true;
-        $scope.childMode = false;
-        $scope.modeLogin = true;
-    }
-
-    if($location.path() === "/parentregister"){
-        $scope.parentMode = true;
-        $scope.childMode = false;
-        $scope.modeLogin = false;
-    }
-
-     if($location.path() === "/childlogin"){
-        $scope.parentMode = false;
-        $scope.childMode = true;
-        $scope.modeLogin = true;
-    }
-
-    if($location.path() === "/childregister"){
-        $scope.parentMode = false;
-        $scope.childMode = true;
-        $scope.modeLogin = false;
-    }
-
-    if($location.path() === "/logout"){
-        ref.unauth();
-        $rootScope.isActive = false;
-    }
 
 
     $scope.register = (authFactory) => {
@@ -107,8 +75,9 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         authFactory
         .authenticate($rootScope.account)
         .then((userCreds) => {
+            console.log("userCreds", userCreds);
             $scope.$apply(function() {
-                $location.path("/childlogin");
+                $location.path(`/childlogin`);
                 $scope.checkForChildren();
                 $rootScope.isActive = true;
             });
@@ -125,7 +94,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         .authenticateGoogle()
         .then((userCreds) => {
             $scope.$apply(function() {
-                $location.path("/childlogin");
+                $location.path(`/childlogin`);
                 $scope.checkForChildren();
                 $rootScope.isActive = true;
             });
@@ -164,7 +133,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
 
     $scope.childadd = () => {
         addChildFactory.addChildToParentAccount($scope.childAccount).then(() => {
-            $location.path("/childlogin");
+            $location.path(`/childlogin`);
             $scope.checkForChildren();
         });
     };
@@ -173,13 +142,15 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     **              CHILD LOGIN                **
     ********************************************/
     $scope.checkForChildren = () => {
-        addChildFactory.returnAllChildrenForLoggedInParent().then((childrenFromFirebase) => {
+    let parent = $rootScope.selectedParent = authFactory.getUser();
+        addChildFactory.returnAllChildrenForLoggedInParent(parent).then((childrenFromFirebase) => {
             $rootScope.children = childrenFromFirebase;    
             if (childrenFromFirebase.length > 0) {
                 $rootScope.children = childrenFromFirebase;    
             }
         });
     };
+
 
     $scope.selectActiveChild = (child) => {
         $rootScope.selectedChild = child;
@@ -227,4 +198,39 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
             $scope.lessThanFourChildren = false;
         }
     });
+
+    /********************************************
+    **        WHICH PARTIAL SHOULD I SHOW?     **
+    ********************************************/
+
+    if($location.path() === "/parentlogin"){
+        $scope.parentMode = true;
+        $scope.childMode = false;
+        $scope.modeLogin = true;
+    }
+
+    if($location.path() === "/parentregister"){
+        $scope.parentMode = true;
+        $scope.childMode = false;
+        $scope.modeLogin = false;
+    }
+
+     if($location.path() === "/childlogin"){
+        $scope.parentMode = false;
+        $scope.childMode = true;
+        $scope.modeLogin = true;
+        $rootScope.selectedParent = authFactory.getUser();
+        $scope.checkForChildren();
+    }
+
+    if($location.path() === "/childregister"){
+        $scope.parentMode = false;
+        $scope.childMode = true;
+        $scope.modeLogin = false;
+    }
+
+    if($location.path() === "/logout"){
+        ref.unauth();
+        $rootScope.isActive = false;
+    }
 });

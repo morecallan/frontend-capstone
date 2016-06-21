@@ -7,8 +7,10 @@ var app = angular.module("ToothBrushingApp", ["ngRoute", "ui.calendar", "angular
 let isAuth = (authFactory) => new Promise((resolve, reject) => {
     if (authFactory.isAuthenticated()) {
         resolve();
+        return true;    
     } else {
-        reject();    
+        reject();
+        return false;    
     }
 });
 

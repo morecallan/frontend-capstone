@@ -41,8 +41,9 @@ app.factory("addChildFactory", function($q, $http, firebaseURL, authFactory){
 
     
 // Firebase: Retrieves full list of children (subusers) for logged-in parent(user).
-    let returnAllChildrenForLoggedInParent = () => {
-        let user = authFactory.getUser();
+    let returnAllChildrenForLoggedInParent = (parent) => {
+        let user = parent;
+        console.log("user", user);
         let children =[];
         
         return $q(function(resolve, reject){

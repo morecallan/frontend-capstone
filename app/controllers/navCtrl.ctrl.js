@@ -8,6 +8,18 @@ app.controller('navCtrl', function ($scope, $location, $rootScope, firebaseURL, 
     ********************************************/
     $rootScope.navImg = "./img/avatar/av1.png";
     $rootScope.selectedChild = {};
+    $rootScope.selectedParent = authFactory.getUser();
+
+    $rootScope.childIsAuth = false;
+    $rootScope.isParentAuth = false;
+
+    $scope.$watch(() => {
+        if ($rootScope.selectedParent !== null) {
+            $rootScope.isParentAuth = true;
+        } else {
+            $rootScope.isParentAuth = false;
+        }
+    });
 
 
     $scope.$watch(() => {
@@ -16,6 +28,7 @@ app.controller('navCtrl', function ($scope, $location, $rootScope, firebaseURL, 
                 $rootScope.navImg = "./img/avatar/av1.png";
             } else {
                 $rootScope.navImg = $rootScope.selectedChild.avatar;
+                $rootScope.childIsAuth = true;
             }
         }
     });
