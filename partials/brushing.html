@@ -2,7 +2,7 @@
   <div class="songContainer">
     <div  ng-show="selectSongMode">
       <div class="col s8 offset-s2 songSelectTitle">
-        <div class="imgContainer"><img src="{{selectedChild.avatar}}"></div>
+        <div class="imgContainer"><img ng-src="{{selectedChild.avatar}}" class="animate-show" fade-in></div>
         <h4>Hey {{selectedChild.firstName}}!</h4>
         <p>Make your own brushing song by selecting 4 boxes below!</p>
       </div>
@@ -15,7 +15,7 @@
           <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons achieved" >library_add</i></div>
             <div ng-repeat="selectedSong in playlist" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
               <div class="btn pink col s2" class="songCard z-depth-2">
-                <img src="{{selectedSong.img}}">
+                <img ng-src="{{selectedSong.img}}" class="animate-show" fade-in>
               </div>
             </div>
             <div ng-repeat="songLeft in songsLeft" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
@@ -37,7 +37,7 @@
         <div class="songsContainer">
           <div ng-repeat="song in songs">
               <div class="btn" class="songCard z-depth-2" ng-init="thisSongChosenAlready = song.chosenAlready" ng-class="{thisSongChosenAlready:'disabledOpacity'}">
-                <img src="{{song.img}}" music-player ng-click="addSongToPaylist(song, $index)">
+                <img ng-src="{{song.img}}" music-player ng-click="addSongToPaylist(song, $index)" class="animate-show" fade-in>
                 <div class="disabledOverlay" ng-show="song.chosenAlready"></div>
               </div>
           </div>

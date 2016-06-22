@@ -70,7 +70,7 @@
 <!-- -------------------------     ERROR MODAL     ------------------------- -->
 <div class="errormodal" ng-keypress="closeModal()" ng-click="closeModal()" id="errorMessageBox" autofocus="true" ng-show="userError" ng-if="userError" ng-focus="userError">
   <a class="waves-effect waves-green btn-floating teal"><i class="material-icons left">close</i></a>
-  <div class="errormodal-photo-container"><img class="errormodal-photo" src="img/avatar/av11.png"></div>
+  <div class="errormodal-photo-container"><img ng-src="img/avatar/av11.png" class="animate-show errormodal-photo" fade-in></div>
   <div class="mockmodal-content">
     <h4>Oops! Houston we have a problem.</h4>
     <p>{{errorMessage}}</p>

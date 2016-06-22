@@ -6,6 +6,7 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
     /********************************************
     **               SELECTED USER             **
     ********************************************/
+    
     $scope.$watch($rootScope.morningOrNight);
 
     $scope.closeModal = () => {

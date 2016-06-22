@@ -25,7 +25,7 @@
         <a class="btn-floating top-right-btn red" ng-click="activateAreYouSureModal(child)" ng-show="deleteMode"><i class="large material-icons">delete_forever</i></a>
         <div ng-click="deleteMode||selectActiveChild(child)">
           <div class="card-image valign-wrapper">
-            <img src="{{child.avatar}}" class="valign">  
+            <img ng-src="{{child.avatar}}" class="animate-show valign" fade-in>  
           </div>
           <div class="card-content">
             <h4>{{child.firstName}}</h4>

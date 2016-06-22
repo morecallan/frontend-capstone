@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, firebaseURL, authFactory, addChildFactory) {
+app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $interval, firebaseURL, authFactory, addChildFactory) {
 
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
@@ -49,9 +49,70 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, f
 
     $scope.images = {};
 
-    $scope.images.prev = {src: "./img/info/kidAtDentist.jpg", fact: "blah blah blah blah blah"}; 
-    $scope.images.next = {src: "./img/info/kidAtDentist3.jpg", fact: "bladh dlah bldah bladh blahd"};
-    $scope.images.focus = {src: "./img/info/kidAtDentist.jpg", fact: "blah blah blah blah blah"};
+    $scope.carouselImages = [
+        {src: "./img/info/brushes.jpg", fact: "blah blah blah blah blah"},
+        {src: "./img/info/kidAtDentist.jpg", fact: "2blah blah blah blah blah"},
+        {src: "./img/info/kidAtDentist2.jpg", fact: "3blah blah blah blah blah"},
+        {src: "./img/info/kidAtDentist3.jpg", fact: "4blah blah blah blah blah"},
+        {src: "./img/info/surpriseDentist.jpg", fact: "5blah blah blah blah blah"}
+    ];
+
+    let focus = 0;
+    let prev = focus - 1;
+    let next = focus + 1;
+
+    $scope.animateCards = (cards) => {
+        $scope.removeAnimationFromCards(); 
+        let carouselCards = document.getElementsByClassName("carouselCard");
+        for (var i = 0; i < carouselCards.length; i++) {
+            carouselCards[i].classList.add("animated", "slideInRight");
+        }
+    };
+
+    $scope.removeAnimationFromCards = (cards) => {
+        let carouselCards = document.getElementsByClassName("carouselCard");
+        for (var j = 0; j < carouselCards.length; j++) {
+            carouselCards[j].classList.remove("animated", "slideInRight");
+        }
+    };
+
+    $scope.moveCarouselAlong = () => {
+        let prev = focus - 1;
+        let next = focus + 1;
+        if (focus === 0) {
+            prev = $scope.carouselImages.length - 1;
+        }
+
+        if (focus ===  $scope.carouselImages.length - 1) {
+            next = 0;
+        }
+
+        $scope.images.prev = $scope.carouselImages[prev];
+        $scope.images.focus = $scope.carouselImages[focus];
+        $scope.images.next = $scope.carouselImages[next];
+       
+
+        if (focus < $scope.carouselImages.length - 1) {
+            focus++;
+        } else {
+            focus = 0;
+        }
+    };
+
+    $scope.initiateCarousel = () => {
+        $timeout(() => {
+            $scope.moveCarouselAlong();
+            $scope.animateCards();
+        }, 100);
+        $interval(() => {
+            $timeout(()=> {$scope.removeAnimationFromCards()}, 100);
+            $scope.moveCarouselAlong();
+            $scope.animateCards();
+        }, 5000);
+    };
+
+    $scope.initiateCarousel();
+
 
     /********************************************
     **               ERROR MODAL               **

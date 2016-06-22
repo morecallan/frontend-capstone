@@ -23,7 +23,6 @@ let isChildAuth = ($rootScope) => {
 };
 
 
-
 app.config(function($routeProvider) {
     $routeProvider
         .when("/splash", {
@@ -50,7 +49,7 @@ app.config(function($routeProvider) {
         })
         .when("/childlanding/:subuid", {
             templateUrl: "partials/child-landing.html",
-            controller:  "childAcctCtrl",
+            controller:  "brushingCtrl",
             resolve: {isAuth, isChildAuth}
         })
         .when("/brushing/:subuid",{
