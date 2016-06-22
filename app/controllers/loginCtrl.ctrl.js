@@ -286,7 +286,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     if($location.path() === "/splash"){
         let focus = 0;
         let prev = focus - 1;
-    let next = focus + 1;
+        let next = focus + 1;
         $scope.initiateCarousel();
     }
 
@@ -294,7 +294,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     if($location.path() === "/parentlogin"){
         let focus = 0;
         let prev = focus - 1;
-    let next = focus + 1;
+        let next = focus + 1;
         $scope.parentMode = true;
         $scope.childMode = false;
         $scope.modeLogin = true;
@@ -304,7 +304,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     if($location.path() === "/parentregister"){
         let focus = 0;
         let prev = focus - 1;
-    let next = focus + 1;
+        let next = focus + 1;
         $scope.parentMode = true;
         $scope.childMode = false;
         $scope.modeLogin = false;
