@@ -9,10 +9,12 @@
     text-align: center;
     padding: 1vw;
 
+
     h4 {
         font-family: "Amatic SC";
         font-size: 32px !important;
         margin: 0;
+        font-weight: bold;
         margin-top: -3px;
         padding: 4px;
         padding-bottom: 0;
@@ -22,10 +24,11 @@
         margin: 0;
         margin-top: -1.4vw;
         padding: 0;
-        font-size: 15px;
-        letter-spacing: 1.3px;
-        color: #ef5350;
-        font-weight: 1.5;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        color: $pink-dark;
     }
 
     .row {
@@ -51,11 +54,12 @@
         border-radius: 5px;
         font-family: "Amatic SC";
         font-size: 12px;
-        font-weight: bold;
         letter-spacing: 2px;
 
         .active {
             margin-top: 4px;
+            background-color: $pink-dark !important;
+            font-weight: bold;
         }
 
         .waves-effect {
@@ -71,6 +75,8 @@
 
     .btn {
         margin: 1vw;
+        color: $blue-dark;
+        color: white;
     }
 
     .btnRow {

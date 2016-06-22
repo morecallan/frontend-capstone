@@ -661,6 +661,7 @@ body {
     font-family: "Amatic SC";
     font-size: 32px !important;
     margin: 0;
+    font-weight: bold;
     margin-top: -3px;
     padding: 4px;
     padding-bottom: 0; }
@@ -668,10 +669,11 @@ body {
     margin: 0;
     margin-top: -1.4vw;
     padding: 0;
-    font-size: 15px;
-    letter-spacing: 1.3px;
-    color: #ef5350;
-    font-weight: 1.5; }
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: #FF005D; }
   .parentLoginContainer .row {
     height: 60%;
     padding: 0;
@@ -689,10 +691,11 @@ body {
     border-radius: 5px;
     font-family: "Amatic SC";
     font-size: 12px;
-    font-weight: bold;
     letter-spacing: 2px; }
     .parentLoginContainer .pagination .active {
-      margin-top: 4px; }
+      margin-top: 4px;
+      background-color: #FF005D !important;
+      font-weight: bold; }
     .parentLoginContainer .pagination .waves-effect {
       background-color: rgba(0, 0, 0, 0.09);
       margin-bottom: 4px; }
@@ -700,7 +703,9 @@ body {
     padding: 0;
     margin: 1vw 5vw; }
   .parentLoginContainer .btn {
-    margin: 1vw; }
+    margin: 1vw;
+    color: #017575;
+    color: white; }
   .parentLoginContainer .btnRow {
     width: 80%;
     margin: 0 10%; }
