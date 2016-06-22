@@ -42,6 +42,7 @@ body {
   z-index: 1; }
 
 #mainContainer {
+  background-color: #00BEBE;
   position: absolute;
   left: 0vw;
   top: 0vw;
@@ -624,8 +625,19 @@ body {
       object-fit: contain; }
     .navBar .fixed-action-btn .btn-floating {
       width: 4.5em !important;
-      height: 4.5em !important;
-      background-color: #EE6E73; }
+      height: 4.5em !important; }
+    .navBar .fixed-action-btn .btn-floating {
+      background-color: #FF6D78 !important; }
+    .navBar .fixed-action-btn .sub-btn {
+      padding-top: 3px; }
+    .navBar .fixed-action-btn a.orange-mid {
+      background-color: #E2681D !important; }
+    .navBar .fixed-action-btn a.blue-dark {
+      background-color: #017575 !important; }
+    .navBar .fixed-action-btn a.yellow-mid {
+      background-color: #EEA30C !important; }
+    .navBar .fixed-action-btn a.purple-dark {
+      background-color: #C006C1 !important; }
     .navBar .fixed-action-btn ul {
       top: 6em;
       width: 5em;

@@ -30,8 +30,32 @@
         .btn-floating {
             width: 4.5em !important;
             height: 4.5em !important;
-            background-color: #EE6E73;
         }
+
+        .btn-floating {
+            background-color: $pink-light !important;
+        }
+
+        .sub-btn {
+            padding-top: 3px;
+        }
+
+        a.orange-mid {
+            background-color: $orange-mid !important;
+        }
+
+        a.blue-dark {
+            background-color: $blue-dark !important;
+        }
+
+        a.yellow-mid {
+            background-color: $yellow-mid !important;
+        }
+        
+        a.purple-dark {
+            background-color: $purple-dark !important;
+        }
+
 
         ul {
             top: 6em;
