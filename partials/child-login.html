@@ -8,6 +8,19 @@
 <!-- -------------------------- AVATAR SELECT MODAL ------------------------- -->
   <div class="childUserSelectSlider">
     <div class="childUserList" ng-focus="true">
+
+    <!-- -------------------------- LESS THAN 4 USERS ------------------------- -->
+      <div class="card" ng-show="lessThanFourChildren"> 
+          <a class="btn-floating btn-large add-child-btn" ng-href="#/childregister">
+            <i class="large material-icons">add_circle</i>
+          </a>
+
+          <div class="card-content">
+            <h4>Add Child</h4>
+          </div>
+      </div>
+
+    <!-- -------------------------- POPULATES WITH ALL USERS TIED WITH PARENT ACCOUNT ------------------------- -->
       <div class="card child-login-card" ng-repeat="child in children">
         <a class="btn-floating top-right-btn red" ng-click="activateAreYouSureModal(child)" ng-show="deleteMode"><i class="large material-icons">delete_forever</i></a>
         <div ng-click="deleteMode||selectActiveChild(child)">
@@ -20,16 +33,7 @@
         </div>
       </div>
 
-      <!-- -------------------------- DELETE: ARE YOU SURE ------------------------- -->
-      <div class="card" ng-show="lessThanFourChildren"> 
-          <a class="btn-floating btn-large add-child-btn" ng-href="#/childregister">
-            <i class="large material-icons">add_circle</i>
-          </a>
-
-          <div class="card-content">
-            <h4>Add Child</h4>
-          </div>
-      </div>
+      
     </div>
   </div>
 </div>

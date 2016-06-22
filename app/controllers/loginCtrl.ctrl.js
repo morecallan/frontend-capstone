@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL, authFactory, addChildFactory) {
+app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, firebaseURL, authFactory, addChildFactory) {
 
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
@@ -146,7 +146,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         addChildFactory.returnAllChildrenForLoggedInParent(parent).then((childrenFromFirebase) => {
             $rootScope.children = childrenFromFirebase;    
             if (childrenFromFirebase.length > 0) {
-                $rootScope.children = childrenFromFirebase;    
+                $rootScope.children = childrenFromFirebase;
+                $scope.checkForChildrenLimit();    
             }
         });
     };
@@ -160,8 +161,10 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
     $scope.deleteSelectedChild = (child) => {
         addChildFactory.deleteOneChild(child.subuid).then((childrenFromFirebase) => {
             $scope.checkForChildren();
-            $scope.exitDeleteMode();
-            $scope.enterDeleteMode();
+            $timeout(() => {
+                $scope.exitDeleteMode();
+                $scope.enterDeleteMode();
+            }, 300);
         });
     };
 
@@ -193,11 +196,16 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, firebaseURL
         $scope.deleteButtonClicked = true;
     };
 
-    $scope.$watch(() => {
+    $scope.checkForChildrenLimit = () => {
         if ($rootScope.children.length >= 4) {
             $scope.lessThanFourChildren = false;
+        } else {
+            $scope.lessThanFourChildren = true;
         }
-    });
+    };
+
+    $scope.$watch($rootScope.children);
+    $scope.$watch($scope.lessThanFourChildren);
 
     /********************************************
     **        WHICH PARTIAL SHOULD I SHOW?     **

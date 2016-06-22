@@ -660,8 +660,8 @@ body {
   justify-content: center;
   overflow: hidden;
   position: relative;
-  left: 0em;
-  top: -1em;
+  left: -1.6em;
+  top: -1.15em;
   border-radius: 0px 0px 10px 10px;
   background-color: rgba(0, 0, 0, 0.6); }
   .songsContainer .btn {
@@ -734,6 +734,8 @@ body {
     margin-top: -7px;
     margin-bottom: 7px;
     padding: 0;
+    font-size: 15px;
+    font-weight: bold;
     text-align: center; }
 
 .songSelectContainer {
@@ -741,7 +743,8 @@ body {
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px 10px 0px 0px;
-  padding: 0px 25px; }
+  width: 100%;
+  padding: 0px 10px; }
   .songSelectContainer .achieved {
     color: #8bc34a;
     -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
