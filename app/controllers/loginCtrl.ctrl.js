@@ -43,7 +43,15 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, f
     $rootScope.selectedChild = {};
     $rootScope.selectedParent = authFactory.getUser();
 
+    /********************************************
+    **                 CAROUSEL                **
+    ********************************************/
 
+    $scope.images = {};
+
+    $scope.images.prev = {src: "./img/info/kidAtDentist.jpg", fact: "blah blah blah blah blah"}; 
+    $scope.images.next = {src: "./img/info/kidAtDentist3.jpg", fact: "bladh dlah bldah bladh blahd"};
+    $scope.images.focus = {src: "./img/info/kidAtDentist.jpg", fact: "blah blah blah blah blah"};
 
     /********************************************
     **               ERROR MODAL               **
