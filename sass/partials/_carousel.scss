@@ -94,14 +94,15 @@
     }
 
     .subfact {
+        text-align: center;
         display: inline-block;
         font-family: "Roboto";
         font-size: 14px;
         font-weight: normal;
-        line-height: 12px;
+        line-height: 13px;
         margin: 0;
-        position: relative;
-        top: -10px;
+        position: absolute;
+        top: 0;
         padding: 10px;
     }
   

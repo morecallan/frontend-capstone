@@ -50,11 +50,11 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     $scope.images = {};
 
     $scope.carouselImages = [
-        {src: "./img/info/brushes.jpg", fact: "blah blah blah blah blah"},
-        {src: "./img/info/kidAtDentist.jpg", fact: "2blah blah blah blah blah"},
-        {src: "./img/info/kidAtDentist2.jpg", fact: "3blah blah blah blah blah"},
-        {src: "./img/info/kidAtDentist3.jpg", fact: "4blah blah blah blah blah"},
-        {src: "./img/info/surpriseDentist.jpg", fact: "5blah blah blah blah blah"}
+        {src: "./img/info/brushes.jpg", fact: "Be sure your toothbrush has soft bristles."},
+        {src: "./img/info/kidAtDentist.jpg", fact: "It's also important to visit the dentist twice a year."},
+        {src: "./img/info/kidAtDentist2.jpg", fact: "The dentist can help you learn the best way to brush and floss."},
+        {src: "./img/info/kidAtDentist3.jpg", fact: "Candy is not what makes teeth decay; germs do."},
+        {src: "./img/info/surpriseDentist.jpg", fact: "Bacteria go crazy over the sugar on your teeth, like ants at a picnic."}
     ];
 
     let focus = 0;

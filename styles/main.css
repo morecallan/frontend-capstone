@@ -162,14 +162,15 @@ body {
     border-radius: 0px 5px 5px 0px;
     z-index: 2000; }
   .carouselContainer .subfact {
+    text-align: center;
     display: inline-block;
     font-family: "Roboto";
     font-size: 14px;
     font-weight: normal;
-    line-height: 12px;
+    line-height: 13px;
     margin: 0;
-    position: relative;
-    top: -10px;
+    position: absolute;
+    top: 0;
     padding: 10px; }
 
 .childErrorModal {
