@@ -63,16 +63,19 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
 
     $scope.animateCards = (cards) => {
         $scope.removeAnimationFromCards(); 
-        let carouselCards = document.getElementsByClassName("carouselCard");
+        let carouselCards = document.getElementsByClassName("carouselCard")[1];
+        carouselCards.classList.add("animated", "slideInRight");
+
         for (var i = 0; i < carouselCards.length; i++) {
-            carouselCards[i].classList.add("animated", "slideInRight");
+            carouselCards[i].classList.add("animated", "fadeIn");
         }
     };
 
     $scope.removeAnimationFromCards = (cards) => {
-        let carouselCards = document.getElementsByClassName("carouselCard");
+        let carouselCards = document.getElementsByClassName("carouselCard")[1];
+        carouselCards.classList.remove("animated", "slideInRight");
         for (var j = 0; j < carouselCards.length; j++) {
-            carouselCards[j].classList.remove("animated", "slideInRight");
+            carouselCards[j].classList.remove("animated", "fadeIn");
         }
     };
 
@@ -103,9 +106,10 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         $timeout(() => {
             $scope.moveCarouselAlong();
             $scope.animateCards();
+            $scope.removeAnimationFromCards();
         }, 100);
         $interval(() => {
-            $timeout(()=> {$scope.removeAnimationFromCards()}, 100);
+            $timeout(()=> {$scope.removeAnimationFromCards()}, 50);
             $scope.moveCarouselAlong();
             $scope.animateCards();
         }, 5000);
