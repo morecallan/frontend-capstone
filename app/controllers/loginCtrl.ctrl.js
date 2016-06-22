@@ -60,6 +60,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     let focus = 0;
     let prev = focus - 1;
     let next = focus + 1;
+    
 
     $scope.animateCards = (cards) => {
         $scope.removeAnimationFromCards(); 
@@ -80,8 +81,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     };
 
     $scope.moveCarouselAlong = () => {
-        let prev = focus - 1;
-        let next = focus + 1;
+        prev = focus - 1;
+        next = focus + 1;
         if (focus === 0) {
             prev = $scope.carouselImages.length - 1;
         }
@@ -103,6 +104,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     };
 
     $scope.initiateCarousel = () => {
+        $timeout(()=> {$scope.removeAnimationFromCards()}, 10);
         $timeout(() => {
             $scope.moveCarouselAlong();
             $scope.animateCards();
@@ -114,8 +116,6 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
             $scope.animateCards();
         }, 5000);
     };
-
-    $scope.initiateCarousel();
 
 
     /********************************************
@@ -283,26 +283,45 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     /********************************************
     **        WHICH PARTIAL SHOULD I SHOW?     **
     ********************************************/
+    if($location.path() === "/splash"){
+        let focus = 0;
+        let prev = focus - 1;
+    let next = focus + 1;
+        $scope.initiateCarousel();
+    }
+
 
     if($location.path() === "/parentlogin"){
+        let focus = 0;
+        let prev = focus - 1;
+    let next = focus + 1;
         $scope.parentMode = true;
         $scope.childMode = false;
         $scope.modeLogin = true;
+        $scope.initiateCarousel();
     }
 
     if($location.path() === "/parentregister"){
+        let focus = 0;
+        let prev = focus - 1;
+    let next = focus + 1;
         $scope.parentMode = true;
         $scope.childMode = false;
         $scope.modeLogin = false;
+        $scope.initiateCarousel();
     }
 
      if($location.path() === "/childlogin"){
+        let focus = 0;
+        let prev = focus - 1;
+    let next = focus + 1;
         $rootScope.childIsAuth = false;
         $scope.parentMode = false;
         $scope.childMode = true;
         $scope.modeLogin = true;
         $rootScope.selectedParent = authFactory.getUser();
         $scope.checkForChildren();
+        $scope.initiateCarousel();
     }
 
     if($location.path() === "/childregister"){
