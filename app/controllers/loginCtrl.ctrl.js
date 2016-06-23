@@ -57,32 +57,47 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         {src: "./img/info/surpriseDentist.jpg", fact: "Bacteria go crazy over the sugar on your teeth, like ants at a picnic."}
     ];
 
-    let focus = 0;
-    let prev = focus - 1;
-    let next = focus + 1;
+
     
-
-    $scope.animateCards = (cards) => {
-        $scope.removeAnimationFromCards(); 
-        let carouselCards = document.getElementsByClassName("carouselCard")[1];
-        carouselCards.classList.add("animated", "slideInRight");
-
+    $scope.animateCards = () => {
+        let carouselCards = document.getElementsByClassName("carouselCard");
+        carouselCards[1].classList.add("animated", "slideInRight");
         for (var i = 0; i < carouselCards.length; i++) {
             carouselCards[i].classList.add("animated", "fadeIn");
         }
     };
 
-    $scope.removeAnimationFromCards = (cards) => {
-        let carouselCards = document.getElementsByClassName("carouselCard")[1];
-        carouselCards.classList.remove("animated", "slideInRight");
+    $scope.removeAnimationFromCards = () => {
+        let carouselCards = document.getElementsByClassName("carouselCard");
+        carouselCards[1].classList.remove("animated", "slideInRight");
         for (var j = 0; j < carouselCards.length; j++) {
-            carouselCards[j].classList.remove("animated", "fadeIn");
+            carouselCards[j].classList.remove("animated",   "fadeIn");
         }
+    };
+
+    var focus = 0;
+    var prev = $scope.carouselImages.length - 1;
+    var next = focus + 1;
+    // $rootScope.carouselInterval = null;
+
+    $rootScope.initiateCarousel = () => {
+        $timeout(() => {
+            $scope.moveCarouselAlong();
+            $scope.animateCards();
+            $timeout(()=>{$scope.removeAnimationFromCards();}, 650);
+        }, 100);
+        $rootScope.carouselInterval = $interval(() => {
+            $scope.moveCarouselAlong();
+            $scope.animateCards();
+            $timeout(()=>{$scope.removeAnimationFromCards();}, 650);
+        }, 4800);
+        
     };
 
     $scope.moveCarouselAlong = () => {
         prev = focus - 1;
         next = focus + 1;
+    
         if (focus === 0) {
             prev = $scope.carouselImages.length - 1;
         }
@@ -103,19 +118,14 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         }
     };
 
-    $scope.initiateCarousel = () => {
-        $timeout(()=> {$scope.removeAnimationFromCards()}, 10);
-        $timeout(() => {
-            $scope.moveCarouselAlong();
-            $scope.animateCards();
-            $scope.removeAnimationFromCards();
-        }, 100);
-        $interval(() => {
-            $timeout(()=> {$scope.removeAnimationFromCards()}, 50);
-            $scope.moveCarouselAlong();
-            $scope.animateCards();
-        }, 5000);
-    };
+        $scope.stopInterval = function () {
+            if (angular.isDefined($rootScope.carouselInterval)) {
+                console.log("maybe stoppin" );
+                $interval.cancel($rootScope.carouselInterval);
+            }
+        };
+
+
 
 
     /********************************************
@@ -284,47 +294,39 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     **        WHICH PARTIAL SHOULD I SHOW?     **
     ********************************************/
     if($location.path() === "/splash"){
-        let focus = 0;
-        let prev = focus - 1;
-        let next = focus + 1;
-        $scope.initiateCarousel();
+        $rootScope.initiateCarousel();
     }
 
 
     if($location.path() === "/parentlogin"){
-        let focus = 0;
-        let prev = focus - 1;
-        let next = focus + 1;
         $scope.parentMode = true;
         $scope.childMode = false;
         $scope.modeLogin = true;
-        $scope.initiateCarousel();
+        $scope.stopInterval();
+        $rootScope.initiateCarousel();
     }
 
     if($location.path() === "/parentregister"){
-        let focus = 0;
-        let prev = focus - 1;
-        let next = focus + 1;
         $scope.parentMode = true;
         $scope.childMode = false;
         $scope.modeLogin = false;
-        $scope.initiateCarousel();
+        $scope.stopInterval();
+        $rootScope.initiateCarousel();
     }
 
      if($location.path() === "/childlogin"){
-        let focus = 0;
-        let prev = focus - 1;
-    let next = focus + 1;
         $rootScope.childIsAuth = false;
         $scope.parentMode = false;
         $scope.childMode = true;
         $scope.modeLogin = true;
         $rootScope.selectedParent = authFactory.getUser();
         $scope.checkForChildren();
-        $scope.initiateCarousel();
+        $scope.stopInterval();
+        $rootScope.initiateCarousel();
     }
 
     if($location.path() === "/childregister"){
+        $scope.stopInterval();
         $scope.parentMode = false;
         $scope.childMode = true;
         $scope.modeLogin = false;

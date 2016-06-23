@@ -70,7 +70,7 @@ app.config(function($routeProvider) {
 });
 
 
-app.run(($location) => {
+app.run(($location, $rootScope) => {
     let brushingDbRef = new Firebase("https://tooth-brushing.firebaseio.com/");
     brushingDbRef.unauth();
 
