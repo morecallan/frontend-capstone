@@ -3,6 +3,8 @@
 
 app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routeParams, $timeout, firebaseURL, authFactory, addChildFactory, brushingDataFactory) {
 
+
+
     /********************************************
     **               SELECTED USER             **
     ********************************************/

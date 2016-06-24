@@ -1,5 +1,5 @@
 {
-  "predef": [ "document", "console", "angular", "Firebase", "$http", "$rootScope", "Materialize" ],
+  "predef": [ "document", "console", "angular", "Firebase", "$http", "$rootScope", "Materialize", "jQuery" ],
   "esversion": 6,
   "globalstrict": true,
   "curly": true,
@@ -9,6 +9,7 @@
   "globals": { 
     "$": true,
     "app": true,
-    "soundManager": true
+    "soundManager": true,
+    "jQuery": true
   }
 }

@@ -3,6 +3,8 @@
 
 app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $interval, firebaseURL, authFactory, addChildFactory) {
 
+
+
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
     ********************************************/
@@ -338,6 +340,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     }
 
     if($location.path() === "/logout"){
+        $scope.stopInterval();
+        $rootScope.initiateCarousel();
         ref.unauth();
         $rootScope.isActive = false;
     }

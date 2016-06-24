@@ -3,6 +3,8 @@
 
 app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $routeParams, $compile, uiCalendarConfig, firebaseURL, authFactory, addChildFactory, brushingDataFactory) {
 
+
+
     /********************************************
     **               SELECTED USER             **
     ********************************************/
