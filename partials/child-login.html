@@ -8,7 +8,7 @@
 
 <!-- -------------------------- AVATAR SELECT MODAL ------------------------- -->
   <div class="childUserSelectSlider">
-    <div class="childUserList" ng-focus="true">
+    <div class="childUserList">
 
     
 
@@ -42,11 +42,14 @@
 </div>
 
 <!-- -------------------------- DELETE: ARE YOU SURE ------------------------- -->
-<div class="errormodal" ng-keypress="closeModal()" ng-click="closeModal()" id="areYouSureYouWantToDelete" autofocus="true" ng-show="deleteButtonClicked" ng-if="deleteButtonClicked" ng-focus="deleteButtonClicked">
-  <h4>Are you sure</h4>
-  <h5>you want to delete {{childToDelete.firstName}} from your account?</h5>
-  <div class="row buttonRow">
-    <button class="btn col s5 offset-s1" ng-click="closeModal()">Nope. Just kidding.</button>
-    <button class="btn red col s5" ng-click="deleteSelectedChild(childToDelete, childCardToAnimate)">Yes. Delete account.</button>
+<div class="errormodal lighten-2" ng-click="closeModal()" id="areYouSureYouWantToDelete" ng-show="deleteButtonClicked">
+  <div class="errormodal-photo-container"><img ng-src="img/avatar/av16.png" class="animate-show errormodal-photo" fade-in></div>
+  <div class="mockmodal-content-with-btn">
+    <h4>Are you sure</h4>
+    <h5>you want to delete {{childToDelete.firstName}} from your account?</h5>
+    <div class="row buttonRow">
+      <button class="btn col s5 offset-s1" ng-click="closeModal()">Nope.<p class="btn-subtext"> Just kidding.</p></button>
+      <button class="btn red col s5" ng-click="deleteSelectedChild(childToDelete, childCardToAnimate)">Yes. <p class="btn-subtext"> Delete Account.</p></button>
+    </div>
   </div>
 </div>

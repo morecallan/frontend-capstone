@@ -97,7 +97,7 @@ app.animation('.slide', [function() {
     },
 
     leave: function(element, doneFn) {
-      $('.fixed-action-btn').closeFAB();(element).fadeOut(100, doneFn);
+      jQuery(element).fadeOut(100, doneFn);
     }
   };
 }]);
