@@ -37,7 +37,7 @@
 <!-- -------------------------     ERROR MODAL     ------------------------- -->
 <div class="errormodal" ng-keypress="closeModal()" ng-click="closeModal()" id="errorMessageBox" autofocus="true" ng-show="childRegError" ng-if="childRegError" ng-focus="childRegError">
   <a class="waves-effect waves-green btn-floating teal"><i class="material-icons left">close</i></a>
-  <div class="errormodal-photo-container"><img class="errormodal-photo" src="img/avatar/av11.png"></div>
+  <div class="errormodal-photo-container"><img ng-src="img/avatar/av11.png" class="animate-show errormodal-photo" fade-in></div>
   <div class="mockmodal-content">
     <h4>Oops! Houston we have a problem.</h4>
     <p>{{errorMessage}}</p>
@@ -50,7 +50,7 @@
   <div class="avatarSelectModalSlider">
     <ul class="avatarList">
       <li ng-repeat="avatar in avatars">
-        <img src="./{{avatar.img}}" class="selectionAvatars z-depth-2" ng-click="assignAvatar(avatar.img)"> 
+        <img ng-src="./{{avatar.img}}" class="animate-show selectionAvatars z-depth-2" fade-in ng-click="assignAvatar(avatar.img)"> 
       </li>
     </ul>   
   </div>

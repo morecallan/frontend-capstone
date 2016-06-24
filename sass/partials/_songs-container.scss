@@ -1,3 +1,6 @@
+@import "../components/colors";
+
+
 .songsContainer {
     width: 456px;
     display: flex;
@@ -6,8 +9,8 @@
     justify-content: center;
     overflow: hidden;
     position: relative;
-    left: 0em;
-    top: -1em;
+    left: -1.6em;
+    top: -1.15em;
     border-radius: 0px 0px 10px 10px;
     background-color: rgba(0, 0, 0, .6);
 

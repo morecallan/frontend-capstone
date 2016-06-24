@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col s6 offset-s1">
       <h4 >"I need an adult!"</h4>
-      <p>Parent Login</p>
+      <p>Parent {{parentLoginTitle}}</p>
     </div>
       
-    <ul class="pagination col s4 offset-s1">
+    <ul class="pagination col s5">
       <li class="waves-effect" ng-hide="!modeLogin" ng-href="/#/parentregister"><a ng-href="/#/parentregister">Register</a></li>
       <li class="active" ng-hide="modeLogin" ng-href="/#/parentregister"><a ng-href="/#/parentregister">Register</a></li>
       <li class="waves-effect" ng-hide="modeLogin" ng-href="/#/parentlogin"><a ng-href="/#/parentlogin">Login</a></li>
@@ -68,11 +68,12 @@
 
 
 <!-- -------------------------     ERROR MODAL     ------------------------- -->
-<div class="errormodal" ng-keypress="closeModal()" ng-click="closeModal()" id="errorMessageBox" autofocus="true" ng-show="userError" ng-if="userError" ng-focus="userError">
+<div class="errormodal lighten-2" ng-click="closeModal()" autofocus="true" ng-show="userError">
   <a class="waves-effect waves-green btn-floating teal"><i class="material-icons left">close</i></a>
-  <div class="errormodal-photo-container"><img class="errormodal-photo" src="img/avatar/av11.png"></div>
+  <div class="errormodal-photo-container"><img ng-src="img/avatar/av16.png" class="animate-show errormodal-photo" fade-in></div>
   <div class="mockmodal-content">
-    <h4>Oops! Houston we have a problem.</h4>
+    <h4><i class="medium-icon material-icons">error_outline</i>Oops!</h4>
+    <h4>Houston we have a problem.</h4>
     <p>{{errorMessage}}</p>
   </div>   
 </div>

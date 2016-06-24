@@ -42,6 +42,7 @@ body {
   z-index: 1; }
 
 #mainContainer {
+  background-color: #00BEBE;
   position: absolute;
   left: 0vw;
   top: 0vw;
@@ -90,36 +91,88 @@ body {
   box-sizing: border-box; }
 
 .carouselContainer {
-  margin: 20px 25px;
-  background-color: rgba(0, 0, 0, 0.1);
-  height: 100%;
-  text-align: center;
+  margin: 10px 25px -10px;
   padding: 0;
-  font-family: "Amatic SC"; }
+  font-family: "Amatic SC";
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+  height: 250px;
+  max-height: 250px;
+  position: relative;
+  perspective: 500px;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%; }
   .carouselContainer .row {
     margin: 0;
-    padding: 2% 0; }
+    padding: 1% 0; }
+  .carouselContainer .stick {
+    position: relative;
+    height: 250px;
+    width: 400px; }
   .carouselContainer .card {
-    margin: 0 5%;
     padding: 0;
-    max-height: 90%;
-    max-width: 90%; }
+    width: 380px !important;
+    min-width: 380px !important;
+    display: inline-block !important;
+    position: absolute;
+    left: 37px;
+    top: -8px;
+    z-index: 1000;
+    border-radius: 5px; }
+    .carouselContainer .card .card-image {
+      border-radius: 5px;
+      overflow: hidden; }
+  .carouselContainer .smallCard {
+    height: 175px !important;
+    min-height: 175px !important;
+    width: 300px !important;
+    display: inline-block !important;
+    background-color: transparent;
+    opacity: 0.5 !important;
+    position: absolute !important;
+    top: 30px;
+    z-index: 500;
+    border-radius: 5px; }
+    .carouselContainer .smallCard .card-image {
+      width: 300px !important;
+      height: 175px !important;
+      min-height: 175px !important;
+      overflow: none;
+      border-radius: 5px; }
+    .carouselContainer .smallCard img {
+      max-height: 100%;
+      min-height: 100%;
+      height: 100%; }
+  .carouselContainer .smallCardLeft {
+    left: 0px; }
+  .carouselContainer .smallCardRight {
+    left: 155px; }
   .carouselContainer .card-title {
     color: black !important;
     font-weight: bold;
     line-height: 12px;
     display: inline;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.9);
     margin: 0;
-    padding: 15px 10px !important; }
+    padding: 15px 10px !important;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    border-radius: 0px 5px 5px 0px;
+    z-index: 2000; }
   .carouselContainer .subfact {
-    display: inline;
+    text-align: center;
+    display: inline-block;
     font-family: "Roboto";
     font-size: 14px;
     font-weight: normal;
-    line-height: 12px;
+    line-height: 13px;
     margin: 0;
-    padding: 5px; }
+    position: absolute;
+    top: 0;
+    padding: 10px; }
 
 .childErrorModal {
   box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
@@ -234,11 +287,23 @@ body {
     font-family: "Cabin Sketch";
     font-size: 25px;
     display: inline-block; }
-  .childLoginContainer a {
+  .childLoginContainer a.top-right {
+    position: absolute;
+    top: 5px;
+    right: 5px; }
+  .childLoginContainer a:nth-of-type(1) {
     display: inline-block;
     margin: 0;
-    margin-left: 30px;
-    margin-top: -10px; }
+    position: relative; }
+  .childLoginContainer a:nth-of-type(2) {
+    display: inline-block;
+    margin: 0;
+    position: relative; }
+  .childLoginContainer .top-right-btn {
+    position: absolute !important;
+    top: 5px;
+    right: 5px;
+    color: red; }
   .childLoginContainer .childUserSelectSlider {
     margin: 0;
     overflow: auto;
@@ -313,13 +378,13 @@ body {
     border-radius: 20px; }
 
 .errormodal {
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.5), 0 12.5px px 0 rgba(0, 0, 0, 0.6);
   z-index: 1000;
   position: absolute;
   top: 40%;
   left: 7%;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: black;
+  background-color: #EEB436;
+  color: #017575;
   padding: 2px;
   height: 155px;
   width: 86%;
@@ -335,23 +400,41 @@ body {
     display: inline-block;
     margin: 5%;
     margin-top: 8%;
-    margin-left: -3vw;
-    width: 70%; }
-  .errormodal h4:nth-of-type(1) {
+    margin-left: -1em;
+    width: 60%;
+    font-size: 18px;
+    line-height: 15px; }
+  .errormodal h4 {
     font-family: 'Amatic SC', cursive;
     font-size: 31px;
     margin-bottom: -10px;
     padding: 0; }
+  .errormodal h4:nth-of-type(1) {
+    font-size: 36px;
+    margin-bottom: -25px;
+    margin-top: -25px;
+    padding: 0;
+    font-weight: bold; }
+  .errormodal h4:nth-of-type(2) {
+    font-family: 'Amatic SC', cursive;
+    font-size: 31px;
+    margin-bottom: -15px;
+    padding: 0;
+    color: white; }
+  .errormodal p {
+    color: #DC2D00; }
   .errormodal .errormodal-photo-container {
     max-width: 100px;
     min-width: 100px;
-    margin: 8% 2% 10%;
+    margin: 2% 2% 10%;
     float: left;
     overflow: hidden;
-    border-radius: 2px;
-    height: 90px; }
+    border-radius: 30px;
+    height: 130px;
+    background-color: white; }
   .errormodal .errormodal-photo {
-    width: 80px; }
+    width: 70px;
+    background-color: white; }
   .errormodal h5 {
     font-size: 16px !important;
     margin-top: 8px; }
@@ -572,31 +655,47 @@ body {
       object-fit: contain; }
     .navBar .fixed-action-btn .btn-floating {
       width: 4.5em !important;
-      height: 4.5em !important;
-      background-color: #EE6E73; }
+      height: 4.5em !important; }
+    .navBar .fixed-action-btn .btn-floating {
+      background-color: #FF6D78 !important; }
+    .navBar .fixed-action-btn .sub-btn {
+      padding-top: 3px; }
+    .navBar .fixed-action-btn a.orange-mid {
+      background-color: #E2681D !important; }
+    .navBar .fixed-action-btn a.blue-dark {
+      background-color: #017575 !important; }
+    .navBar .fixed-action-btn a.yellow-mid {
+      background-color: #EEA30C !important; }
+    .navBar .fixed-action-btn a.purple-dark {
+      background-color: #C006C1 !important; }
     .navBar .fixed-action-btn ul {
       top: 6em;
       width: 5em;
       padding: 0;
       margin: 0; }
+  .navBar .logo-container-main {
+    width: 400px;
+    height: 75px;
+    overflow: hidden;
+    margin-top: -5px;
+    position: relative;
+    left: -25px; }
   .navBar .mainHeader {
-    margin: 0;
-    padding: 1%;
-    font-family: 'Londrina Shadow', cursive;
-    font-size: 4em;
-    color: #4e342e; }
+    width: 380px; }
 
 .parentLoginContainer {
   margin: 20px 25px;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
   height: 100%;
   text-align: center;
-  padding: 1vw; }
+  padding: 1vw;
+  border-radius: 5px; }
   .parentLoginContainer h4 {
     font-family: "Amatic SC";
     font-size: 32px !important;
     margin: 0;
+    font-weight: bold;
     margin-top: -3px;
     padding: 4px;
     padding-bottom: 0; }
@@ -604,10 +703,11 @@ body {
     margin: 0;
     margin-top: -1.4vw;
     padding: 0;
-    font-size: 15px;
-    letter-spacing: 1.3px;
-    color: #ef5350;
-    font-weight: 1.5; }
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: #FF005D; }
   .parentLoginContainer .row {
     height: 60%;
     padding: 0;
@@ -618,25 +718,38 @@ body {
   .parentLoginContainer form .row:nth-of-type(1) {
     margin-top: 20px; }
   .parentLoginContainer .pagination {
-    margin: 5px auto;
-    padding: 1px;
-    width: 34%;
+    margin: 5px 5px 5px 15px;
+    padding: 4px 1px;
+    height: 40px;
+    width: 36% !important;
     background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: 8px !important;
     font-family: "Amatic SC";
-    font-size: 12px;
+    letter-spacing: 2px;
     font-weight: bold;
-    letter-spacing: 2px; }
-    .parentLoginContainer .pagination .active {
-      margin-top: 4px; }
-    .parentLoginContainer .pagination .waves-effect {
-      background-color: rgba(0, 0, 0, 0.09);
-      margin-bottom: 4px; }
+    position: relative; }
+    .parentLoginContainer .pagination li {
+      font-size: 22px !important;
+      position: absolute;
+      top: 5px;
+      padding: 1px 9px;
+      max-height: 30px;
+      background-color: rgba(0, 0, 0, 0.14);
+      width: 75px; }
+    .parentLoginContainer .pagination li.active {
+      background-color: #FF005D !important;
+      font-weight: bold; }
+    .parentLoginContainer .pagination li:nth-of-type(1) {
+      left: 5px; }
+    .parentLoginContainer .pagination li:nth-of-type(2).active {
+      left: 5px; }
   .parentLoginContainer .input-field {
     padding: 0;
     margin: 1vw 5vw; }
   .parentLoginContainer .btn {
-    margin: 1vw; }
+    margin: 1vw;
+    color: #017575;
+    color: white; }
   .parentLoginContainer .btnRow {
     width: 80%;
     margin: 0 10%; }
@@ -660,8 +773,8 @@ body {
   justify-content: center;
   overflow: hidden;
   position: relative;
-  left: 0em;
-  top: -1em;
+  left: -1.6em;
+  top: -1.15em;
   border-radius: 0px 0px 10px 10px;
   background-color: rgba(0, 0, 0, 0.6); }
   .songsContainer .btn {
@@ -700,46 +813,51 @@ body {
   z-index: 1;
   padding: 0; }
 
-.songSelectTitle .imgContainer {
-  width: 10% !important;
-  max-width: 10% !important;
-  overflow: none;
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  z-index: 100; }
-
-.songSelectTitle img {
-  -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
-  filter: drop-shadow(0 10px 0px white);
-  margin: auto;
-  vertical-align: middle;
-  display: inline-block;
-  min-width: 75%;
-  min-height: 75%;
-  max-width: 100%;
-  max-height: 100%;
-  object-position: 50% 50%;
-  object-fit: cover; }
-
-.songSelectTitle h4 {
-  font-family: "Cabin Sketch";
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  margin: 0 10%;
-  text-align: center; }
-
-.songSelectTitle p {
-  margin: 0;
-  margin-top: -7px;
-  margin-bottom: 7px;
-  padding: 0;
-  text-align: center; }
+.songSelectTitle {
+  opacity: 1; }
+  .songSelectTitle .imgContainer {
+    width: 10% !important;
+    max-width: 10% !important;
+    overflow: none;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 100; }
+  .songSelectTitle img {
+    -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
+    filter: drop-shadow(0 10px 0px white);
+    margin: auto;
+    vertical-align: middle;
+    display: inline-block;
+    min-width: 75%;
+    min-height: 75%;
+    max-width: 100%;
+    max-height: 100%;
+    object-position: 50% 50%;
+    object-fit: cover; }
+  .songSelectTitle h4 {
+    font-family: "Cabin Sketch";
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 10%;
+    text-align: center; }
+  .songSelectTitle p {
+    margin: 0;
+    margin-top: -7px;
+    margin-bottom: 7px;
+    padding: 0;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center; }
 
 .songSelectContainer {
+  opacity: 1;
+  z-index: 1000;
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 10px 10px 0px 0px; }
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  padding: 0px 10px; }
   .songSelectContainer .achieved {
     color: #8bc34a;
     -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);

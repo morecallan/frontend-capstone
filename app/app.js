@@ -7,8 +7,10 @@ var app = angular.module("ToothBrushingApp", ["ngRoute", "ui.calendar", "angular
 let isAuth = (authFactory) => new Promise((resolve, reject) => {
     if (authFactory.isAuthenticated()) {
         resolve();
+        return true;    
     } else {
-        reject();    
+        reject();
+        return false;    
     }
 });
 
@@ -19,7 +21,6 @@ let isChildAuth = ($rootScope) => {
         return true;    
     }
 };
-
 
 
 app.config(function($routeProvider) {
@@ -48,7 +49,7 @@ app.config(function($routeProvider) {
         })
         .when("/childlanding/:subuid", {
             templateUrl: "partials/child-landing.html",
-            controller:  "childAcctCtrl",
+            controller:  "brushingCtrl",
             resolve: {isAuth, isChildAuth}
         })
         .when("/brushing/:subuid",{
@@ -69,7 +70,7 @@ app.config(function($routeProvider) {
 });
 
 
-app.run(($location) => {
+app.run(($location, $rootScope) => {
     let brushingDbRef = new Firebase("https://tooth-brushing.firebaseio.com/");
     brushingDbRef.unauth();
 
@@ -79,3 +80,24 @@ app.run(($location) => {
         }
     });
 });
+
+app.animation('.slide', [function() {
+  return {
+    // make note that other events (like addClass/removeClass)
+    // have different function input parameters
+    enter: function(element, doneFn) {
+      jQuery(element).fadeIn(100, doneFn);
+
+      // remember to call doneFn so that angular
+      // knows that the animation has concluded
+    },
+
+    move: function(element, doneFn) {
+      jQuery(element).fadeIn(100, doneFn);
+    },
+
+    leave: function(element, doneFn) {
+      jQuery(element).fadeOut(100, doneFn);
+    }
+  }
+}]);
