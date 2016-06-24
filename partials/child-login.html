@@ -13,7 +13,7 @@
     
 
     <!-- -------------------------- POPULATES WITH ALL USERS TIED WITH PARENT ACCOUNT ------------------------- -->
-      <div class="card child-login-card angular-animate slide" ng-repeat="child in children">
+      <div class="card child-login-card angular-animate slide" ng-repeat="child in children" myRepeatDirective>
         <a class="btn-floating top-right-btn red" ng-click="activateAreYouSureModal(child, $index)" ng-show="deleteMode"><i class="large material-icons">delete_forever</i></a>
         <div ng-click="deleteMode||selectActiveChild(child)">
           <div class="card-image valign-wrapper">
@@ -27,7 +27,7 @@
 
 
       <!-- -------------------------- LESS THAN 4 USERS ------------------------- -->
-      <div class="card" ng-show="lessThanFourChildren"> 
+      <div class="card angular-animate slide" ng-show="lessThanFourChildren" > 
           <a class="btn-floating btn-large add-child-btn" ng-href="#/childregister">
             <i class="large material-icons">add_circle</i>
           </a>

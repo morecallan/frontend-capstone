@@ -296,6 +296,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     **        WHICH PARTIAL SHOULD I SHOW?     **
     ********************************************/
     if($location.path() === "/splash"){
+        $scope.stopInterval();
         $rootScope.initiateCarousel();
     }
 
