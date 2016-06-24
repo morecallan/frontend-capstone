@@ -154,7 +154,7 @@ body {
     line-height: 12px;
     display: inline;
     width: 95%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     margin: 0;
     padding: 15px 10px !important;
     position: absolute;
@@ -366,13 +366,13 @@ body {
     border-radius: 20px; }
 
 .errormodal {
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.5), 0 12.5px px 0 rgba(0, 0, 0, 0.6);
   z-index: 1000;
   position: absolute;
   top: 40%;
   left: 7%;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: black;
+  background-color: #EEB436;
+  color: #017575;
   padding: 2px;
   height: 155px;
   width: 86%;
@@ -388,23 +388,41 @@ body {
     display: inline-block;
     margin: 5%;
     margin-top: 8%;
-    margin-left: -3vw;
-    width: 70%; }
-  .errormodal h4:nth-of-type(1) {
+    margin-left: -1em;
+    width: 60%;
+    font-size: 18px;
+    line-height: 15px; }
+  .errormodal h4 {
     font-family: 'Amatic SC', cursive;
     font-size: 31px;
     margin-bottom: -10px;
     padding: 0; }
+  .errormodal h4:nth-of-type(1) {
+    font-size: 36px;
+    margin-bottom: -25px;
+    margin-top: -25px;
+    padding: 0;
+    font-weight: bold; }
+  .errormodal h4:nth-of-type(2) {
+    font-family: 'Amatic SC', cursive;
+    font-size: 31px;
+    margin-bottom: -15px;
+    padding: 0;
+    color: white; }
+  .errormodal p {
+    color: #DC2D00; }
   .errormodal .errormodal-photo-container {
     max-width: 100px;
     min-width: 100px;
-    margin: 8% 2% 10%;
+    margin: 2% 2% 10%;
     float: left;
     overflow: hidden;
-    border-radius: 2px;
-    height: 90px; }
+    border-radius: 30px;
+    height: 130px;
+    background-color: white; }
   .errormodal .errormodal-photo {
-    width: 80px; }
+    width: 70px;
+    background-color: white; }
   .errormodal h5 {
     font-size: 16px !important;
     margin-top: 8px; }
@@ -653,10 +671,11 @@ body {
 .parentLoginContainer {
   margin: 20px 25px;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
   height: 100%;
   text-align: center;
-  padding: 1vw; }
+  padding: 1vw;
+  border-radius: 5px; }
   .parentLoginContainer h4 {
     font-family: "Amatic SC";
     font-size: 32px !important;
@@ -684,21 +703,31 @@ body {
   .parentLoginContainer form .row:nth-of-type(1) {
     margin-top: 20px; }
   .parentLoginContainer .pagination {
-    margin: 5px auto;
-    padding: 1px;
-    width: 34%;
+    margin: 5px 5px 5px 15px;
+    padding: 4px 1px;
+    height: 40px;
+    width: 36% !important;
     background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: 8px !important;
     font-family: "Amatic SC";
-    font-size: 12px;
-    letter-spacing: 2px; }
-    .parentLoginContainer .pagination .active {
-      margin-top: 4px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    position: relative; }
+    .parentLoginContainer .pagination li {
+      font-size: 22px !important;
+      position: absolute;
+      top: 5px;
+      padding: 1px 9px;
+      max-height: 30px;
+      background-color: rgba(0, 0, 0, 0.14);
+      width: 75px; }
+    .parentLoginContainer .pagination li.active {
       background-color: #FF005D !important;
       font-weight: bold; }
-    .parentLoginContainer .pagination .waves-effect {
-      background-color: rgba(0, 0, 0, 0.09);
-      margin-bottom: 4px; }
+    .parentLoginContainer .pagination li:nth-of-type(1) {
+      left: 5px; }
+    .parentLoginContainer .pagination li:nth-of-type(2).active {
+      left: 5px; }
   .parentLoginContainer .input-field {
     padding: 0;
     margin: 1vw 5vw; }

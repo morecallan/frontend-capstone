@@ -2,14 +2,14 @@
 
 
 .errormodal {
-    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.5), 0 12.5px px 0 rgba(0, 0, 0, 0.6);
     z-index: 1000;
 
     position: absolute;
     top: 40%;
     left: 7%;
-    background-color: rgba(255, 255, 255, .9);
-    color: black;
+    background-color: $yellow-light;
+    color: $blue-dark;
     padding: 2px;
     height: 155px;
     width: 86%;
@@ -28,30 +28,55 @@
         display: inline-block;
         margin: 5%;
         margin-top: 8%;
-        margin-left: -3vw;
-        width: 70%;
+        margin-left: -1em;
+        width: 60%;
+        font-size: 18px;
+        line-height: 15px;
     }
 
-    h4:nth-of-type(1){
+    h4 {
         font-family: 'Amatic SC', cursive; 
         font-size: 31px;
         margin-bottom: -10px;
         padding: 0;
     }
 
+    h4:nth-of-type(1){
+        font-size: 36px;
+        margin-bottom: -25px;
+        margin-top: -25px;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    h4:nth-of-type(2){
+        font-family: 'Amatic SC', cursive; 
+        font-size: 31px;
+        margin-bottom: -15px;
+        padding: 0;
+        color: white;
+    }
+
+    p {
+        color: $orange-dark;
+    }
+
     .errormodal-photo-container {
         max-width: 100px;
         min-width: 100px;
-        margin: 8% 2% 10%;
+        margin: 2% 2% 10%;
         float: left;
         overflow: hidden;
-        border-radius: 2px;
-        height: 90px;
+        border-radius: 30px;
+        height: 130px;
+        background-color: white;
 
     }
 
     .errormodal-photo {
-        width: 80px;
+        width: 70px;
+        background-color: white;
+
     }
 
     h5 {

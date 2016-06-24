@@ -4,10 +4,11 @@
 .parentLoginContainer {
     margin: 20px 25px;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, .95);
     height: 100%;
     text-align: center;
     padding: 1vw;
+    border-radius: 5px;
 
 
     h4 {
@@ -47,25 +48,41 @@
     }
 
     .pagination {
-        margin: 5px auto;
-        padding: 1px;
-        width: 34%;
+        margin: 5px 5px 5px 15px;
+        padding: 4px 1px;
+        height: 40px;
+        width: 36% !important;
         background-color: rgba(0, 0, 0, .1);
-        border-radius: 5px;
+        border-radius: 8px !important;
         font-family: "Amatic SC";
-        font-size: 12px;
         letter-spacing: 2px;
+        font-weight: bold;
+        position: relative; 
 
-        .active {
-            margin-top: 4px;
+        li {
+            font-size: 22px !important;
+            position: absolute;
+            top: 5px;
+            padding: 1px 9px;
+            max-height: 30px;
+            background-color: rgba(0, 0, 0, .14);
+            width: 75px;
+        }
+
+        li.active {
             background-color: $pink-dark !important;
             font-weight: bold;
         }
 
-        .waves-effect {
-            background-color: rgba(0, 0, 0, .09);
-            margin-bottom: 4px;
+        li:nth-of-type(1) {
+            left: 5px;
         }
+
+        li:nth-of-type(2).active {
+            left: 5px;
+        }
+
+        
     }
 
     .input-field {

@@ -11,6 +11,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     $scope.userError = false;
     $scope.childRegError = false;
 
+    $scope.parentLoginTitle = "Login";
     $scope.parentMode = true;
     $scope.childMode = false;
     $scope.modeLogin = true;
@@ -87,8 +88,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
             $timeout(()=>{$scope.removeAnimationFromCards();}, 650);
         }, 100);
         $rootScope.carouselInterval = $interval(() => {
-            $scope.moveCarouselAlong();
             $scope.animateCards();
+            $scope.moveCarouselAlong();
             $timeout(()=>{$scope.removeAnimationFromCards();}, 650);
         }, 4800);
         
@@ -120,7 +121,6 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
 
         $scope.stopInterval = function () {
             if (angular.isDefined($rootScope.carouselInterval)) {
-                console.log("maybe stoppin" );
                 $interval.cancel($rootScope.carouselInterval);
             }
         };
@@ -300,6 +300,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
 
     if($location.path() === "/parentlogin"){
         $scope.parentMode = true;
+        $scope.parentLoginTitle = "Login";
         $scope.childMode = false;
         $scope.modeLogin = true;
         $scope.stopInterval();
@@ -308,6 +309,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
 
     if($location.path() === "/parentregister"){
         $scope.parentMode = true;
+        $scope.parentLoginTitle = "Register";
         $scope.childMode = false;
         $scope.modeLogin = false;
         $scope.stopInterval();
