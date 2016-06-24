@@ -13,11 +13,29 @@
         display: inline-block;
     }
 
-    a {
+    a.top-right {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+    a:nth-of-type(1) {
         display: inline-block;
         margin: 0;
-        margin-left: 30px;
-        margin-top: -10px;
+        position: relative;
+    }
+
+    a:nth-of-type(2) {
+        display: inline-block;
+        margin: 0;
+        position: relative;
+    }
+
+    .top-right-btn {
+        position: absolute !important;
+        top: 5px;
+        right: 5px;
+        color: red;
     }
 
     .childUserSelectSlider {

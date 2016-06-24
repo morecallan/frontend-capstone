@@ -38,7 +38,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         subuid: ""
     };
 
-    $rootScope.children = [];
+    $scope.children = [];
     $scope.lessThanFourChildren = true;
 
     $rootScope.selectedChild = {};
@@ -227,10 +227,10 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     $scope.checkForChildren = () => {
     let parent = $rootScope.selectedParent = authFactory.getUser();
         addChildFactory.returnAllChildrenForLoggedInParent(parent).then((childrenFromFirebase) => {
-            $rootScope.children = childrenFromFirebase;    
+            $scope.children = childrenFromFirebase;    
             if (childrenFromFirebase.length > 0) {
-                $rootScope.children = childrenFromFirebase;
-                $scope.checkForChildrenLimit();    
+                $scope.children = childrenFromFirebase;
+                $scope.checkForChildrenLimit();
             }
         });
     };
@@ -241,13 +241,14 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         $location.path("/childlanding/" + child.subuid);
     };
 
-    $scope.deleteSelectedChild = (child) => {
+    $scope.deleteSelectedChild = (child, index) => {
+        console.log("index", index);
+        let childAcctCards = document.getElementsByClassName("child-login-card");
+        childAcctCards[index].classList.remove("animated", "infinite", "shake");
+        childAcctCards[index].classList.add("animated", "slideOutDown");
         addChildFactory.deleteOneChild(child.subuid).then((childrenFromFirebase) => {
             $scope.checkForChildren();
-            $timeout(() => {
-                $scope.exitDeleteMode();
-                $scope.enterDeleteMode();
-            }, 300);
+            $scope.applyDeleteMode();
         });
     };
 
@@ -269,26 +270,27 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
 
     $scope.exitDeleteMode = () => {
         let childAcctCards = document.getElementsByClassName("child-login-card");
-        for (var i = 0; i < childAcctCards.length; i++) {
-            childAcctCards[i].classList.remove("animated", "infinite", "shake");
+        for (var j = 0; j < childAcctCards.length; j++) {
+            childAcctCards[j].classList.remove("animated", "infinite", "shake");
         }
     };
 
-    $scope.activateAreYouSureModal = (child) => {
+    $scope.activateAreYouSureModal = (child, index) => {
         $scope.childToDelete = child;
+        $scope.childCardToAnimate = index;
         $scope.deleteButtonClicked = true;
     };
 
     $scope.checkForChildrenLimit = () => {
-        if ($rootScope.children.length >= 4) {
+        if ($scope.children.length >= 4) {
             $scope.lessThanFourChildren = false;
         } else {
             $scope.lessThanFourChildren = true;
         }
     };
 
-    $scope.$watch($rootScope.children);
     $scope.$watch($scope.lessThanFourChildren);
+    $scope.$watch($scope.childCardToAnimate);
 
     /********************************************
     **        WHICH PARTIAL SHOULD I SHOW?     **
@@ -339,3 +341,15 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         $rootScope.isActive = false;
     }
 });
+
+/********************************************
+**       WATCH FOR NG REPEAT COMPLETE      **
+********************************************/
+app.directive('myRepeatDirective', function($rootScope) {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+      $rootScope.lastLoaded = true;
+    }
+  };
+});
+

@@ -65,11 +65,16 @@
         }  
     }
 
+    .logo-container-main {
+        width: 400px;
+        height: 75px;
+        overflow: hidden;
+        margin-top: -5px;
+        position: relative;
+        left: -25px;
+    }
+
     .mainHeader {
-        margin: 0;
-        padding: 1%;
-        font-family: 'Londrina Shadow', cursive;
-        font-size: 4em;
-        color: #4e342e;
+        width: 380px;
     }
 }
