@@ -38,6 +38,7 @@ $nth: nth( $colors, random(length($colors)) );
     background-size: 98%;
     border-radius: 15px;
     z-index: 1;
+    margin-top: 40px;
 }
 
 .stickerEventEveningJustAdded {
@@ -54,8 +55,8 @@ $nth: nth( $colors, random(length($colors)) );
 
 
 
-@for $i from 1 through 9 {
-    .fc-content-skeleton a:nth-of-type(#{random(3)}n+#{$i}) {
+@for $i from 1 through 11 {
+    .fc-content-skeleton :nth-child(#{$i}) a {
         background-color: nth($colors, random(length($colors)));
     }
 }
