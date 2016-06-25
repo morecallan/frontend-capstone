@@ -1,47 +1,63 @@
 @import "../components/colors";
+$colors: $orange-light, $yellow-light, $yellow-mid, $yellow-dark, $purple-light, $purple-dark, $bright-green, $blue-light, $blue-dark;
 
+
+$key: random( length($colors) );
+$nth: nth( $colors, random(length($colors)) );
 
 .fc-event-containter {
     position: relative !important;
 }
 
 .stickerEventMorning {
-    height: 150px;
+    height: 100px;
     width: 62px;
     background: url(../img/avatar/av1.png) no-repeat center center;
     background-size: 98%;
+    border-radius: 15px;
     z-index: 1;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .stickerEventNight {
-    height: 150px;
+    height: 100px;
     width: 62px;
     background: url(../img/avatar/av10.png) no-repeat -1px center;
     background-size: 140%;
     z-index: 1;
+    border-radius: 15px;
     margin-top: 20px;
     position: absolute;
-    top: 190px;
+    top: 220px;
 }
 
 .stickerEventMorningJustAdded {
-    height: 150px;
+    height: 100px;
     width: 62px;
     background: url(../img/avatar/av1.png) no-repeat center center;
     background-size: 98%;
+    border-radius: 15px;
     z-index: 1;
 }
 
 .stickerEventEveningJustAdded {
-    height: 150px;
+    height: 100px;
     width: 62px;
     background: url(../img/avatar/av10.png) no-repeat -1px center;
     background-size: 140%;
     z-index: 1;
-    border-radius: 5px;
+    border-radius: 15px;
     position: absolute;
-    top: 190px;
+    top: 220px;
+}
+
+
+
+
+@for $i from 1 through 9 {
+    .fc-content-skeleton a:nth-of-type(#{random(3)}n+#{$i}) {
+        background-color: nth($colors, random(length($colors)));
+    }
 }
 
 
@@ -86,7 +102,7 @@
     color: #fff;
     font-family: Neucha !important;
     font-size: 20px !important;
-    background-color: #26a69a !important;
+    background-color: $blue-dark !important;
     text-align: center;
     letter-spacing: .5px;
     cursor: pointer;

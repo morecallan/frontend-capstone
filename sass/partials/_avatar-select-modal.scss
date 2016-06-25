@@ -35,11 +35,9 @@
         display: flex;
         flex-wrap: no-wrap;
         flex-direction: row;
-        -webkit-overflow-scrolling: touch;
 
 
         .selectionAvatars {
-            -webkit-overflow-scrolling: touch;
             border-radius: 5px;
             height: 30vw;
             margin: 0 20px;

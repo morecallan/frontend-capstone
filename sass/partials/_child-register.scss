@@ -4,10 +4,77 @@
 .childRegisterContainer {
     margin: 20px 25px;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, .95);
     height: 100%;
     text-align: center;
-    padding: 1vw;
+    padding: .5em;
+    border-radius: 5px;
+
+    .my-card-row {
+        margin: 10px 30px;
+        display: flex;
+        flex-wrap: no-wrap;
+        flex-direction: row;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .card {
+        display: inline-block;
+        margin: 0 5px;
+        min-width: 80px !important;
+        max-width: 120px !important;
+        height: 120px;
+        border-radius: 10px;
+
+        .card-image {
+            width: 100% !important;
+            height: 120px !important;
+            margin: 0 !important;
+            padding: 0 !important; 
+            overflow: hidden;
+        }
+
+        img {
+            margin: auto;
+            display: inline-block;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: fill;
+            
+        }
+
+        .larger-center {
+            max-width: 180%;
+            max-height: 180%;
+            min-height: 80%;
+            min-width: 80%;
+            object-fit: fill;
+            width: 300px !important;
+            display: inline-block;
+        }
+
+
+        .card-content {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0, 0, 0, .9);
+            overflow-y: hidden;
+            position: absolute;
+            top: 63%;
+        }
+
+        h4 {
+            margin: 0;
+            white-space:nowrap;
+            padding: 5px;
+            width: 100%;
+            font-size: 27px !important;
+            text-align: center;
+            color: white;
+        }
+    }
+
 
     h4 {
         font-family: "Cabin Sketch";
@@ -18,15 +85,16 @@
     p {
         margin: 0;
         margin-top: -4vw;
-        font-size: 20px;
+        font-size: 25px;
         text-transform: uppercase;
-        color: #ef5350;  
+        color: $pink-dark;  
         padding: 0;
         letter-spacing: 1.3px;
+        font-weight: bold;
     }
 
     .row:nth-of-type(1) {
-        margin-top: 8vw;
+        margin-top: 1em;
     }
 
     .btn {
