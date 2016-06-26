@@ -4,6 +4,35 @@
     <p>Create Child Account</p>
   </div>
 
+  <div class="my-card-row">
+    <div class="card">
+        <div class="card-image valign-wrapper">
+          <img ng-src="./img/songCovers/dance7.png" class="animate-show valign" fade-in>  
+        </div>
+        <div class="card-content">
+          <h4>Brush</h4>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image valign-wrapper">
+          <img ng-src="./img/songCovers/dance9.png" class="animate-show valign" fade-in>  
+        </div>
+        <div class="card-content">
+          <h4>Boogie</h4>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image valign-wrapper">
+          <img ng-src="./img/songCovers/dance3.png" class="animate-show larger-center" fade-in>  
+        </div>
+        <div class="card-content">
+          <h4>Report</h4>
+        </div>
+    </div>
+  </div>
+
   <form>
     <div class="row">
       <div class="input-field col s10 offset-s1">
@@ -26,6 +55,7 @@
       </div>
     </div>
   
+  <a class="btn red" ng-href="#/childlogin"><i class="material-icons left">error_outline</i>Oops JK!</a>
   <button class="btn" ng-click="checkChildRegForm()"><i class="material-icons left">person_add</i>Add Me!</button>
       
   </form>
@@ -35,11 +65,12 @@
 
 
 <!-- -------------------------     ERROR MODAL     ------------------------- -->
-<div class="errormodal" ng-keypress="closeModal()" ng-click="closeModal()" id="errorMessageBox" autofocus="true" ng-show="childRegError" ng-if="childRegError" ng-focus="childRegError">
+<div class="errormodal lighten-2" ng-click="closeModal()" autofocus="true" ng-show="userError">
   <a class="waves-effect waves-green btn-floating teal"><i class="material-icons left">close</i></a>
-  <div class="errormodal-photo-container"><img ng-src="img/avatar/av11.png" class="animate-show errormodal-photo" fade-in></div>
+  <div class="errormodal-photo-container"><img ng-src="img/avatar/av16.png" class="animate-show errormodal-photo" fade-in></div>
   <div class="mockmodal-content">
-    <h4>Oops! Houston we have a problem.</h4>
+    <h4><i class="medium-icon material-icons">error_outline</i>Oops!</h4>
+    <h4>Houston we have a problem.</h4>
     <p>{{errorMessage}}</p>
   </div>   
 </div>

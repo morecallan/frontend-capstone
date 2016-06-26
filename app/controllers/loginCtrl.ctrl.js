@@ -3,6 +3,8 @@
 
 app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $interval, firebaseURL, authFactory, addChildFactory) {
 
+
+
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
     ********************************************/
@@ -119,11 +121,11 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         }
     };
 
-        $scope.stopInterval = function () {
-            if (angular.isDefined($rootScope.carouselInterval)) {
-                $interval.cancel($rootScope.carouselInterval);
-            }
-        };
+    $rootScope.stopInterval =  () => {
+        if (angular.isDefined($rootScope.carouselInterval)) {
+            $interval.cancel($rootScope.carouselInterval);
+        }
+    };
 
 
 
@@ -296,7 +298,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     **        WHICH PARTIAL SHOULD I SHOW?     **
     ********************************************/
     if($location.path() === "/splash"){
-        $scope.stopInterval();
+        $rootScope.stopInterval();
         $rootScope.initiateCarousel();
     }
 
@@ -306,7 +308,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         $scope.parentLoginTitle = "Login";
         $scope.childMode = false;
         $scope.modeLogin = true;
-        $scope.stopInterval();
+        $rootScope.stopInterval();
         $rootScope.initiateCarousel();
     }
 
@@ -315,7 +317,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         $scope.parentLoginTitle = "Register";
         $scope.childMode = false;
         $scope.modeLogin = false;
-        $scope.stopInterval();
+        $rootScope.stopInterval();
         $rootScope.initiateCarousel();
     }
 
@@ -326,21 +328,24 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         $scope.modeLogin = true;
         $rootScope.selectedParent = authFactory.getUser();
         $scope.checkForChildren();
-        $scope.stopInterval();
+        $rootScope.stopInterval();
         $rootScope.initiateCarousel();
     }
 
     if($location.path() === "/childregister"){
-        $scope.stopInterval();
+        $rootScope.stopInterval();
         $scope.parentMode = false;
         $scope.childMode = true;
         $scope.modeLogin = false;
     }
 
     if($location.path() === "/logout"){
+        $rootScope.stopInterval();
+        $rootScope.initiateCarousel();
         ref.unauth();
         $rootScope.isActive = false;
     }
+
 });
 
 /********************************************

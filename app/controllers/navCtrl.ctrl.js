@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller('navCtrl', function ($scope, $location, $rootScope, firebaseURL, authFactory, addChildFactory) {
+app.controller('navCtrl', function ($scope, $location, $rootScope, $timeout, firebaseURL, authFactory, addChildFactory) {
 
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
@@ -35,6 +35,27 @@ app.controller('navCtrl', function ($scope, $location, $rootScope, firebaseURL, 
             }
         }
     });
+
+    $scope.closeNav = (btn) => {
+        var $this = $(btn.currentTarget);
+        var $menu = $($this.closest(".click-to-toggle"));
+          if ($menu.hasClass('active')) {
+            // Get direction option
+            var horizontal = $this.hasClass('horizontal');
+            var offsetY, offsetX;
+
+            if (horizontal === true) {
+              offsetX = 40;
+            } else {
+              offsetY = 40;
+            }
+
+            $menu.removeClass('active');
+            var time = 0;
+            $menu.find('ul .btn-floating').addClass("animated fadeOutUp")
+            $timeout(() => {$menu.find('ul .btn-floating').removeClass("animated fadeOutUp")}, 700);
+        }
+    };
     
 
 });

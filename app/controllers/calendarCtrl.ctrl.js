@@ -3,8 +3,6 @@
 app.controller('calendarCtrl', ['ui.calendar']);
 
 
-
-
 function CalendarCtrl($scope,$compile,uiCalendarConfig) {
     var date = new Date();
     var d = date.getDate();

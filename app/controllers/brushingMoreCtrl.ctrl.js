@@ -3,6 +3,9 @@
 
 app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $routeParams, $compile, uiCalendarConfig, firebaseURL, authFactory, addChildFactory, brushingDataFactory) {
 
+$rootScope.stopInterval ();
+
+
     /********************************************
     **               SELECTED USER             **
     ********************************************/
@@ -56,7 +59,6 @@ app.controller('brushingMoreCtrl', function ($scope, $location, $rootScope, $rou
                 event.start = start;
                 event.allDay = false;
                 event.stick = true;
-                event.backgroundColor = "rgba(255,255,255,0.8)";
                 event.borderColor = "rgba(255,255,255,0.8)";
                 $scope.events.push(event);
             });

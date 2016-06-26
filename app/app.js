@@ -99,5 +99,5 @@ app.animation('.slide', [function() {
     leave: function(element, doneFn) {
       jQuery(element).fadeOut(100, doneFn);
     }
-  }
+  };
 }]);

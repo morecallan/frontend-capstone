@@ -3,6 +3,8 @@
 
 app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routeParams, $timeout, firebaseURL, authFactory, addChildFactory, brushingDataFactory) {
 
+$rootScope.stopInterval();
+
     /********************************************
     **               SELECTED USER             **
     ********************************************/

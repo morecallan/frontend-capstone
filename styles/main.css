@@ -24,10 +24,8 @@
   .avatarSelectModal .avatarList {
     display: flex;
     flex-wrap: no-wrap;
-    flex-direction: row;
-    -webkit-overflow-scrolling: touch; }
+    flex-direction: row; }
     .avatarSelectModal .avatarList .selectionAvatars {
-      -webkit-overflow-scrolling: touch;
       border-radius: 5px;
       height: 30vw;
       margin: 0 20px;
@@ -237,12 +235,14 @@ body {
 
 .childLandingContainer {
   margin: 20px 25px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
   text-align: center;
   padding: 1vw; }
   .childLandingContainer h4 {
     font-family: "Cabin Sketch";
     font-size: 40px; }
+  .childLandingContainer .btn-large {
+    background-color: #D146D5 !important; }
   .childLandingContainer .card {
     display: inline-block;
     margin: 0 5px;
@@ -265,7 +265,7 @@ body {
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: rgba(0, 128, 128, 0.5);
+      background-color: rgba(0, 0, 0, 0.9);
       overflow-y: hidden;
       position: absolute;
       top: 63%; }
@@ -280,13 +280,17 @@ body {
 
 .childLoginContainer {
   margin: 20px 25px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
   text-align: center;
-  padding: 1vw; }
+  padding: .5em;
+  height: 260px;
+  width: 90%;
+  border-radius: 5px; }
   .childLoginContainer h4 {
     font-family: "Cabin Sketch";
-    font-size: 25px;
-    display: inline-block; }
+    font-size: 24px;
+    display: inline-block;
+    padding: 0 12px; }
   .childLoginContainer a.top-right {
     position: absolute;
     top: 5px;
@@ -305,15 +309,19 @@ body {
     right: 5px;
     color: red; }
   .childLoginContainer .childUserSelectSlider {
-    margin: 0;
-    overflow: auto;
-    width: 100%;
-    padding: 10px 0; }
+    height: 175px;
+    margin: 10px 2% 0;
+    width: 96%;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden; }
   .childLoginContainer .childUserList {
     display: flex;
     flex-wrap: no-wrap;
     flex-direction: row;
-    margin: auto; }
+    margin: 20px 0;
+    padding: 0;
+    height: 200px; }
   .childLoginContainer .card {
     display: inline-block;
     margin: 0 5px;
@@ -336,7 +344,7 @@ body {
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: rgba(0, 128, 128, 0.5);
+      background-color: rgba(0, 0, 0, 0.9);
       overflow-y: hidden;
       position: absolute;
       top: 63%; }
@@ -355,10 +363,60 @@ body {
 .childRegisterContainer {
   margin: 20px 25px;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
   height: 100%;
   text-align: center;
-  padding: 1vw; }
+  padding: .5em;
+  border-radius: 5px; }
+  .childRegisterContainer .my-card-row {
+    margin: 10px 30px;
+    display: flex;
+    flex-wrap: no-wrap;
+    flex-direction: row;
+    -webkit-overflow-scrolling: touch; }
+  .childRegisterContainer .card {
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 80px !important;
+    max-width: 120px !important;
+    height: 120px;
+    border-radius: 10px; }
+    .childRegisterContainer .card .card-image {
+      width: 100% !important;
+      height: 120px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden; }
+    .childRegisterContainer .card img {
+      margin: auto;
+      display: inline-block;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: fill; }
+    .childRegisterContainer .card .larger-center {
+      max-width: 180%;
+      max-height: 180%;
+      min-height: 80%;
+      min-width: 80%;
+      object-fit: fill;
+      width: 300px !important;
+      display: inline-block; }
+    .childRegisterContainer .card .card-content {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow-y: hidden;
+      position: absolute;
+      top: 63%; }
+    .childRegisterContainer .card h4 {
+      margin: 0;
+      white-space: nowrap;
+      padding: 5px;
+      width: 100%;
+      font-size: 27px !important;
+      text-align: center;
+      color: white; }
   .childRegisterContainer h4 {
     font-family: "Cabin Sketch";
     font-size: 40px;
@@ -366,13 +424,14 @@ body {
   .childRegisterContainer p {
     margin: 0;
     margin-top: -4vw;
-    font-size: 20px;
+    font-size: 25px;
     text-transform: uppercase;
-    color: #ef5350;
+    color: #FF005D;
     padding: 0;
-    letter-spacing: 1.3px; }
+    letter-spacing: 1.3px;
+    font-weight: bold; }
   .childRegisterContainer .row:nth-of-type(1) {
-    margin-top: 8vw; }
+    margin-top: 1em; }
   .childRegisterContainer .btn {
     margin: 20px;
     border-radius: 20px; }
@@ -391,6 +450,9 @@ body {
   overflow-y: hidden;
   border-radius: 10px;
   text-align: center; }
+  .errormodal i {
+    font-size: 33px;
+    padding: 0 2px; }
   .errormodal .btn-floating {
     margin: 10px;
     position: absolute;
@@ -402,6 +464,15 @@ body {
     margin-top: 8%;
     margin-left: -1em;
     width: 60%;
+    font-size: 18px;
+    line-height: 15px; }
+  .errormodal .mockmodal-content-with-btn {
+    display: inline-block;
+    margin: 5%;
+    margin-top: 8%;
+    margin-left: -1%;
+    margin-right: 1%;
+    width: 70%;
     font-size: 18px;
     line-height: 15px; }
   .errormodal h4 {
@@ -437,12 +508,22 @@ body {
     background-color: white; }
   .errormodal h5 {
     font-size: 16px !important;
-    margin-top: 8px; }
+    margin-top: 20px;
+    color: white; }
   .errormodal .buttonRow {
     margin-top: 15px; }
     .errormodal .buttonRow .btn {
       width: 38%;
-      margin: 0 2px; }
+      margin: 0 2px;
+      line-height: 20px !important;
+      padding-top: 2px; }
+      .errormodal .buttonRow .btn .btn-subtext {
+        width: 110%;
+        line-height: 13px !important;
+        color: white;
+        font-size: 11px !important;
+        margin: 0;
+        padding: 0; }
     .errormodal .buttonRow .btn:nth-of-type(1) {
       margin-left: 12%; }
 
@@ -453,39 +534,76 @@ body {
   position: relative !important; }
 
 .stickerEventMorning {
-  height: 150px;
+  height: 100px;
   width: 62px;
   background: url(../img/avatar/av1.png) no-repeat center center;
   background-size: 98%;
+  border-radius: 15px;
   z-index: 1;
-  margin-top: 20px; }
+  margin-top: 40px; }
 
 .stickerEventNight {
-  height: 150px;
+  height: 100px;
   width: 62px;
   background: url(../img/avatar/av10.png) no-repeat -1px center;
   background-size: 140%;
   z-index: 1;
+  border-radius: 15px;
   margin-top: 20px;
   position: absolute;
-  top: 190px; }
+  top: 220px; }
 
 .stickerEventMorningJustAdded {
-  height: 150px;
+  height: 100px;
   width: 62px;
   background: url(../img/avatar/av1.png) no-repeat center center;
   background-size: 98%;
-  z-index: 1; }
+  border-radius: 15px;
+  z-index: 1;
+  margin-top: 40px; }
 
 .stickerEventEveningJustAdded {
-  height: 150px;
+  height: 100px;
   width: 62px;
   background: url(../img/avatar/av10.png) no-repeat -1px center;
   background-size: 140%;
   z-index: 1;
-  border-radius: 5px;
+  border-radius: 15px;
   position: absolute;
-  top: 190px; }
+  top: 220px; }
+
+.fc-content-skeleton :nth-child(1) a {
+  background-color: #00BEBE; }
+
+.fc-content-skeleton :nth-child(2) a {
+  background-color: #EEA30C; }
+
+.fc-content-skeleton :nth-child(3) a {
+  background-color: #C006C1; }
+
+.fc-content-skeleton :nth-child(4) a {
+  background-color: #EEA30C; }
+
+.fc-content-skeleton :nth-child(5) a {
+  background-color: #00BEBE; }
+
+.fc-content-skeleton :nth-child(6) a {
+  background-color: #00BEBE; }
+
+.fc-content-skeleton :nth-child(7) a {
+  background-color: #017575; }
+
+.fc-content-skeleton :nth-child(8) a {
+  background-color: #E47B39; }
+
+.fc-content-skeleton :nth-child(9) a {
+  background-color: #EEB436; }
+
+.fc-content-skeleton :nth-child(10) a {
+  background-color: #00BEBE; }
+
+.fc-content-skeleton :nth-child(11) a {
+  background-color: #DA9700; }
 
 .fc-toolbar {
   padding: 10px 20px; }
@@ -524,7 +642,7 @@ body {
   color: #fff;
   font-family: Neucha !important;
   font-size: 20px !important;
-  background-color: #26a69a !important;
+  background-color: #017575 !important;
   text-align: center;
   letter-spacing: .5px;
   cursor: pointer;
@@ -689,7 +807,7 @@ body {
   background-color: rgba(255, 255, 255, 0.95);
   height: 100%;
   text-align: center;
-  padding: 1vw;
+  padding: .5em;
   border-radius: 5px; }
   .parentLoginContainer h4 {
     font-family: "Amatic SC";
@@ -745,7 +863,7 @@ body {
       left: 5px; }
   .parentLoginContainer .input-field {
     padding: 0;
-    margin: 1vw 5vw; }
+    margin: .2em; }
   .parentLoginContainer .btn {
     margin: 1vw;
     color: #017575;

@@ -3,14 +3,19 @@
 
 .childLoginContainer {
     margin: 20px 25px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, .95);
     text-align: center;
-    padding: 1vw;
+    padding: .5em;
+    height: 260px;
+    width: 90%;
+    border-radius: 5px;
+
 
     h4 {
         font-family: "Cabin Sketch";
-        font-size: 25px;
+        font-size: 24px;
         display: inline-block;
+        padding: 0 12px;
     }
 
     a.top-right {
@@ -39,17 +44,21 @@
     }
 
     .childUserSelectSlider {
-        margin: 0;
-        overflow: auto;
-        width: 100%;
-        padding: 10px 0;
+        height: 175px;
+        margin: 10px 2% 0;
+        width: 96%;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 
     .childUserList {
         display: flex;
         flex-wrap: no-wrap;
         flex-direction: row;
-        margin: auto;
+        margin: 20px 0;
+        padding: 0;
+        height: 200px;
     }
 
     .card {
@@ -79,7 +88,7 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            background-color: rgba(0, 128, 128, .5);
+            background-color: rgba(0, 0, 0, .9);
             overflow-y: hidden;
             position: absolute;
             top: 63%;
