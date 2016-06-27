@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $interval, firebaseURL, authFactory, addChildFactory) {
+app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $interval, firebaseURL, authFactory, emailFactory, addChildFactory) {
 
 
 
@@ -26,7 +26,8 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
 
     $rootScope.account = {
         email: "",
-        password: ""
+        password: "",
+        emailSubscribe: false
     };
 
     $scope.avatars = [{img: "img/avatar/av1.png"},{img: "img/avatar/av2.png"},{img: "img/avatar/av3.png"},{img: "img/avatar/av4.png"},{img: "img/avatar/av5.png"},{img: "img/avatar/av6.png"},{img: "img/avatar/av7.png"},{img: "img/avatar/av8.png"},{img: "img/avatar/av9.png"},{img: "img/avatar/av10.png"},{img: "img/avatar/av11.png"},{img: "img/avatar/av12.png"},{img: "img/avatar/av13.png"},{img: "img/avatar/av14.png"},{img: "img/avatar/av15.png"}];
@@ -61,7 +62,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     ];
 
 
-    
+
     $scope.animateCards = () => {
         let carouselCards = document.getElementsByClassName("carouselCard");
         carouselCards[1].classList.add("animated", "slideInRight");
@@ -94,13 +95,13 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
             $scope.moveCarouselAlong();
             $timeout(()=>{$scope.removeAnimationFromCards();}, 650);
         }, 4800);
-        
+
     };
 
     $scope.moveCarouselAlong = () => {
         prev = focus - 1;
         next = focus + 1;
-    
+
         if (focus === 0) {
             prev = $scope.carouselImages.length - 1;
         }
@@ -112,7 +113,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
         $scope.images.prev = $scope.carouselImages[prev];
         $scope.images.focus = $scope.carouselImages[focus];
         $scope.images.next = $scope.carouselImages[next];
-       
+
 
         if (focus < $scope.carouselImages.length - 1) {
             focus++;
@@ -142,6 +143,10 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
 
 
     $scope.register = (authFactory) => {
+      console.log($rootScope.account.emailSubscribe);
+      if ($rootScope.account.emailSubscribe) {
+        emailFactory.addContact($rootScope.account.email);
+      }
         ref.createUser({
             email: $rootScope.account.email,
             password: $rootScope.account.password
@@ -209,7 +214,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     $scope.checkChildRegForm = () => {
         if ($scope.childAccount.firstName !== "" && $scope.childAccount.age !== "") {
             $scope.childadd();
-        } else {    
+        } else {
             $scope.childRegError = true;
             $scope.errorMessage = "Please fill out all fields!";
         }
@@ -229,7 +234,7 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
     $scope.checkForChildren = () => {
     let parent = $rootScope.selectedParent = authFactory.getUser();
         addChildFactory.returnAllChildrenForLoggedInParent(parent).then((childrenFromFirebase) => {
-            $scope.children = childrenFromFirebase;    
+            $scope.children = childrenFromFirebase;
             if (childrenFromFirebase.length > 0) {
                 $scope.children = childrenFromFirebase;
                 $scope.checkForChildrenLimit();
@@ -358,4 +363,3 @@ app.directive('myRepeatDirective', function($rootScope) {
     }
   };
 });
-

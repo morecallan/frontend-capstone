@@ -147,5 +147,5 @@ $rootScope.stopInterval();
             }
         ];
 
-    
+
 });
