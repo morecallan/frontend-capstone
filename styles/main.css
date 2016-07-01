@@ -573,34 +573,34 @@ body {
   top: 220px; }
 
 .fc-content-skeleton :nth-child(1) a {
-  background-color: #EEA30C; }
-
-.fc-content-skeleton :nth-child(2) a {
-  background-color: #D146D5; }
-
-.fc-content-skeleton :nth-child(3) a {
-  background-color: #E47B39; }
-
-.fc-content-skeleton :nth-child(4) a {
-  background-color: #DA9700; }
-
-.fc-content-skeleton :nth-child(5) a {
-  background-color: #C006C1; }
-
-.fc-content-skeleton :nth-child(6) a {
-  background-color: #EEA30C; }
-
-.fc-content-skeleton :nth-child(7) a {
   background-color: #017575; }
 
-.fc-content-skeleton :nth-child(8) a {
+.fc-content-skeleton :nth-child(2) a {
+  background-color: #DA9700; }
+
+.fc-content-skeleton :nth-child(3) a {
+  background-color: #017575; }
+
+.fc-content-skeleton :nth-child(4) a {
   background-color: #C006C1; }
+
+.fc-content-skeleton :nth-child(5) a {
+  background-color: #00BEBE; }
+
+.fc-content-skeleton :nth-child(6) a {
+  background-color: #DA9700; }
+
+.fc-content-skeleton :nth-child(7) a {
+  background-color: #DA9700; }
+
+.fc-content-skeleton :nth-child(8) a {
+  background-color: #E47B39; }
 
 .fc-content-skeleton :nth-child(9) a {
-  background-color: #EEB436; }
+  background-color: #DA9700; }
 
 .fc-content-skeleton :nth-child(10) a {
-  background-color: #C006C1; }
+  background-color: #EEB436; }
 
 .fc-content-skeleton :nth-child(11) a {
   background-color: #DA9700; }

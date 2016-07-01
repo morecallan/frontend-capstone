@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routeParams, $timeout, firebaseURL, authFactory, addChildFactory, brushingDataFactory) {
+app.controller('brushingCtrl', function ($scope, $route, $location, $rootScope, $routeParams, $timeout, firebaseURL, authFactory, addChildFactory, brushingDataFactory) {
 
 $rootScope.stopInterval();
 
@@ -15,6 +15,7 @@ $rootScope.stopInterval();
         brushingDataFactory.runBrushingDataCheckThenSubmitNewIfCool($routeParams.subuid, brushTime);
     };
 
+
     /********************************************
     **        SELECTING SONG FUNCTIONALITY     **
     ********************************************/
@@ -26,10 +27,12 @@ $rootScope.stopInterval();
     $scope.songsLeft = [{icon: 'music_note'},{icon: 'music_note'},{icon: 'music_note'},{icon: 'music_note'}];
 
     $scope.playlist = [];
-    $scope.usersPlaylist = [];
-
-    $scope.$watch($scope.songsLeft);
     $scope.$watch($scope.playlist);
+
+    $scope.usersPlaylist = [];
+    $scope.$watch($scope.usersPlaylist);
+
+
 
     $scope.addSongToPaylist = (selectedSong, index) => {
         if ($scope.playlist.length < 4) {
@@ -47,14 +50,27 @@ $rootScope.stopInterval();
             }
         } else {
             $scope.allSongsSelected = true;
+            $scope.playlist = [];
         }
     };
 
     $scope.switchToBrushingMode = () => {
         $scope.selectSongMode = false;
         $scope.usersPlaylist[0].play();
-        $timeout($scope.submitBrushingCompleteData, 120100);
+        $timeout($scope.submitBrushingCompleteData, 120000);
     };
+
+    $scope.resetSongSelectionMode = () => {
+      $scope.playlist = [];
+      $scope.allSongsSelected = false;
+    }
+
+    if($location.path() === "/brushing/:subuid") {
+        console.log("ugggggh");
+        $route.reload();
+        $scope.playlist = [];
+        $scope.$watch($scope.playlist);
+    }
 
     $scope.nowPlaying = "";
 

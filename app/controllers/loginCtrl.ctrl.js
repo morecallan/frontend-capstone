@@ -143,7 +143,6 @@ app.controller('loginCtrl', function ($scope, $location, $rootScope, $timeout, $
 
 
     $scope.register = (authFactory) => {
-      console.log($rootScope.account.emailSubscribe);
       if ($rootScope.account.emailSubscribe) {
         emailFactory.addContact($rootScope.account.email);
       }
