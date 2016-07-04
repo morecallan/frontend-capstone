@@ -7,7 +7,7 @@ app.factory("emailFactory", function(firebaseURL, $q, $http, $rootScope, credent
   let api_url = 'http://api2.getresponse.com';
 
   let getAPIKey = () => {
-    credentialsFactory.getCredentials().then((credentials) => {
+    credentialsFactory.getGetResponseCredentials().then((credentials) => {
       api_key = credentials.alpha;
     });
   };

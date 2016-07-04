@@ -3,7 +3,7 @@
 app.factory("credentialsFactory", function($q, $http){
 
 
-var getCredentials = () => {
+var getGetResponseCredentials = () => {
         return $q(function(resolve, reject){
             $http
             .get("data/getResponse.json")
@@ -16,5 +16,18 @@ var getCredentials = () => {
         });
     };
 
-    return {getCredentials: getCredentials};
+  var getS3Credentials = () => {
+      return $q(function(resolve, reject){
+          $http
+          .get("data/S3.json")
+          .success(function(credentials){
+              resolve(credentials.credentials);
+          })
+          .error(function(error){
+              reject(error);
+          });
+      });
+  };
+
+    return {getGetResponseCredentials: getGetResponseCredentials, getS3Credentials: getS3Credentials};
 });
