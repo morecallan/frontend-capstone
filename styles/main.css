@@ -573,37 +573,37 @@ body {
   top: 220px; }
 
 .fc-content-skeleton :nth-child(1) a {
-  background-color: #017575; }
+  background-color: #DA9700; }
 
 .fc-content-skeleton :nth-child(2) a {
-  background-color: #DA9700; }
+  background-color: #EEB436; }
 
 .fc-content-skeleton :nth-child(3) a {
   background-color: #017575; }
 
 .fc-content-skeleton :nth-child(4) a {
-  background-color: #C006C1; }
-
-.fc-content-skeleton :nth-child(5) a {
   background-color: #00BEBE; }
 
+.fc-content-skeleton :nth-child(5) a {
+  background-color: #017575; }
+
 .fc-content-skeleton :nth-child(6) a {
-  background-color: #DA9700; }
+  background-color: #04BE01; }
 
 .fc-content-skeleton :nth-child(7) a {
   background-color: #DA9700; }
 
 .fc-content-skeleton :nth-child(8) a {
-  background-color: #E47B39; }
+  background-color: #DA9700; }
 
 .fc-content-skeleton :nth-child(9) a {
-  background-color: #DA9700; }
+  background-color: #04BE01; }
 
 .fc-content-skeleton :nth-child(10) a {
   background-color: #EEB436; }
 
 .fc-content-skeleton :nth-child(11) a {
-  background-color: #DA9700; }
+  background-color: #E47B39; }
 
 .fc-toolbar {
   padding: 10px 20px; }

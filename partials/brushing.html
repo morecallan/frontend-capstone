@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col s2" ng-show="allSongsSelected"><i class="midSmall material-icons disabled">library_add</i></div>
           <div class="col s2" ng-show="!allSongsSelected"><i class="midSmall material-icons achieved" >library_add</i></div>
-            <div ng-repeat="selectedSong in playlist">
+            <div ng-repeat="selectedSong in mplaylist">
               <div class="btn pink col s2" class="songCard z-depth-2">
                 <img ng-src="{{selectedSong.img}}">
               </div>

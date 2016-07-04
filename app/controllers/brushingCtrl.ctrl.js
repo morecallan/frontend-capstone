@@ -26,8 +26,8 @@ $rootScope.stopInterval();
 
     $scope.songsLeft = [{icon: 'music_note'},{icon: 'music_note'},{icon: 'music_note'},{icon: 'music_note'}];
 
-    $rootScope.playlist = [];
-    $scope.$watch($rootScope.playlist);
+    $rootScope.mplaylist = [];
+    $scope.$watch($rootScope.mplaylist);
 
     $scope.usersPlaylist = [];
     $scope.$watch($scope.usersPlaylist);
@@ -35,17 +35,17 @@ $rootScope.stopInterval();
 
 
     $scope.addSongToPaylist = (selectedSong, index) => {
-        if ($rootScope.playlist.length < 4) {
+        if ($rootScope.mplaylist.length < 4) {
             $scope.songs[index].chosenAlready = true;
             let SMSound = soundManager.createSound({
                 id: selectedSong.id,
                 url: selectedSong.url
             });
-            $rootScope.playlist.push(selectedSong);
+            $rootScope.mplaylist.push(selectedSong);
             $scope.usersPlaylist.push(SMSound);
             let placeHolderToRemove = $scope.songsLeft.length - 1;
             $scope.songsLeft.splice(placeHolderToRemove, 1);
-            if ($rootScope.playlist.length === 4) {
+            if ($rootScope.mplaylist.length === 4) {
                 $scope.allSongsSelected = true;
             }
         } else {
@@ -55,14 +55,14 @@ $rootScope.stopInterval();
     };
 
     $scope.switchToBrushingMode = () => {
-        $rootScope.playlist = [];
+        $rootScope.mplaylist = [];
         $scope.selectSongMode = false;
         $scope.usersPlaylist[0].play();
         $timeout($scope.submitBrushingCompleteData, 120000);
     };
 
     $scope.resetSongSelectionMode = () => {
-      $rootScope.playlist = [];
+      $rootScope.mplaylist = [];
       $scope.allSongsSelected = false;
     }
 

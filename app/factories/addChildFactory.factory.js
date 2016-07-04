@@ -5,6 +5,7 @@ app.factory("addChildFactory", function($q, $http, firebaseURL, authFactory){
 //Firebase: Adds child to a parent account based on the UID of logged in parent (Full child account data from registration form passed).
     let addChildToParentAccount = (childAccount) => {
         let user=authFactory.getUser();
+        // TODO: Update parent email account to accept new child as an additional field
 
         return $q(function(resolve,reject){
             $http.post(`${firebaseURL}subusers.json`,
@@ -12,7 +13,7 @@ app.factory("addChildFactory", function($q, $http, firebaseURL, authFactory){
                     firstName: childAccount.firstName,
                     age: childAccount.age,
                     avatar: childAccount.avatar,
-                    awards: childAccount.awards, 
+                    awards: childAccount.awards,
                     uid:user.uid,
                     subuid: ""
                 }))
@@ -39,16 +40,16 @@ app.factory("addChildFactory", function($q, $http, firebaseURL, authFactory){
         });
     };
 
-    
+
 // Firebase: Retrieves full list of children (subusers) for logged-in parent(user).
     let returnAllChildrenForLoggedInParent = (parent) => {
         let user = parent;
         console.log("user", user);
         let children =[];
-        
+
         return $q(function(resolve, reject){
           $http.get(`${firebaseURL}subusers.json?orderBy="uid"&equalTo="${user.uid}"`)
-            .success(function(returnObject){ 
+            .success(function(returnObject){
                 Object.keys(returnObject).forEach(function(key){
                 returnObject[key].subuid=key;
                 children.push(returnObject[key]);
@@ -57,12 +58,14 @@ app.factory("addChildFactory", function($q, $http, firebaseURL, authFactory){
             })
             .error(function(error){
                 reject(error);
-            });  
-        }); 
+            });
+        });
     };
 
 //Firebase: Removes selected child from db. (Only child subuid key passed).
     let deleteOneChild = (childSubuid) =>{
+      // TODO: brushing data delete
+      // TODO: remove from email specs
         return $q(function(resolve, reject){
             $http
             .delete(`${firebaseURL}subusers/${childSubuid}.json`)

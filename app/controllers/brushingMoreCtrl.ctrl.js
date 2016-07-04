@@ -9,7 +9,7 @@ $rootScope.stopInterval ();
     /********************************************
     **               SELECTED USER             **
     ********************************************/
-    
+
     $scope.$watch($rootScope.morningOrNight);
 
     $scope.closeModal = () => {
@@ -34,7 +34,7 @@ $rootScope.stopInterval ();
                 } else if (usersLastEventCardsEvening.length === 1) {
                     usersLastEventCardsEvening[0].classList.add("animated", "tada");
                 }
-        });         
+        });
     };
 
     $scope.renderDataForCalendar = (returnBrushingData) => {
@@ -45,13 +45,13 @@ $rootScope.stopInterval ();
                 eventHours = eventHours.getHours();
                 if (eventHours >= 0 && eventHours <= 13) {
                     event.className = "stickerEventMorning";
-                    if (index === $scope.eventPlaceholder.length - 1) {
-                        event.className = "stickerEventMorningJustAdded";  
+                    if (index >= $scope.eventPlaceholder.length - 1) {
+                        event.className = "stickerEventMorningJustAdded";
                     }
                 } else if (eventHours >= 14 && eventHours <= 23) {
                     event.className = "stickerEventNight";
-                    if (index === $scope.eventPlaceholder.length - 1) {
-                        event.className = "stickerEventEveningJustAdded";  
+                    if (index >= $scope.eventPlaceholder.length - 1) {
+                        event.className = "stickerEventEveningJustAdded";
                     }
                 }
                 event.title = "I Brushed My Teeth!";
@@ -84,7 +84,7 @@ $rootScope.stopInterval ();
     };
 
     $scope.eventRender = function( event, element, view ) {
-        $scope.populateBrushingData(); 
+        $scope.populateBrushingData();
         $compile(element)($scope);
     };
 
