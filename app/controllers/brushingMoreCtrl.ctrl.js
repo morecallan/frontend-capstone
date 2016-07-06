@@ -39,29 +39,32 @@ $rootScope.stopInterval ();
 
     $scope.renderDataForCalendar = (returnBrushingData) => {
         $scope.eventPlaceholder = returnBrushingData;
-            $('#calendar').fullCalendar("changeView", "basicWeek");
-            $scope.eventPlaceholder.forEach((event, index)=>{
-                let eventHours = new Date(event.timestamp);
-                eventHours = eventHours.getHours();
-                if (eventHours >= 0 && eventHours <= 13) {
-                    event.className = "stickerEventMorning";
-                    if (index >= $scope.eventPlaceholder.length - 1) {
-                        event.className = "stickerEventMorningJustAdded";
-                    }
-                } else if (eventHours >= 14 && eventHours <= 23) {
-                    event.className = "stickerEventNight";
-                    if (index >= $scope.eventPlaceholder.length - 1) {
-                        event.className = "stickerEventEveningJustAdded";
-                    }
+        $scope.eventPlaceholder = $scope.eventPlaceholder.sort(function(a,b){
+          return new Date(b.timestamp) - new Date(a.timestamp);
+        });
+        $('#calendar').fullCalendar("changeView", "basicWeek");
+        $scope.eventPlaceholder.forEach((event, index)=>{
+            let eventHours = new Date(event.timestamp);
+            eventHours = eventHours.getHours();
+            if (eventHours >= 0 && eventHours <= 13) {
+                event.className = "stickerEventMorning";
+                if (index === 0 ) {
+                    event.className = "stickerEventMorningJustAdded";
                 }
-                event.title = "I Brushed My Teeth!";
-                let start = new Date(event.timestamp);
-                event.start = start;
-                event.allDay = false;
-                event.stick = true;
-                event.borderColor = "rgba(255,255,255,0.8)";
-                $scope.events.push(event);
-            });
+            } else if (eventHours >= 14 && eventHours <= 23) {
+                event.className = "stickerEventNight";
+                if (index === 0) {
+                    event.className = "stickerEventEveningJustAdded";
+                }
+            }
+            event.title = "I Brushed My Teeth!";
+            let start = new Date(event.timestamp);
+            event.start = start;
+            event.allDay = false;
+            event.stick = true;
+            event.borderColor = "rgba(255,255,255,0.8)";
+            $scope.events.push(event);
+        });
     };
 
 

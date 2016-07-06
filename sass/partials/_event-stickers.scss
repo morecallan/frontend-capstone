@@ -26,7 +26,6 @@ $nth: nth( $colors, random(length($colors)) );
     background-size: 140%;
     z-index: 1;
     border-radius: 15px;
-    margin-top: 20px;
     position: absolute;
     top: 220px;
 }
@@ -131,9 +130,9 @@ $nth: nth( $colors, random(length($colors)) );
     margin: 0px !important;
     margin-left: -1em !important;
     padding-left: 0px !important;
-    padding-right: 0px !important; 
+    padding-right: 0px !important;
     font-family: Neucha !important;
-    width: 2em; 
+    width: 2em;
 }
 
 .fc-icon-left-single-arrow:after {
@@ -145,7 +144,7 @@ $nth: nth( $colors, random(length($colors)) );
 .fc-icon-right-single-arrow:after {
     font-size: 150%;
     top: 0;
-    left: 0;    
+    left: 0;
 }
 
 .fc-button:hover {
@@ -158,9 +157,9 @@ $nth: nth( $colors, random(length($colors)) );
 }
 
 .fc-event .fc-time {
-   display : none;    
+   display : none;
 }
 
 .fc-event .fc-title {
-   display : none;    
+   display : none;
 }
