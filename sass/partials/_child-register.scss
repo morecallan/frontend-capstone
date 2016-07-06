@@ -11,48 +11,43 @@
     border-radius: 5px;
 
     .my-card-row {
-        margin: 10px 30px;
+        margin: 0 0 40px -1.6%;
+        padding: 5px 60px;
         display: flex;
         flex-wrap: no-wrap;
         flex-direction: row;
         -webkit-overflow-scrolling: touch;
+        background-color: $pink-light;
+        width: 103.2%;
+        opacity: 0.9;
     }
 
     .card {
+        box-shadow: none !important;
+        cursor: none;
+        opacity: 0.9;
         display: inline-block;
         margin: 0 5px;
-        min-width: 80px !important;
-        max-width: 120px !important;
-        height: 120px;
+        max-width: 100px !important;
+        height: 100px;
         border-radius: 10px;
+        overflow: hidden;
 
         .card-image {
-            width: 100% !important;
             height: 120px !important;
             margin: 0 !important;
-            padding: 0 !important; 
+            padding: 0 !important;
             overflow: hidden;
         }
 
         img {
-            margin: auto;
+            margin: 0;
+            margin-top: -20px;
             display: inline-block;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: fill;
-            
+            max-width: 120%;
+            max-height: 120%;
+            object-fit: cover !important;
         }
-
-        .larger-center {
-            max-width: 180%;
-            max-height: 180%;
-            min-height: 80%;
-            min-width: 80%;
-            object-fit: fill;
-            width: 300px !important;
-            display: inline-block;
-        }
-
 
         .card-content {
             width: 100%;
@@ -87,7 +82,7 @@
         margin-top: -4vw;
         font-size: 25px;
         text-transform: uppercase;
-        color: $pink-dark;  
+        color: $pink-dark;
         padding: 0;
         letter-spacing: 1.3px;
         font-weight: bold;
