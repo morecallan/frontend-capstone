@@ -3,7 +3,7 @@
 
 .btnDiv {
     margin: 0;
-    margin-top: -5vw;
+    margin-top: -1em;
     min-width: 50%;
 
     h6 {
@@ -14,15 +14,15 @@
 }
 
 .avatarChoose {
-    margin-top: 0vw;
-    width: 12vw !important;
-    height: 12vw !important;
+    margin-top: 0;
+    width: 5em !important;
+    height: 5em !important;
     overflow: hidden;
 }
 
 .buttonAvatar {
     -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
-    filter: drop-shadow(0 10px 0px white); 
+    filter: drop-shadow(0 10px 0px white);
     margin: auto;
     vertical-align: middle;
     display: inline-block;
@@ -44,4 +44,3 @@
     text-transform: uppercase;
     box-sizing: border-box;
 }
-

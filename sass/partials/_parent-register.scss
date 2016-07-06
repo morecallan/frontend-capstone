@@ -2,11 +2,11 @@
 
 
 .parentLoginContainer {
-    margin: 20px 25px;
+    margin: 40px 25px;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, .95);
+    width: 90%;
     height: 100%;
-    height: 260px;
     text-align: center;
     padding: .5em;
     border-radius: 5px;
@@ -24,7 +24,7 @@
 
     p {
         margin: 0;
-        margin-top: -1.4vw;
+        margin-top: -1em;
         padding: 0;
         font-size: 18px;
         font-weight: bold;
@@ -58,7 +58,7 @@
         font-family: "Amatic SC";
         letter-spacing: 2px;
         font-weight: bold;
-        position: relative; 
+        position: relative;
 
         li {
             font-size: 22px !important;
@@ -83,7 +83,7 @@
             left: 5px;
         }
 
-        
+
     }
 
     p {
@@ -97,7 +97,7 @@
     }
 
     .btn {
-        margin: 1vw;
+        margin: 1em;
         color: $blue-dark;
         color: white;
     }

@@ -27,7 +27,7 @@
     flex-direction: row; }
     .avatarSelectModal .avatarList .selectionAvatars {
       border-radius: 5px;
-      height: 30vw;
+      height: 10em;
       margin: 0 20px;
       background-color: rgba(0, 128, 128, 0.1); }
 
@@ -35,24 +35,36 @@
   outline: none; }
 
 body {
+  background: url(../img/ipadScreen.png) no-repeat center center fixed;
+  background-size: 650px; }
+
+#tabletSizingDiv {
   background: url(../img/background/bg4.png) no-repeat center center fixed;
   background-size: cover;
-  z-index: 1; }
+  z-index: 1;
+  margin: 40px auto;
+  width: 538px !important;
+  max-width: 538px !important;
+  height: 712px !important;
+  max-height: 712px !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; }
 
 #mainContainer {
   background-color: #00BEBE;
   position: absolute;
-  left: 0vw;
-  top: 0vw;
-  height: 85%;
+  left: 0;
+  top: 0;
+  height: 600px;
   width: 94%;
-  margin: 15% 3% 0% 3%;
+  margin: 18% 3% 0% 3%;
   border-radius: 4px;
   opacity: 0.95; }
 
 .btnDiv {
   margin: 0;
-  margin-top: -5vw;
+  margin-top: -1em;
   min-width: 50%; }
   .btnDiv h6 {
     position: relative;
@@ -60,9 +72,9 @@ body {
     left: -5px; }
 
 .avatarChoose {
-  margin-top: 0vw;
-  width: 12vw !important;
-  height: 12vw !important;
+  margin-top: 0;
+  width: 5em !important;
+  height: 5em !important;
   overflow: hidden; }
 
 .buttonAvatar {
@@ -234,10 +246,13 @@ body {
   outline: none; }
 
 .childLandingContainer {
-  margin: 20px 25px;
+  margin: 40px 25px;
+  box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.95);
+  width: 90%;
   text-align: center;
-  padding: 1vw; }
+  padding: .5em;
+  border-radius: 5px; }
   .childLandingContainer h4 {
     font-family: "Cabin Sketch";
     font-size: 40px; }
@@ -279,18 +294,19 @@ body {
       color: white; }
 
 .childLoginContainer {
-  margin: 20px 25px;
+  margin: 40px 25px;
+  box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.95);
+  width: 90%;
+  height: 100%;
   text-align: center;
   padding: .5em;
-  height: 260px;
-  width: 90%;
   border-radius: 5px; }
   .childLoginContainer h4 {
     font-family: "Cabin Sketch";
     font-size: 24px;
     display: inline-block;
-    padding: 0 12px; }
+    padding: 0 5px; }
   .childLoginContainer a.top-right {
     position: absolute;
     top: 5px;
@@ -361,9 +377,10 @@ body {
       top: 15%; }
 
 .childRegisterContainer {
-  margin: 20px 25px;
+  margin: 40px 25px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.95);
+  width: 90%;
   height: 100%;
   text-align: center;
   padding: .5em;
@@ -422,7 +439,7 @@ body {
     font-weight: bold; }
   .childRegisterContainer p {
     margin: 0;
-    margin-top: -4vw;
+    margin-top: -10px;
     font-size: 25px;
     text-transform: uppercase;
     color: #FF005D;
@@ -571,10 +588,10 @@ body {
   top: 220px; }
 
 .fc-content-skeleton :nth-child(1) a {
-  background-color: #C006C1; }
+  background-color: #E47B39; }
 
 .fc-content-skeleton :nth-child(2) a {
-  background-color: #DA9700; }
+  background-color: #E47B39; }
 
 .fc-content-skeleton :nth-child(3) a {
   background-color: #DA9700; }
@@ -583,25 +600,25 @@ body {
   background-color: #EEA30C; }
 
 .fc-content-skeleton :nth-child(5) a {
-  background-color: #D146D5; }
+  background-color: #EEB436; }
 
 .fc-content-skeleton :nth-child(6) a {
-  background-color: #E47B39; }
+  background-color: #EEA30C; }
 
 .fc-content-skeleton :nth-child(7) a {
-  background-color: #00BEBE; }
+  background-color: #04BE01; }
 
 .fc-content-skeleton :nth-child(8) a {
-  background-color: #04BE01; }
+  background-color: #EEB436; }
 
 .fc-content-skeleton :nth-child(9) a {
   background-color: #00BEBE; }
 
 .fc-content-skeleton :nth-child(10) a {
-  background-color: #EEA30C; }
+  background-color: #04BE01; }
 
 .fc-content-skeleton :nth-child(11) a {
-  background-color: #017575; }
+  background-color: #EEB436; }
 
 .fc-toolbar {
   padding: 10px 20px; }
@@ -732,7 +749,7 @@ body {
   padding: 10px;
   position: fixed;
   top: 48%;
-  left: 42%;
+  left: 47%;
   z-index: 1100; }
 
 .musicContainer .seekBase {
@@ -791,7 +808,7 @@ body {
       margin: 0; }
   .navBar .logo-container-main {
     width: 400px;
-    height: 75px;
+    height: 80px;
     overflow: hidden;
     margin-top: -5px;
     position: relative;
@@ -800,11 +817,11 @@ body {
     width: 380px; }
 
 .parentLoginContainer {
-  margin: 20px 25px;
+  margin: 40px 25px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.95);
+  width: 90%;
   height: 100%;
-  height: 260px;
   text-align: center;
   padding: .5em;
   border-radius: 5px; }
@@ -818,7 +835,7 @@ body {
     padding-bottom: 0; }
   .parentLoginContainer p {
     margin: 0;
-    margin-top: -1.4vw;
+    margin-top: -1em;
     padding: 0;
     font-size: 18px;
     font-weight: bold;
@@ -867,18 +884,24 @@ body {
     padding: 0;
     margin: .1em; }
   .parentLoginContainer .btn {
-    margin: 1vw;
+    margin: 1em;
     color: #017575;
     color: white; }
   .parentLoginContainer .btnRow {
     width: 90%;
     margin: 0 5%; }
 
+.ng-fader {
+  width: 400px;
+  min-width: 400px;
+  margin: 0 15px; }
+
 .slideshowContainer {
+  margin: 0 auto;
   margin-top: 4.5em;
   border-radius: 15px;
   overflow: hidden;
-  padding: 10px;
+  padding: 5px;
   background-color: white;
   color: white; }
 
@@ -886,14 +909,14 @@ body {
   background-color: white; }
 
 .songsContainer {
-  width: 456px;
+  width: 440px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   overflow: hidden;
   position: relative;
-  left: -1.6em;
+  left: -4.3em;
   top: -1.15em;
   border-radius: 0px 0px 10px 10px;
   background-color: rgba(0, 0, 0, 0.6); }
@@ -928,10 +951,18 @@ body {
 
 .songContainer {
   width: 100%;
-  background: url(../img/background/musicNote.png) no-repeat -50px center fixed;
-  background-size: 100%;
+  background: url(../img/background/musicNote.png) no-repeat center center fixed;
+  background-size: 40%;
   z-index: 1;
-  padding: 0; }
+  padding: 0;
+  height: 90%;
+  margin: 10px 25px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 90%;
+  text-align: center;
+  padding: .5em;
+  border-radius: 5px; }
 
 .songSelectTitle {
   opacity: 1; }

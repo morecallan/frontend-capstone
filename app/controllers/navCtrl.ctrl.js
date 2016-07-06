@@ -6,6 +6,9 @@ app.controller('navCtrl', function ($scope, $location, $rootScope, $timeout, fir
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
     ********************************************/
+    // TODO: make sure music stops upon logout
+
+
     $rootScope.navImg = "./img/avatar/av1.png";
     $rootScope.selectedChild = {};
     $rootScope.selectedParent = authFactory.getUser();
