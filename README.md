@@ -26,8 +26,16 @@
 
 
 ### Final Result:
-> "Chat Room" where users are able to send messages from their specific username, edit their messages, receive replies from an AI and customize their themes.  
-> PS. Try entering swear word just for fun.
+# "Oral Hygiene Promotion App" for children
+> Parents must create an account for access to the app. They are able to add up to 4 children associated with their account. These accounts can be deleted or added at any point.
+
+> Child users log in each time they intend to brush their teeth. They can either view their previous brushing records or create a new brushing record.
+
+> If child user opts to create a new brushing record, they are able to select 4 clips from a set of "mystery songs" to compile one 2-minute song. Once they have 4 selections, they are able to play their "custom" song.
+
+> While the child user's "custom" song is playing, they receive step-by-step brushing instructions from an animated slideshow.
+
+> Once the 2-minute animation and song duo is completed. The child receives a "sticker" for brushing. Brushing is limited to once per morning and once per evening.
 
 ##### Description: Base Messages Loaded on Pageload
 <img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/1.baseMessages.jpg" width="600">
