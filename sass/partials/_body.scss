@@ -1,20 +1,33 @@
 @import "../components/colors";
 
-
 body {
-    background: url(../img/background/bg4.png)  no-repeat center center fixed;
-    background-size: cover;
-    z-index: 1;
+  background: url(../img/ipadScreen.png)  no-repeat center center fixed;
+  background-size: 650px;
+}
+
+
+#tabletSizingDiv {
+  background: url(../img/background/bg4.png)  no-repeat center center fixed;
+  background-size: cover;
+  z-index: 1;
+  margin: 40px auto;
+  width: 538px !important;
+  max-width: 538px !important;
+  height: 712px !important;
+  max-height: 712px !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 #mainContainer {
     background-color: $blue-light;
     position: absolute;
-    left: 0vw;
-    top: 0vw;
-    height: 85%;
+    left: 0;
+    top: 0;
+    height: 600px;
     width: 94%;
-    margin: 15% 3% 0% 3%;
+    margin: 18% 3% 0% 3%;
     border-radius: 4px;
     opacity: 0.95;
 }

@@ -6,6 +6,9 @@ app.controller('navCtrl', function ($scope, $location, $rootScope, $timeout, fir
     /********************************************
     **      VARIABLES FOR USERS - SUBUSERS     **
     ********************************************/
+    // TODO: make sure music stops upon logout
+
+
     $rootScope.navImg = "./img/avatar/av1.png";
     $rootScope.selectedChild = {};
     $rootScope.selectedParent = authFactory.getUser();
@@ -52,10 +55,10 @@ app.controller('navCtrl', function ($scope, $location, $rootScope, $timeout, fir
 
             $menu.removeClass('active');
             var time = 0;
-            $menu.find('ul .btn-floating').addClass("animated fadeOutUp")
-            $timeout(() => {$menu.find('ul .btn-floating').removeClass("animated fadeOutUp")}, 700);
+            $menu.find('ul .btn-floating').addClass("animated fadeOutUp");
+            $timeout(() => {$menu.find('ul .btn-floating').removeClass("animated fadeOutUp");}, 700);
         }
     };
-    
+
 
 });

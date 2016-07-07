@@ -15,7 +15,7 @@
 
         img {
             -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
-            filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white); 
+            filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
             margin: 10%;
             vertical-align: middle;
             display: inline-block;
@@ -51,7 +51,7 @@
         a.yellow-mid {
             background-color: $yellow-mid !important;
         }
-        
+
         a.purple-dark {
             background-color: $purple-dark !important;
         }
@@ -62,12 +62,12 @@
             width: 5em;
             padding: 0;
             margin: 0;
-        }  
+        }
     }
 
     .logo-container-main {
         width: 400px;
-        height: 75px;
+        height: 80px;
         overflow: hidden;
         margin-top: -5px;
         position: relative;

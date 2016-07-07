@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller('brushingCtrl', function ($scope, $location, $rootScope, $routeParams, $timeout, firebaseURL, authFactory, addChildFactory, brushingDataFactory) {
+app.controller('brushingCtrl', function ($scope, $route, $location, $rootScope, $routeParams, $timeout, firebaseURL, authFactory, addChildFactory, brushingDataFactory) {
 
 $rootScope.stopInterval();
 
@@ -15,6 +15,7 @@ $rootScope.stopInterval();
         brushingDataFactory.runBrushingDataCheckThenSubmitNewIfCool($routeParams.subuid, brushTime);
     };
 
+
     /********************************************
     **        SELECTING SONG FUNCTIONALITY     **
     ********************************************/
@@ -25,36 +26,45 @@ $rootScope.stopInterval();
 
     $scope.songsLeft = [{icon: 'music_note'},{icon: 'music_note'},{icon: 'music_note'},{icon: 'music_note'}];
 
-    $scope.playlist = [];
-    $scope.usersPlaylist = [];
+    $rootScope.mplaylist = [];
+    $scope.$watch($rootScope.mplaylist);
 
-    $scope.$watch($scope.songsLeft);
-    $scope.$watch($scope.playlist);
+    $scope.usersPlaylist = [];
+    $scope.$watch($scope.usersPlaylist);
+
+
 
     $scope.addSongToPaylist = (selectedSong, index) => {
-        if ($scope.playlist.length < 4) {
+        if ($rootScope.mplaylist.length < 4) {
             $scope.songs[index].chosenAlready = true;
             let SMSound = soundManager.createSound({
                 id: selectedSong.id,
                 url: selectedSong.url
             });
-            $scope.playlist.push(selectedSong);
+            $rootScope.mplaylist.push(selectedSong);
             $scope.usersPlaylist.push(SMSound);
             let placeHolderToRemove = $scope.songsLeft.length - 1;
             $scope.songsLeft.splice(placeHolderToRemove, 1);
-            if ($scope.playlist.length === 4) {
+            if ($rootScope.mplaylist.length === 4) {
                 $scope.allSongsSelected = true;
             }
         } else {
             $scope.allSongsSelected = true;
+            $scope.resetSongSelectionMode();
         }
     };
 
     $scope.switchToBrushingMode = () => {
+        $rootScope.mplaylist = [];
         $scope.selectSongMode = false;
         $scope.usersPlaylist[0].play();
-        $timeout($scope.submitBrushingCompleteData, 120100);
+        $timeout($scope.submitBrushingCompleteData, 120000);
     };
+
+    $scope.resetSongSelectionMode = () => {
+      $rootScope.mplaylist = [];
+      $scope.allSongsSelected = false;
+    }
 
     $scope.nowPlaying = "";
 
@@ -147,5 +157,5 @@ $rootScope.stopInterval();
             }
         ];
 
-    
+
 });

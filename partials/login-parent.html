@@ -4,7 +4,7 @@
       <h4 >"I need an adult!"</h4>
       <p>Parent {{parentLoginTitle}}</p>
     </div>
-      
+
     <ul class="pagination col s5">
       <li class="waves-effect" ng-hide="!modeLogin" ng-href="/#/parentregister"><a ng-href="/#/parentregister">Register</a></li>
       <li class="active" ng-hide="modeLogin" ng-href="/#/parentregister"><a ng-href="/#/parentregister">Register</a></li>
@@ -29,6 +29,13 @@
           <input type="password" autocomplete="nope" ng-model="account.password">
           <label>Password</label>
         </div>
+    </div>
+
+    <div class="row">
+      <p class="col s8 offset-s2">
+        <input type="checkbox" id="emailSubscribe" ng-model="account.emailSubscribe"/>
+        <label for="emailSubscribe">Weekly email reports.</label>
+      </p>
     </div>
 
     <div class="row btnRow">
@@ -75,7 +82,7 @@
     <h4><i class="medium-icon material-icons">error_outline</i>Oops!</h4>
     <h4>Houston we have a problem.</h4>
     <p>{{errorMessage}}</p>
-  </div>   
+  </div>
 </div>
 
 

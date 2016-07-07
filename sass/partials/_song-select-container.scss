@@ -3,10 +3,20 @@
 
 .songContainer {
     width: 100%;
-    background: url(../img/background/musicNote.png)  no-repeat -50px center fixed;
-    background-size: 100%;
+    background: url(../img/background/musicNote.png)  no-repeat center center fixed;
+    background-size: 40%;
     z-index: 1;
     padding: 0;
+    height: 90%;
+
+
+    margin: 10px 25px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .25);
+    width: 90%;
+    text-align: center;
+    padding: .5em;
+    border-radius: 5px;
 }
 
 
@@ -25,7 +35,7 @@
 
     img {
         -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
-        filter: drop-shadow(0 10px 0px white); 
+        filter: drop-shadow(0 10px 0px white);
         margin: auto;
         vertical-align: middle;
         display: inline-block;
@@ -70,7 +80,7 @@
     .achieved {
         color: #8bc34a;
         -webkit-filter: drop-shadow(2px 2px 1px white) drop-shadow(-2px -2px 1px white) drop-shadow(-2px 2px 1px white) drop-shadow(2px -2px 1px white);
-        filter: drop-shadow(0 10px 0px white); 
+        filter: drop-shadow(0 10px 0px white);
     }
 
     .midSmall {
@@ -96,7 +106,7 @@
 
         img {
             width: 100% !important;
-            opacity: .95;  
+            opacity: .95;
         }
 
         i {

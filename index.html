@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-signin-client_id" content="945751885154-9a3n2qj8g0na3jh1rl18tgm36hnpoaa2.apps.googleusercontent.com">
-  
+
   <title> Boogie and Brush </title>
 
   <link rel="icon" href="./img/avatar/av1.png">
@@ -26,6 +26,8 @@
 </head>
 
 <body ng-app="ToothBrushingApp" ng-cloak>
+
+  <div id="tabletSizingDiv">
 
 
 
@@ -79,12 +81,14 @@
     </div>
   </div>
   <!-- END OF LOADING SPINNER-->
-  
+
 
   <!-- CONTAINER FOR VIEW-->
   <div class="container"><div id="mainContainer" class="container z-depth-2" ng-view></div></div>
   <!-- END OF CONTAINER FOR VIEW-->
 
+
+  </div>
 
 
   <!-- Materialize: jQuery (necessary for Materialize's JavaScript plugins) -->
@@ -100,7 +104,7 @@
   <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
   <!-- Materialize: Latest compiled and minified JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.min.js"></script> 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.min.js"></script>
   <script src="lib/bower_components/angular-touch/angular-touch.js"></script>
   <script src="lib/ngFader-master/ngFader.js"></script>
   <!-- jquery: Version req by UI Calendar-->
@@ -115,7 +119,9 @@
   <script type="text/javascript" src="app/app.js"></script>
   <!-- FACTORIES -->
   <script type="text/javascript" src="app/factories/httpInterceptor.factory.js"></script>
+  <script type="text/javascript" src="app/factories/credentialsFactory.factory.js"></script>
   <script type="text/javascript" src="app/factories/authFactory.factory.js"></script>
+  <script type="text/javascript" src="app/factories/emailFactory.factory.js"></script>
   <script type="text/javascript" src="app/factories/addChildFactory.factory.js"></script>
   <script type="text/javascript" src="app/factories/brushingDataFactory.factory.js"></script>
   <!-- DIRECTIVES -->

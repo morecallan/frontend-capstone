@@ -10,14 +10,13 @@
   <div class="childUserSelectSlider">
     <div class="childUserList">
 
-    
 
     <!-- -------------------------- POPULATES WITH ALL USERS TIED WITH PARENT ACCOUNT ------------------------- -->
       <div class="card child-login-card angular-animate slide" ng-repeat="child in children" myRepeatDirective>
         <a class="btn-floating top-right-btn red" ng-click="activateAreYouSureModal(child, $index)" ng-show="deleteMode"><i class="large material-icons">delete_forever</i></a>
         <div ng-click="deleteMode||selectActiveChild(child)">
           <div class="card-image valign-wrapper">
-            <img ng-src="{{child.avatar}}" class="animate-show valign" fade-in>  
+            <img ng-src="{{child.avatar}}" class="animate-show valign" fade-in>
           </div>
           <div class="card-content">
             <h4>{{child.firstName}}</h4>
@@ -27,7 +26,7 @@
 
 
       <!-- -------------------------- LESS THAN 4 USERS ------------------------- -->
-      <div class="card angular-animate slide" ng-show="lessThanFourChildren" > 
+      <div class="card angular-animate slide" ng-show="lessThanFourChildren" >
           <a class="btn-floating btn-large add-child-btn" ng-href="#/childregister">
             <i class="large material-icons">add_circle</i>
           </a>
