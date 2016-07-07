@@ -26,7 +26,7 @@
 
 
 ### Final Result:
-# "Oral Hygiene Promotion App" for children
+##### "Oral Hygiene Promotion App" for children
 > Parents must create an account for access to the app. They are able to add up to 4 children associated with their account. These accounts can be deleted or added at any point.
 
 > Child users log in each time they intend to brush their teeth. They can either view their previous brushing records or create a new brushing record.
@@ -37,26 +37,32 @@
 
 > Once the 2-minute animation and song duo is completed. The child receives a "sticker" for brushing. Brushing is limited to once per morning and once per evening.
 
-##### Description: Base Messages Loaded on Pageload
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/1.baseMessages.jpg" width="600">
-##### Description: Select User Menu
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/2.selectUsers.jpg" width="600">
-##### Description: User Inputs New Message
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/3.userMessage.jpg" width="600">
-##### Description: AI Response
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/4.AIResponse.jpg" width="600">
-##### Description: Theme Selection
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/5.themeSelection.jpg" width="600">
-##### Description: Theme Applied
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/6.themeApplied.jpg" width="600">
-##### Description: Emoji Usage
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/7.emoji.jpg" width="600">
-##### Description: Clear Entire Message Board
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/8.clearMessageBoard.jpg" width="600">
-##### Description: Edit Mode
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/9.editMode.jpg" width="600">
-##### Description: Edited Text
-<img src="https://raw.githubusercontent.com/nss-evening-cohort-3/chatty-e3-iwantanap/master/screenshots/10.editTextStamp.jpg" width="600">
+##### Description: Parent Registration
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-register.jpg" width="200">
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-error.jpg" width="200">
+##### Description: Parent Login
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-login.jpg" width="400">
+##### Description: Account Landing
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/account-landing.jpg" width="400">
+##### Description: Child Registration
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-register.jpg" width="200">
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-avatar.jpg" width="200">
+##### Description: Child Account Features
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-login.jpg" width="200">
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-delete.jpg" width="200">
+##### Description: Child Landing
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-landing.jpg" width="400">
+##### Description: Child Brushing - Song Selection
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/create-song-begin.jpg" width="200">
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/create-song-end.jpg" width="200">
+##### Description: Child Brushing - Slideshow
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/slideshow-a.jpg" width="200">
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/slideshow-b.jpg" width="200">
+##### Description: Child Brushing - Recording
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/record-single.jpg" width="200">
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/record-multiple.jpg" width="200">
+
+
 
 ### How to run:
 ```
