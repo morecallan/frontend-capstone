@@ -39,7 +39,7 @@
 
 ##### Description: Parent Registration
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-register.jpg" width="200">
-<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-error.jpg" width="200">
+<img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-register-error.jpg" width="200">
 ##### Description: Parent Login
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-login.jpg" width="400">
 ##### Description: Account Landing
