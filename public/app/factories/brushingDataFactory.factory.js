@@ -28,7 +28,7 @@ app.factory("brushingDataFactory", function($rootScope, $location, $q, $http, $t
 
         return $q(function(resolve, reject){
           $http.get(`${firebaseURL}brushData.json?orderBy="subuid"&equalTo="${selectedChildID}"`)
-            .success(function(returnObject){ 
+            .success(function(returnObject){
                 Object.keys(returnObject).forEach(function(key){
                 returnObject[key].brushingDataKey=key;
                 brushingDataForChild.push(returnObject[key]);
@@ -37,8 +37,8 @@ app.factory("brushingDataFactory", function($rootScope, $location, $q, $http, $t
             })
             .error(function(error){
                 reject(error);
-            });  
-        }); 
+            });
+        });
     };
 
 //Checks to see if users submission is ready to go

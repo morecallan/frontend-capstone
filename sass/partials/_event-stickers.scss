@@ -1,5 +1,5 @@
 @import "../components/colors";
-$colors: $orange-light, $yellow-light, $yellow-mid, $yellow-dark, $purple-light, $purple-dark, $bright-green, $blue-light, $blue-dark;
+$colors: $yellow-light, $purple-light, $purple-dark, $bright-green, $blue-light, $blue-dark;
 
 
 $key: random( length($colors) );

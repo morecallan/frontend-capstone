@@ -7,10 +7,10 @@ var app = angular.module("ToothBrushingApp", ["ngRoute", "ui.calendar", "angular
 let isAuth = (authFactory) => new Promise((resolve, reject) => {
     if (authFactory.isAuthenticated()) {
         resolve();
-        return true;    
+        return true;
     } else {
         reject();
-        return false;    
+        return false;
     }
 });
 
@@ -18,7 +18,7 @@ let isChildAuth = ($rootScope) => {
     if (Object.getOwnPropertyNames($rootScope.selectedChild).length === 0) {
         return false;
     } else {
-        return true;    
+        return true;
     }
 };
 
@@ -66,18 +66,23 @@ app.config(function($routeProvider) {
             templateUrl: "partials/splash.html",
             controller:  "loginCtrl"
         })
-        .otherwise("/splash"); 
+        .otherwise("/splash");
 });
 
 
-app.run(($location, $rootScope) => {
-    let brushingDbRef = new Firebase("https://tooth-brushing.firebaseio.com/");
-    brushingDbRef.unauth();
+app.run(($location, $rootScope, fireconfig) => {
+    firebase.initializeApp(fireconfig.fireconfig);
 
-    brushingDbRef.onAuth(authData => {
-        if(!authData) {
-            $location.path("/splash");
-        }
+    firebase.auth().signOut;
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if(user) {
+        console.log("User logged in", user.uid);
+        let currentUserId = user.uid;
+        let userName = user.displayName;
+      } else {
+        $location.path("/splash");
+      }
     });
 });
 
