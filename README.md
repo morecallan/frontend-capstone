@@ -40,24 +40,32 @@
 ##### Description: Parent Registration
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-register.jpg" width="200">
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-register-error.jpg" width="200">
+
 ##### Description: Parent Login
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/parent-login.jpg" width="400">
+
 ##### Description: Account Landing
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/account-landing.jpg" width="400">
+
 ##### Description: Child Registration
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-register.jpg" width="200">
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-avatar.jpg" width="200">
+
 ##### Description: Child Account Features
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-login.jpg" width="200">
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-delete.jpg" width="200">
+
 ##### Description: Child Landing
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/child-landing.jpg" width="400">
+
 ##### Description: Child Brushing - Song Selection
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/create-song-begin.jpg" width="200">
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/create-song-end.jpg" width="200">
+
 ##### Description: Child Brushing - Slideshow
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/slideshow-a.jpg" width="200">
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/slideshow-b.jpg" width="200">
+
 ##### Description: Child Brushing - Recording
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/record-single.jpg" width="200">
 <img src="https://raw.githubusercontent.com/morecallan/frontend-capstone/master/grabs/record-multiple.jpg" width="200">
