@@ -25,7 +25,7 @@
 
 
 
-### Final Result:
+### Description:
 ##### "Oral Hygiene Promotion App" for children
 > Parents must create an account for access to the app. They are able to add up to 4 children associated with their account. These accounts can be deleted or added at any point.
 
