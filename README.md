@@ -78,7 +78,8 @@
 2. Navigate to the project folder in command line interface and type: `http-server -p 8080`  
 3. This will show at: `http://localhost:8080` in your internet browser.  
 ```
-
+### Demo:
+[Preview the project here.](https://boogie-and-brush.firebaseapp.com)
 
 
 
